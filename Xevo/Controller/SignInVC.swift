@@ -1,0 +1,77 @@
+//
+//  ViewController.swift
+//  Xevo
+//
+//  Created by Aditya Saxena on 01/04/18.
+//  Copyright © 2018 aditya saxena. All rights reserved.
+//
+
+import UIKit
+import FacebookLogin
+import FBSDKCoreKit
+import FBSDKLoginKit
+import Firebase
+
+class SignInVC: UIViewController {
+        
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        
+    }
+    
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var pwdField: UITextField!
+    
+    
+    @IBAction func facebookBtnClicked(_ sender: Any) {
+        
+        let facebookLogin = FBSDKLoginManager()
+        facebookLogin.logIn(withReadPermissions: ["email"], from: self) {(result, error) in
+            if error != nil {
+                print("Unable to authenticate with facebook")
+            } else if result?.isCancelled == true {
+                print("User cancelled")
+            } else {
+                print("Sucessfully Authenticated")
+                let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+                self.firebaseAuth(credential)
+            }
+        }
+        
+    }
+    
+    func firebaseAuth(_ credential: AuthCredential) {
+        Auth.auth().signIn(with: credential) { (user, error) in
+            if let error = error {
+                print("Unable to authenticate with Firebase")
+            } else {
+                print("Successfully Authenticated with Firebase")
+            }
+            
+        }
+    }
+    
+    @IBAction func SignInClicked(_ sender: Any) {
+        if let email = emailField.text, let pwd = pwdField.text {
+            Auth.auth().signIn(withEmail: email, password: pwd, completion: { (user, error) in
+                if error == nil {
+                    print("User authenticated with Firebase")
+                } else {
+                    print("Sign up part/Sign in failure")
+                }
+            })
+        }
+        
+        
+    }
+    
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+
+}
+

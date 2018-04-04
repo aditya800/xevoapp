@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>654288468653-gfro8gan9cdq0a5ljeq30422ojkr2dvg.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.654288468653-gfro8gan9cdq0a5ljeq30422ojkr2dvg</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBIqooMhOVk7ViVxIW8wbVhnfl5akBkhGg</string>
+	<key>GCM_SENDER_ID</key>
+	<string>654288468653</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.sampleapp221.Xevo</string>
+	<key>PROJECT_ID</key>
+	<string>xevo1-3358a</string>
+	<key>STORAGE_BUCKET</key>
+	<string>xevo1-3358a.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:654288468653:ios:8b71d26bbd251027</string>
+	<key>DATABASE_URL</key>
+	<string>https://xevo1-3358a.firebaseio.com</string>
+</dict>
+</plist>

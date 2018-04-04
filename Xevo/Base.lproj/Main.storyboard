@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Avenir.ttc">
+            <string>Avenir-Book</string>
+            <string>Avenir-Heavy</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Sign InVC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="SignInVC" customModule="Xevo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="X" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Nt-Sd-mTZ">
+                                <rect key="frame" x="69" y="78" width="237" height="152"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="237" id="3Rv-kK-nee"/>
+                                    <constraint firstAttribute="height" constant="152" id="bcy-7g-cAc"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xevo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GaZ-fS-Cg6">
+                                <rect key="frame" x="150.5" y="251" width="74" height="45.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="33"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="G3Y-WS-h6l">
+                                <rect key="frame" x="32" y="321.5" width="311" height="100"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FbT-es-UUt">
+                                        <rect key="frame" x="0.0" y="0.0" width="311" height="30"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5S8-ys-0yf">
+                                        <rect key="frame" x="0.0" y="30" width="311" height="30"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                    <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2TK-QQ-BiE">
+                                        <rect key="frame" x="0.0" y="60" width="311" height="40"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.87" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                        <state key="normal" title="Sign in">
+                                            <color key="titleColor" red="0.56366049577742061" green="0.065072589978047962" blue="0.001600502268157901" alpha="0.87" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="SignInClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tUB-h1-IOA"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="No8-tN-WOh">
+                                <rect key="frame" x="32" y="453.5" width="311" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="LAY-OL-TMI"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="fb"/>
+                                <connections>
+                                    <action selector="facebookBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PId-bg-fhz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="G3Y-WS-h6l" firstAttribute="top" secondItem="GaZ-fS-Cg6" secondAttribute="bottom" constant="25" id="1xb-bl-qtY"/>
+                            <constraint firstItem="GaZ-fS-Cg6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2qP-fl-J0c"/>
+                            <constraint firstItem="G3Y-WS-h6l" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="E1Y-y9-8kg"/>
+                            <constraint firstItem="G3Y-WS-h6l" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="SwM-Jc-Img"/>
+                            <constraint firstItem="GaZ-fS-Cg6" firstAttribute="top" secondItem="4Nt-Sd-mTZ" secondAttribute="bottom" constant="21" id="ZEu-zw-2zn"/>
+                            <constraint firstItem="4Nt-Sd-mTZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zez-Mq-EnZ"/>
+                            <constraint firstItem="No8-tN-WOh" firstAttribute="top" secondItem="G3Y-WS-h6l" secondAttribute="bottom" constant="32" id="a4O-qQ-KOu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="No8-tN-WOh" secondAttribute="trailing" constant="32" id="aSz-mc-qHB"/>
+                            <constraint firstItem="No8-tN-WOh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="iE9-rF-JM0"/>
+                            <constraint firstItem="4Nt-Sd-mTZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="58" id="kM3-6P-rcl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="G3Y-WS-h6l" secondAttribute="trailing" constant="32" id="lGb-Bs-yYa"/>
+                            <constraint firstItem="No8-tN-WOh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xm5-bX-Rk7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="emailField" destination="FbT-es-UUt" id="xWZ-nd-FYh"/>
+                        <outlet property="pwdField" destination="5S8-ys-0yf" id="42L-hi-VFr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="112.8" y="115.59220389805098"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="X" width="1563" height="2780"/>
+        <image name="fb" width="988" height="160"/>
+    </resources>
+</document>
