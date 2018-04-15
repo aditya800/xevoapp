@@ -13,6 +13,7 @@
 		4829C5262071D3CD007C29E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4829C5252071D3CD007C29E6 /* Assets.xcassets */; };
 		4829C5292071D3CD007C29E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4829C5272071D3CD007C29E6 /* LaunchScreen.storyboard */; };
 		4829C5312071D670007C29E6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4829C5302071D670007C29E6 /* GoogleService-Info.plist */; };
+		482C56D52075FE7400ABDB41 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482C56D42075FE7400ABDB41 /* SignUpVC.swift */; };
 		56CBAC7048965D09557297A7 /* Pods_Xevo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94F377391D7BE633DDBEE615 /* Pods_Xevo.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		4829C5282071D3CD007C29E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4829C52A2071D3CD007C29E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4829C5302071D670007C29E6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		482C56D42075FE7400ABDB41 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		7D28001DC60B6137E5DEF8BE /* Pods-Xevo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Xevo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Xevo/Pods-Xevo.debug.xcconfig"; sourceTree = "<group>"; };
 		94F377391D7BE633DDBEE615 /* Pods_Xevo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Xevo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD6A92010EF73A31AF8543BF /* Pods-Xevo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Xevo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Xevo/Pods-Xevo.release.xcconfig"; sourceTree = "<group>"; };
@@ -46,6 +48,7 @@
 			isa = PBXGroup;
 			children = (
 				4829C5202071D3CD007C29E6 /* SignInVC.swift */,
+				482C56D42075FE7400ABDB41 /* SignUpVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4829C5212071D3CD007C29E6 /* SignInVC.swift in Sources */,
+				482C56D52075FE7400ABDB41 /* SignUpVC.swift in Sources */,
 				4829C51F2071D3CD007C29E6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
