@@ -12,5 +12,6 @@ target 'Xevo' do
   pod 'Firebase/Storage'
   pod 'FBSDKLoginKit'
   pod 'FacebookLogin'
+  pod 'SwiftKeychainWrapper'
 
 end

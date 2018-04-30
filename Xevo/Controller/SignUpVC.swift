@@ -33,6 +33,7 @@ class SignUpVC: UIViewController {
                 print("Unable to create user")
             } else {
                 print("Successfully authenticated with firebase")
+                self.performSegue(withIdentifier: "goToFeed", sender: nil)
             }
         })
     }
@@ -43,7 +44,11 @@ class SignUpVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    
+    @IBAction func goBackToSignIn(_ sender: Any) {
+        self.dismiss(animated: false, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

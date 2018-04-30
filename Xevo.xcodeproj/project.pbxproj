@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4810554220955AEA00967B36 /* QuestionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4810554120955AEA00967B36 /* QuestionVC.swift */; };
+		481055442096B0B300967B36 /* ActualVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481055432096B0B300967B36 /* ActualVC.swift */; };
 		4829C51F2071D3CD007C29E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4829C51E2071D3CD007C29E6 /* AppDelegate.swift */; };
 		4829C5212071D3CD007C29E6 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4829C5202071D3CD007C29E6 /* SignInVC.swift */; };
 		4829C5242071D3CD007C29E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4829C5222071D3CD007C29E6 /* Main.storyboard */; };
@@ -14,10 +16,13 @@
 		4829C5292071D3CD007C29E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4829C5272071D3CD007C29E6 /* LaunchScreen.storyboard */; };
 		4829C5312071D670007C29E6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4829C5302071D670007C29E6 /* GoogleService-Info.plist */; };
 		482C56D52075FE7400ABDB41 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482C56D42075FE7400ABDB41 /* SignUpVC.swift */; };
+		48EC6CF82089833F00874A96 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EC6CF72089833F00874A96 /* FeedVC.swift */; };
 		56CBAC7048965D09557297A7 /* Pods_Xevo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94F377391D7BE633DDBEE615 /* Pods_Xevo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4810554120955AEA00967B36 /* QuestionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionVC.swift; sourceTree = "<group>"; };
+		481055432096B0B300967B36 /* ActualVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActualVC.swift; sourceTree = "<group>"; };
 		4829C51B2071D3CD007C29E6 /* Xevo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Xevo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4829C51E2071D3CD007C29E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4829C5202071D3CD007C29E6 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -27,6 +32,7 @@
 		4829C52A2071D3CD007C29E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4829C5302071D670007C29E6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		482C56D42075FE7400ABDB41 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		48EC6CF72089833F00874A96 /* FeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		7D28001DC60B6137E5DEF8BE /* Pods-Xevo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Xevo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Xevo/Pods-Xevo.debug.xcconfig"; sourceTree = "<group>"; };
 		94F377391D7BE633DDBEE615 /* Pods_Xevo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Xevo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD6A92010EF73A31AF8543BF /* Pods-Xevo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Xevo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Xevo/Pods-Xevo.release.xcconfig"; sourceTree = "<group>"; };
@@ -49,6 +55,9 @@
 			children = (
 				4829C5202071D3CD007C29E6 /* SignInVC.swift */,
 				482C56D42075FE7400ABDB41 /* SignUpVC.swift */,
+				48EC6CF72089833F00874A96 /* FeedVC.swift */,
+				4810554120955AEA00967B36 /* QuestionVC.swift */,
+				481055432096B0B300967B36 /* ActualVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -237,6 +246,7 @@
 				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -249,6 +259,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -264,8 +275,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48EC6CF82089833F00874A96 /* FeedVC.swift in Sources */,
 				4829C5212071D3CD007C29E6 /* SignInVC.swift in Sources */,
+				481055442096B0B300967B36 /* ActualVC.swift in Sources */,
 				482C56D52075FE7400ABDB41 /* SignUpVC.swift in Sources */,
+				4810554220955AEA00967B36 /* QuestionVC.swift in Sources */,
 				4829C51F2071D3CD007C29E6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,8 +336,10 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = GC9H5GHQAE;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -379,8 +395,10 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = GC9H5GHQAE;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -404,12 +422,14 @@
 			baseConfigurationReference = 7D28001DC60B6137E5DEF8BE /* Pods-Xevo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GC9H5GHQAE;
 				INFOPLIST_FILE = Xevo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sampleapp221.Xevo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -420,12 +440,14 @@
 			baseConfigurationReference = FD6A92010EF73A31AF8543BF /* Pods-Xevo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GC9H5GHQAE;
 				INFOPLIST_FILE = Xevo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sampleapp221.Xevo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -11,13 +11,20 @@ import FacebookLogin
 import FBSDKCoreKit
 import FBSDKLoginKit
 import Firebase
+import SwiftKeychainWrapper
 
 class SignInVC: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        /*if let _ = KeychainWrapper.standard.string(forKey: "uid") {
+             KeychainWrapper.standard.removeObject(forKey: "uid")
+            //performSegue(withIdentifier: "goToFeed", sender: nil)
+        }*/
     }
     
     @IBOutlet weak var emailField: UITextField!
@@ -47,6 +54,9 @@ class SignInVC: UIViewController {
                 print("Unable to authenticate with Firebase")
             } else {
                 print("Successfully Authenticated with Firebase")
+                if let user = user {
+                    self.completeSignIn(id: user.uid)
+                }
             }
             
         }
@@ -57,6 +67,9 @@ class SignInVC: UIViewController {
             Auth.auth().signIn(withEmail: email, password: pwd, completion: { (user, error) in
                 if error == nil {
                     print("User authenticated with Firebase")
+                    if let user = user {
+                        self.completeSignIn(id: user.uid)
+                    }
                 } else {
                     print("Sign up part/Sign in failure")
                 }
@@ -77,6 +90,11 @@ class SignInVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func completeSignIn(id: String) {
+        //let keychain = KeychainWrapper.standard.set(id, forKey: "uid")
+        //print("Data saved to Keychain: \(keychain)")
+        performSegue(withIdentifier: "goToFeed", sender: nil)
+    }
 
 }
 
