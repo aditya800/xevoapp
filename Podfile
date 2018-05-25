@@ -13,5 +13,6 @@ target 'Xevo' do
   pod 'FBSDKLoginKit'
   pod 'FacebookLogin'
   pod 'SwiftKeychainWrapper'
+  pod 'SearchTextField'
 
 end

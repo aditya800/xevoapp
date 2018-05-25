@@ -67,6 +67,7 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - SearchTextField (1.2.0)
   - SwiftKeychainWrapper (3.0.1)
 
 DEPENDENCIES:
@@ -76,6 +77,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - Firebase/Storage
+  - SearchTextField
   - SwiftKeychainWrapper
 
 SPEC CHECKSUMS:
@@ -95,8 +97,9 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 390ea358e5a0d0133153806f744662dad933d06b
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  SearchTextField: a5bb7e4c33affadb115afdbe8100d84ef10a8024
   SwiftKeychainWrapper: 38952a3636320ae61bad3513cadd870929de7a4a
 
-PODFILE CHECKSUM: cc1743eec44df5c9cb613133b0c1ff8facba444b
+PODFILE CHECKSUM: d5e9b0f6f3b2c78ef31780b4b8c4273260e33ebf
 
 COCOAPODS: 1.4.0

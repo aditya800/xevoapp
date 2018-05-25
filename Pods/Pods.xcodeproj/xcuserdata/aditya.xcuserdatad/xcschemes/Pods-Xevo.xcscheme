@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "79AE2614304E05EDF3649D6E28F0A292"
+               BlueprintIdentifier = "2DEC39F54D8A97E4BD8847D6736A9D55"
                BuildableName = "Pods_Xevo.framework"
                BlueprintName = "Pods-Xevo"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -26,7 +26,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
@@ -37,7 +36,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -47,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "79AE2614304E05EDF3649D6E28F0A292"
+            BlueprintIdentifier = "2DEC39F54D8A97E4BD8847D6736A9D55"
             BuildableName = "Pods_Xevo.framework"
             BlueprintName = "Pods-Xevo"
             ReferencedContainer = "container:Pods.xcodeproj">
