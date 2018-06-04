@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eTz-MK-lMy">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -489,7 +489,7 @@ This Beta Test Agreement governs the disclosure of information by Xevo to the Re
                                 <rect key="frame" x="0.0" y="220" width="320" height="348"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="celli" rowHeight="93" id="STt-6K-HbR" customClass="customCell" customModule="Xevo" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="celli" rowHeight="93" id="STt-6K-HbR" customClass="customCell" customModule="Xevo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="93"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="STt-6K-HbR" id="bTD-ja-i7P">
@@ -813,20 +813,23 @@ This Beta Test Agreement governs the disclosure of information by Xevo to the Re
                                 <state key="normal" image="arrow"/>
                                 <connections>
                                     <action selector="goBack:" destination="eF7-Ju-yvs" eventType="touchUpInside" id="po7-kc-mgf"/>
+                                    <action selector="goBack:" destination="PZV-0w-j2e" eventType="touchUpInside" id="v7y-1Z-iYA"/>
                                     <action selector="goback:" destination="SO4-eq-V1z" eventType="touchUpInside" id="0OL-YQ-O9w"/>
                                     <action selector="goback:" destination="xz0-rt-Ie5" eventType="touchUpInside" id="LQD-6O-8I2"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VIv-eD-D9u">
-                                <rect key="frame" x="16" y="187" width="288" height="294"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VIv-eD-D9u">
+                                <rect key="frame" x="16" y="187" width="288" height="300"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="usZ-rf-E3d"/>
+                                </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Yq-Qt-0Vk">
-                                <rect key="frame" x="120" y="501" width="81" height="47"/>
+                                <rect key="frame" x="126" y="513" width="81" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.87" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="25"/>
@@ -843,9 +846,12 @@ This Beta Test Agreement governs the disclosure of information by Xevo to the Re
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="avT-u2-Fgt" firstAttribute="leading" secondItem="He4-Rw-dge" secondAttribute="leading" constant="10" id="3pB-fM-GPL"/>
+                            <constraint firstItem="He4-Rw-dge" firstAttribute="trailing" secondItem="VIv-eD-D9u" secondAttribute="trailing" constant="16" id="4a6-Q7-Xl5"/>
                             <constraint firstItem="Lhx-DM-HRH" firstAttribute="top" secondItem="He4-Rw-dge" secondAttribute="top" constant="8" id="BgG-v5-jrT"/>
                             <constraint firstItem="avT-u2-Fgt" firstAttribute="top" secondItem="He4-Rw-dge" secondAttribute="top" constant="13" id="FmW-uW-EcX"/>
                             <constraint firstItem="pRE-Z0-Gcw" firstAttribute="top" secondItem="Lhx-DM-HRH" secondAttribute="bottom" constant="25" id="Vlm-T9-FEA"/>
+                            <constraint firstItem="VIv-eD-D9u" firstAttribute="leading" secondItem="He4-Rw-dge" secondAttribute="leading" constant="16" id="Y1P-Ef-23d"/>
+                            <constraint firstItem="VIv-eD-D9u" firstAttribute="top" secondItem="pRE-Z0-Gcw" secondAttribute="bottom" constant="19.5" id="cN4-s7-wKn"/>
                             <constraint firstItem="Lhx-DM-HRH" firstAttribute="centerX" secondItem="WMK-6W-jcn" secondAttribute="centerX" id="fN8-Op-FuT"/>
                             <constraint firstItem="pRE-Z0-Gcw" firstAttribute="centerX" secondItem="WMK-6W-jcn" secondAttribute="centerX" id="rNj-Qp-jXh"/>
                         </constraints>
@@ -1382,7 +1388,7 @@ This Beta Test Agreement governs the disclosure of information by Xevo to the Re
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MpA-G9-llW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4989.375" y="830.28169014084506"/>
+            <point key="canvasLocation" x="4991" y="843"/>
         </scene>
         <!--CasesVC-->
         <scene sceneID="fYr-lB-Iu2">
@@ -1485,7 +1491,7 @@ This Beta Test Agreement governs the disclosure of information by Xevo to the Re
                                 <rect key="frame" x="0.0" y="189" width="320" height="379"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="celli" rowHeight="74" id="BhM-fb-PyH" customClass="secondcustomcell" customModule="Xevo" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="celli" rowHeight="74" id="BhM-fb-PyH" customClass="secondcustomcell" customModule="Xevo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="74"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BhM-fb-PyH" id="p8N-hi-lq6">
@@ -1701,7 +1707,7 @@ This Beta Test Agreement governs the disclosure of information by Xevo to the Re
                                 <rect key="frame" x="0.0" y="163" width="320" height="361"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="75" id="ktc-uO-Pa7">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="75" id="ktc-uO-Pa7">
                                         <rect key="frame" x="0.0" y="28" width="320" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ktc-uO-Pa7" id="fX7-9H-GNy">
@@ -2809,6 +2815,6 @@ This Beta Test Agreement governs the disclosure of information by Xevo to the Re
         <segue reference="fFH-Pb-hA1"/>
         <segue reference="yLX-WX-dI9"/>
         <segue reference="szN-p2-jMY"/>
-        <segue reference="eav-P0-9jX"/>
+        <segue reference="6eu-F6-MP2"/>
     </inferredMetricsTieBreakers>
 </document>

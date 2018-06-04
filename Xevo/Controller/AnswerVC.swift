@@ -14,6 +14,11 @@ class AnswerVC: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var timerLabel: UILabel!
     
+    @IBAction func goBack(_ sender: Any) {
+        self.dismiss(animated: false, completion: nil)
+    }
+    
+    
     var seconds = 60
     var minutes = 29
     var timer = Timer()

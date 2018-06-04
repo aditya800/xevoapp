@@ -114,8 +114,8 @@ class CasesVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        //myIndex = indexPath.row
-        //performSegue(withIdentifier: "gotote", sender: self)
+         myIndex = indexPath.row
+         performSegue(withIdentifier: "gotoanswer", sender: self)
         
     }
     
