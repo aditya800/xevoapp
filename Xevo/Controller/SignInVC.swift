@@ -93,7 +93,6 @@ class SignInVC: UIViewController {
                         databaseRef.child("Users").child(user.uid).setValue(userr)
                             
                         print("false room doesn't exist \(fn) \(sn) \(email!)")
-                            
                         }
                     })
                     
@@ -114,8 +113,15 @@ class SignInVC: UIViewController {
                         self.completeSignIn(id: user.uid)
                     }
                 } else {
+                    
+                    var tem = self.pwdField.text?.characters.count
+                    if (self.pwdField.text == "" || tem! <= 4) {
+                        self.pwdField.layer.shadowColor = UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 1.0).cgColor
+                    } else {
+                    
                     self.emailField.layer.shadowColor = UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 1.0).cgColor
-                    self.pwdField.layer.shadowColor = UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 1.0).cgColor
+                    }
+                    
                     print("Sign up part/Sign in failure")
                 }
             })

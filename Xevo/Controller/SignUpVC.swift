@@ -55,7 +55,24 @@ class SignUpVC: UIViewController {
         Auth.auth().createUser(withEmail: email, password: pwd, completion: { (user, error) in
             if error != nil {
                 print("Unable to create user")
+                
+                if (fn == "") {
+                    self.FirstName.layer.shadowColor = UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 1.0).cgColor
+                }
+                
+                if (sn == "") {
+                    self.SecondName.layer.shadowColor = UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 1.0).cgColor
+                }
+                
+                var tem = self.pwdField.text?.characters.count
+                
+                if (pwd == "" || tem! < 4) {
+                
                 self.pwdField.layer.shadowColor = UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 1.0).cgColor
+                } else {
+                   self.Email.layer.shadowColor = UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 1.0).cgColor
+                }
+                
             } else {
                 
                 self.useruid = user?.uid
