@@ -52,6 +52,7 @@
 		48A8D52F20A93BC000722628 /* TermsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A8D52E20A93BC000722628 /* TermsVC.swift */; };
 		48EC6CF82089833F00874A96 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EC6CF72089833F00874A96 /* FeedVC.swift */; };
 		56CBAC7048965D09557297A7 /* Pods_Xevo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94F377391D7BE633DDBEE615 /* Pods_Xevo.framework */; };
+		FF756AA520C6EA8B00E093EC /* RatingCompleteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF756AA420C6EA8B00E093EC /* RatingCompleteVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,6 +106,7 @@
 		7D28001DC60B6137E5DEF8BE /* Pods-Xevo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Xevo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Xevo/Pods-Xevo.debug.xcconfig"; sourceTree = "<group>"; };
 		94F377391D7BE633DDBEE615 /* Pods_Xevo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Xevo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD6A92010EF73A31AF8543BF /* Pods-Xevo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Xevo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Xevo/Pods-Xevo.release.xcconfig"; sourceTree = "<group>"; };
+		FF756AA420C6EA8B00E093EC /* RatingCompleteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingCompleteVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 				4808D2BF20B7B99600C15D24 /* CasesVC.swift */,
 				4808D2C120B7D30100C15D24 /* secondcustomcell.swift */,
 				4808D2C320B7FBB200C15D24 /* AnswerVC.swift */,
+				FF756AA420C6EA8B00E093EC /* RatingCompleteVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 				4808D2C220B7D30100C15D24 /* secondcustomcell.swift in Sources */,
 				4808D2BE20B6E0F200C15D24 /* Consult5VC.swift in Sources */,
 				485DCBD820AEEE6F00DE0DB0 /* VemoVC.swift in Sources */,
+				FF756AA520C6EA8B00E093EC /* RatingCompleteVC.swift in Sources */,
 				4808D2C020B7B99600C15D24 /* CasesVC.swift in Sources */,
 				4808D2B820B6D45C00C15D24 /* Consult2VC.swift in Sources */,
 				485DCBCA20ACE2C600DE0DB0 /* CosmosSize.swift in Sources */,

@@ -21,6 +21,8 @@ class SubcaseVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //if question hasn't been answered, mainbtn.isHidden = true
+        
         mainbtn.setTitle(questions[myIndex].main, for: .normal)
         maintext.text = questions[myIndex].detail
 

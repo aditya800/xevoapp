@@ -28,7 +28,7 @@ class RatingVC: UIViewController {
         
         var rating = starrating.rating
         
-        performSegue(withIdentifier: "gotomin", sender: self)
+        performSegue(withIdentifier: "gotoconfirmrate", sender: self)
         
     }
     

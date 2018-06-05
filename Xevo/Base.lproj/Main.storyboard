@@ -776,11 +776,80 @@ This Beta Test Agreement governs the disclosure of information by Xevo to the Re
                     <connections>
                         <outlet property="starrating" destination="XTP-eL-aUg" id="IJR-rG-4St"/>
                         <segue destination="c2m-Cm-YRf" kind="show" identifier="gotomin" id="zo9-a6-J3A"/>
+                        <segue destination="3T3-Vm-VdH" kind="showDetail" identifier="gotoconfirmrate" id="1do-C5-0nX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cgz-uG-dGH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3348.75" y="828.16901408450701"/>
+        </scene>
+        <!--Rating CompleteVC-->
+        <scene sceneID="RFv-tT-TeS">
+            <objects>
+                <viewController id="3T3-Vm-VdH" customClass="RatingCompleteVC" customModule="Xevo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="srt-xm-8HI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WPk-N8-7oZ">
+                                <rect key="frame" x="90" y="468" width="140" height="40"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.87" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                <state key="normal" title="Back to home">
+                                    <color key="titleColor" red="0.56366049579999999" green="0.065072589979999998" blue="0.001600502268" alpha="0.87" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="SignInClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ukD-b2-Und"/>
+                                    <action selector="signUpClicked:" destination="UcF-wj-3VL" eventType="touchUpInside" id="gyg-kv-uch"/>
+                                    <action selector="submit:" destination="QRb-bT-eBB" eventType="touchUpInside" id="VpY-cb-RV6"/>
+                                    <action selector="submit:" destination="xz0-rt-Ie5" eventType="touchUpInside" id="ZkA-Rp-0P9"/>
+                                    <segue destination="c2m-Cm-YRf" kind="presentation" identifier="backtohome" id="hrM-QL-r0q"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" ambiguous="YES" text="Thank you for submitting a rating!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hx-86-sLS">
+                                <rect key="frame" x="0.0" y="209" width="320" height="95"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8YF-D4-MX3">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="84"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Thank you!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akb-bh-vH5">
+                                        <rect key="frame" x="98" y="40" width="154" height="36"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="26"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.81568627449999997" green="0.15686274510000001" blue="0.23137254900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="84" id="RfO-8j-0QK"/>
+                                    <constraint firstItem="akb-bh-vH5" firstAttribute="top" secondItem="8YF-D4-MX3" secondAttribute="top" constant="41" id="sJg-7R-Xzo"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wLC-mp-IY1" firstAttribute="trailing" secondItem="WPk-N8-7oZ" secondAttribute="trailing" constant="90" id="1Lo-W4-8sE"/>
+                            <constraint firstItem="wLC-mp-IY1" firstAttribute="trailing" secondItem="WPk-N8-7oZ" secondAttribute="trailing" constant="90" id="FSD-Mn-MGf"/>
+                            <constraint firstItem="WPk-N8-7oZ" firstAttribute="leading" secondItem="wLC-mp-IY1" secondAttribute="leading" constant="90" id="X1Z-mf-afZ"/>
+                            <constraint firstItem="WPk-N8-7oZ" firstAttribute="centerX" secondItem="srt-xm-8HI" secondAttribute="centerX" id="YxH-Vo-yxx"/>
+                            <constraint firstItem="0hx-86-sLS" firstAttribute="top" secondItem="8YF-D4-MX3" secondAttribute="bottom" constant="60" id="np8-Yq-MwZ"/>
+                            <constraint firstItem="WPk-N8-7oZ" firstAttribute="top" secondItem="0hx-86-sLS" secondAttribute="bottom" constant="50" id="vRI-e6-cF5"/>
+                            <constraint firstItem="WPk-N8-7oZ" firstAttribute="leading" secondItem="wLC-mp-IY1" secondAttribute="leading" constant="90" id="vrW-9t-ffN"/>
+                            <constraint firstItem="WPk-N8-7oZ" firstAttribute="top" secondItem="0hx-86-sLS" secondAttribute="bottom" constant="158" id="w2d-er-2dl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wLC-mp-IY1"/>
+                    </view>
+                    <connections>
+                        <outlet property="goToHome" destination="WPk-N8-7oZ" id="tmT-9r-hNX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IIS-t3-z0N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3348.75" y="1561.2676056338028"/>
         </scene>
         <!--AnswerVC-->
         <scene sceneID="uCA-nP-c9T">
@@ -2813,7 +2882,7 @@ This Beta Test Agreement governs the disclosure of information by Xevo to the Re
         <segue reference="U0V-Ap-eH4"/>
         <segue reference="fFH-Pb-hA1"/>
         <segue reference="yLX-WX-dI9"/>
-        <segue reference="zo9-a6-J3A"/>
-        <segue reference="6eu-F6-MP2"/>
+        <segue reference="hrM-QL-r0q"/>
+        <segue reference="eav-P0-9jX"/>
     </inferredMetricsTieBreakers>
 </document>
