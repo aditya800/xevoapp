@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eTz-MK-lMy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -489,7 +489,7 @@ This Beta Test Agreement governs the disclosure of information by Xevo to the Re
                                 <rect key="frame" x="0.0" y="220" width="320" height="348"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="celli" rowHeight="93" id="STt-6K-HbR" customClass="customCell" customModule="Xevo" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="celli" rowHeight="93" id="STt-6K-HbR" customClass="customCell" customModule="Xevo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="93"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="STt-6K-HbR" id="bTD-ja-i7P">
@@ -713,7 +713,7 @@ This Beta Test Agreement governs the disclosure of information by Xevo to the Re
                                 <nil key="highlightedColor"/>
                             </label>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kJN-NM-JgF">
-                                <rect key="frame" x="129" y="468" width="63" height="40"/>
+                                <rect key="frame" x="128.5" y="468" width="63" height="40"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.87" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                 <state key="normal" title="Submit">
@@ -728,7 +728,7 @@ This Beta Test Agreement governs the disclosure of information by Xevo to the Re
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XTP-eL-aUg" customClass="CosmosView" customModule="Xevo" customModuleProvider="target">
-                                <rect key="frame" x="60" y="247" width="288" height="52"/>
+                                <rect key="frame" x="13.5" y="257" width="293" height="53"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
@@ -738,7 +738,7 @@ This Beta Test Agreement governs the disclosure of information by Xevo to the Re
                                         <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="starSize">
-                                        <real key="value" value="52"/>
+                                        <real key="value" value="53"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
                                         <color key="value" red="0.81568627449999997" green="0.15686274510000001" blue="0.23137254900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -761,13 +761,13 @@ This Beta Test Agreement governs the disclosure of information by Xevo to the Re
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="mHk-O9-HXt" firstAttribute="top" secondItem="kbf-yO-olt" secondAttribute="top" id="4zp-qM-ot6"/>
-                            <constraint firstItem="XTP-eL-aUg" firstAttribute="leading" secondItem="4Bu-aI-ak4" secondAttribute="leading" constant="60" id="7PO-FJ-Vi0"/>
                             <constraint firstItem="IWc-ad-nID" firstAttribute="top" secondItem="mHk-O9-HXt" secondAttribute="bottom" constant="60" id="Nic-d4-yaJ"/>
                             <constraint firstItem="IWc-ad-nID" firstAttribute="leading" secondItem="4Bu-aI-ak4" secondAttribute="leading" id="Urh-3f-NIZ"/>
                             <constraint firstItem="kJN-NM-JgF" firstAttribute="centerX" secondItem="kbf-yO-olt" secondAttribute="centerX" id="e7L-gx-9FA"/>
                             <constraint firstItem="4Bu-aI-ak4" firstAttribute="trailing" secondItem="IWc-ad-nID" secondAttribute="trailing" id="ecb-rO-uex"/>
-                            <constraint firstItem="XTP-eL-aUg" firstAttribute="top" secondItem="IWc-ad-nID" secondAttribute="bottom" constant="40" id="jTb-Sd-hnk"/>
                             <constraint firstItem="4Bu-aI-ak4" firstAttribute="bottom" secondItem="kJN-NM-JgF" secondAttribute="bottom" constant="60" id="nDZ-mC-F9C"/>
+                            <constraint firstItem="XTP-eL-aUg" firstAttribute="centerX" secondItem="kbf-yO-olt" secondAttribute="centerX" id="qMt-Ay-BXh"/>
+                            <constraint firstItem="XTP-eL-aUg" firstAttribute="top" secondItem="IWc-ad-nID" secondAttribute="bottom" constant="50" id="vZY-tN-fyp"/>
                             <constraint firstItem="mHk-O9-HXt" firstAttribute="leading" secondItem="4Bu-aI-ak4" secondAttribute="leading" id="xP7-EV-yMR"/>
                             <constraint firstAttribute="trailing" secondItem="mHk-O9-HXt" secondAttribute="trailing" id="z3s-wZ-2RE"/>
                         </constraints>
@@ -1490,7 +1490,7 @@ This Beta Test Agreement governs the disclosure of information by Xevo to the Re
                                 <rect key="frame" x="0.0" y="189" width="320" height="379"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="celli" rowHeight="74" id="BhM-fb-PyH" customClass="secondcustomcell" customModule="Xevo" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="celli" rowHeight="74" id="BhM-fb-PyH" customClass="secondcustomcell" customModule="Xevo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="74"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BhM-fb-PyH" id="p8N-hi-lq6">
@@ -1706,7 +1706,7 @@ This Beta Test Agreement governs the disclosure of information by Xevo to the Re
                                 <rect key="frame" x="0.0" y="163" width="320" height="361"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="75" id="ktc-uO-Pa7">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="75" id="ktc-uO-Pa7">
                                         <rect key="frame" x="0.0" y="28" width="320" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ktc-uO-Pa7" id="fX7-9H-GNy">
@@ -2807,19 +2807,13 @@ This Beta Test Agreement governs the disclosure of information by Xevo to the Re
         <image name="grey" width="225" height="225"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nCW-xU-zkH"/>
         <segue reference="cds-Pt-J9I"/>
         <segue reference="sFM-z1-vKX"/>
         <segue reference="ck8-mB-fKB"/>
         <segue reference="U0V-Ap-eH4"/>
         <segue reference="fFH-Pb-hA1"/>
         <segue reference="yLX-WX-dI9"/>
-<<<<<<< HEAD
         <segue reference="zo9-a6-J3A"/>
-        <segue reference="eav-P0-9jX"/>
-=======
-        <segue reference="szN-p2-jMY"/>
         <segue reference="6eu-F6-MP2"/>
->>>>>>> a08f162e1e66b9f9b12d0756c24eaf31cbcf6555
     </inferredMetricsTieBreakers>
 </document>
