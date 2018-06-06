@@ -15,19 +15,22 @@ import FBSDKLoginKit
 
 class QuestionVC: UIViewController {
     
+    var sideMenuViewController = LtemVC()
+    var isMenuOpened:Bool = false
+    
     var text = "error"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        imageMain.layer.cornerRadius = imageMain.frame.size.width / 2
+       /* imageMain.layer.cornerRadius = imageMain.frame.size.width / 2
         imageMain.clipsToBounds = true
         imageMain.layer.backgroundColor = UIColor(red: 186/255, green: 33/255, blue: 6/255, alpha: 1.0).cgColor
         imageMain.layer.borderWidth = 1
-        
+        */
         sideView.isHidden = true
         
-        if(FBSDKAccessToken.current() != nil) {
+        /*if(FBSDKAccessToken.current() != nil) {
             
             print(FBSDKAccessToken.current().permissions)
             let graphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields" : "id, name, email"])
@@ -70,13 +73,20 @@ class QuestionVC: UIViewController {
             
         })
         
-       
+       */
         
         //print(fn + " " + sn)
         //sideName.text = fn!.capitalized + " " + sn!.capitalized
         
         // Do any additional setup after loading the view.
+        
+        sideMenuViewController = storyboard!.instantiateViewController(withIdentifier: "LtemVC") as! LtemVC
+        sideMenuViewController.view.frame = CGRect(x: 0, y: 80, width: 280, height: self.view.frame.height)
+        
+     
+        
     }
+    
     
     @IBOutlet weak var imageMain: UIImageView!
     
@@ -121,16 +131,44 @@ class QuestionVC: UIViewController {
     
     @IBAction func showSide(_ sender: Any) {
         
-        sideView.alpha = 1
         
-        if(sideView.isHidden) {
-            sideView.isHidden = !sideView.isHidden
-            showside.setImage(#imageLiteral(resourceName: "close_symbol"), for: .normal)
-        } else {
-            sideView.isHidden = !sideView.isHidden
+        
+        if(isMenuOpened){
+            
+            
+            
+         //   transition.subtype = kCATransitionFromRight
+           // sideMenuViewController.view.layer.add(transition, forKey: kCATransition)
+
+            isMenuOpened = false
             showside.setImage(#imageLiteral(resourceName: "Hamburger_icon.svg"), for: .normal)
+            sideMenuViewController.willMove(toParentViewController: nil)
+            sideMenuViewController.view.removeFromSuperview()
+            sideMenuViewController.removeFromParentViewController()
+            
+            
         }
-        
+            
+        else{
+            
+            let transition = CATransition()
+            
+            let withDuration = 0.4
+            
+            transition.duration = withDuration
+            transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+            transition.type = kCATransitionPush
+            transition.subtype = kCATransitionFromLeft
+
+            sideMenuViewController.view.layer.add(transition, forKey: kCATransition)
+            
+            isMenuOpened = true
+            showside.setImage(#imageLiteral(resourceName: "close_symbol"), for: .normal)
+            self.addChildViewController(sideMenuViewController)
+            self.view.addSubview(sideMenuViewController.view)
+            sideMenuViewController.didMove(toParentViewController: self)
+        }
+
         
     }
     

@@ -14,5 +14,6 @@ target 'Xevo' do
   pod 'FacebookLogin'
   pod 'SwiftKeychainWrapper'
   pod 'SearchTextField'
+  pod 'SideMenu'
 
 end

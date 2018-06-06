@@ -68,6 +68,7 @@ PODS:
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - SearchTextField (1.2.0)
+  - SideMenu (3.1.5)
   - SwiftKeychainWrapper (3.0.1)
 
 DEPENDENCIES:
@@ -78,6 +79,7 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/Storage
   - SearchTextField
+  - SideMenu
   - SwiftKeychainWrapper
 
 SPEC CHECKSUMS:
@@ -98,8 +100,9 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   SearchTextField: a5bb7e4c33affadb115afdbe8100d84ef10a8024
+  SideMenu: 47dbf9e4d878062d8994aed43f6e4bf6c1fea30b
   SwiftKeychainWrapper: 38952a3636320ae61bad3513cadd870929de7a4a
 
-PODFILE CHECKSUM: d5e9b0f6f3b2c78ef31780b4b8c4273260e33ebf
+PODFILE CHECKSUM: a60f56f9f6470e18f94ad85bba147cdf60e2dbd3
 
 COCOAPODS: 1.4.0

@@ -31,12 +31,13 @@ class SignInVC: UIViewController {
         
     }
     
+    /*
     override func viewDidAppear(_ animated: Bool) {
         if let _ = KeychainWrapper.standard.string(forKey: "uid") {
             performSegue(withIdentifier: "gotofeed", sender: nil)
     }
     }
-    
+    */
     
     @IBOutlet weak var emailField: UITextField!
     
