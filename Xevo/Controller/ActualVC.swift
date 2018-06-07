@@ -117,12 +117,15 @@ class ActualVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
             whatsup.layer.borderColor =  UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 1.0).cgColor
         } else {
         
+        countc += 1
+        mainc = countc
+        //a  = true
+            
         let id = Auth.auth().currentUser?.uid
             let username = Auth.auth().currentUser?.uid
             let question1 = ["caseType": labelMain.text, "description": first.text, "title": whatsup.text]
         dbReference = Database.database().reference()
         dbReference?.child("Questions").child(id!).childByAutoId().setValue(question1)
-            
             
             let image = mainImage.image
             

@@ -13,6 +13,16 @@ import SwiftKeychainWrapper
 import FBSDKCoreKit
 import FBSDKLoginKit
 
+var mainc = 0
+var countc = 0
+
+struct questionStruct {
+    let main : String!
+    let detail : String!
+}
+
+var questions = [questionStruct]()
+
 class QuestionVC: UIViewController {
     
     var sideMenuViewController = LtemVC()
@@ -84,7 +94,6 @@ class QuestionVC: UIViewController {
         sideMenuViewController.view.frame = CGRect(x: 0, y: 80, width: 280, height: self.view.frame.height)
         
      
-        
     }
     
     
@@ -123,8 +132,6 @@ class QuestionVC: UIViewController {
             }
             
         })
-        
-        
     }
     
     @IBAction func myCases(_ sender: Any) {
@@ -147,7 +154,6 @@ class QuestionVC: UIViewController {
     
     
     @IBAction func showSide(_ sender: Any) {
-        
         
         
         if(isMenuOpened){
@@ -192,6 +198,7 @@ class QuestionVC: UIViewController {
     
     @IBAction func logout(_ sender: Any) {
         
+        questions.removeAll()
         let k = KeychainWrapper.standard.removeObject(forKey: "uid")
         print("Signed out \(k)")
         let firebaseAuth = Auth.auth()

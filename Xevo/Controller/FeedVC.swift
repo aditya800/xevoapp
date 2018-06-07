@@ -13,15 +13,9 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 import FirebaseDatabase
 
-struct questionStruct {
-    let main : String!
-    let detail : String!
-}
-
 let temp = ["Test Question", "Test Question 2", "Nothing", "Whatever", "Here you go"]
 let temp2 = ["Test question detail", "dddddd", "whatever", "unanswered", "This is nothing"]
 var myIndex = 0
-var questions = [questionStruct]()
 
 class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -51,13 +45,13 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     //@IBOutlet weak var imgMain: UIImageView!
     
     //@IBOutlet weak var leadingConstraint: NSLayoutConstraint!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
        // leadingConstraint.constant = -270
         //labelName.text = tempVal
-        
         //imgMain.layer.cornerRadius = imgMain.frame.size.width / 2
         //imgMain.clipsToBounds = true
        // imgMain.layer.backgroundColor = UIColor(red: 186/255, green: 33/255, blue: 6/255, alpha: 1.0).cgColor
@@ -96,7 +90,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.delegate = self
         tableView.dataSource = self
         
-        let uid = user?.uid
+        /*let uid = user?.uid
         
         ref.child("Questions").child(uid!).observe(.childAdded, with: {
                 snapshot in
@@ -108,7 +102,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             questions.insert(questionStruct(main: main, detail: detail), at: 0)
             self.tableView.reloadData()
             
-        })
+        })*/
 
   /*ref.child("Questions").child("OOUN4i80LvR1bGVa2ejm56u6SnE2").queryOrderedByKey().observe(.childAdded, with: {
             snapshot in
@@ -123,6 +117,9 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
         })
      */
+        
+      //self.tableView.reloadData()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -191,7 +188,6 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         //cell.textLabel?.text = questions[indexPath.row].title
         
-        if(questions.count > 0) {
         
           cell.mainBtn.setTitle(questions[indexPath.row].main , for: .normal )
           cell.detailLbl.text = questions[indexPath.row].detail
@@ -199,12 +195,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         //let label2 = cell.viewWithTag(2) as! UILabel
        // label2.text = questions[indexPath.row].detail
         
-        } else {
-            
-        cell.mainBtn.setTitle("You have 0 cases. Click here to ask a question" , for: .normal)
-        cell.detailLbl.text = ""
-            
-        }
+       
             
         return cell
         

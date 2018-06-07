@@ -66,13 +66,43 @@ class LtemVC: UIViewController {
             
         })
         
-        if (questions.isEmpty) {
-            print("true")
+        let uid = Auth.auth().currentUser?.uid
+        let ref = Database.database().reference()
+        
+        print(questions.count)
+        print(mainc)
+        print(countc)
+        
+        if(mainc == 0 || mainc != countc) {
+        
+        ref.child("Questions").child(uid!).observe(.childAdded, with: {
+            snapshot in
+            
+            let snapshotValue = snapshot.value as? NSDictionary
+            let main = snapshotValue?["title"] as? String
+            let detail = snapshotValue?["description"] as? String
+            
+            questions.insert(questionStruct(main: main, detail: detail), at: 0)
+            //self.tableView.reloadData()
+            //self.reloadInputViews()
+            
+        })
+            
+        }
+        
+        print(questions.count)
+        countc = questions.count
+        mainc = countc
+        print(mainc)
+        print(countc)
+        
+        if (questions.count == 0) {
+            print("truldkflke")
             myCases.isEnabled = false
             myCases.setTitle("My Cases (0)", for: .normal)
             myCases.sizeToFit()
         }
-        
+ 
         // Do any additional setup after loading the view.
     }
     
@@ -99,10 +129,29 @@ class LtemVC: UIViewController {
     @IBOutlet weak var bcomaconsul: UIButton!
     
     @IBAction func bcomeaconsult(_ sender: Any) {
+        
+        let id = Auth.auth().currentUser?.uid
+        
+        let databaseRef = Database.database().reference()
+        
+        databaseRef.child("Users").child(id!).child("isConsultant").observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
+            
+            let temp = snapshot.value as? String
+            if temp == "Applied" {
+                self.performSegue(withIdentifier: "gotovonsultante", sender: nil)
+            } else {
+                self.performSegue(withIdentifier: "gotobecomee", sender: nil)
+            }
+            
+        })
+        
     }
     
     @IBAction func logout(_ sender: Any) {
         
+        questions.removeAll()
+        mainc = 0
+        countc = 0
         let k = KeychainWrapper.standard.removeObject(forKey: "uid")
         print("Signed out \(k)")
         let firebaseAuth = Auth.auth()

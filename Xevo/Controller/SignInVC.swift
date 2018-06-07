@@ -13,6 +13,8 @@ import FBSDKLoginKit
 import Firebase
 import SwiftKeychainWrapper
 
+//var a = false
+
 class SignInVC: UIViewController {
     
     var userId: String!

@@ -1019,6 +1019,8 @@ This Beta Test Agreement governs the disclosure of information by Xevo to the Re
                         <outlet property="lblMain" destination="tjo-4i-B70" id="dia-ww-yzB"/>
                         <outlet property="myCases" destination="RRx-1Z-RJu" id="4Gj-TG-0m4"/>
                         <segue destination="OLw-k5-HNh" kind="show" identifier="gotocas" id="CAH-Yq-O2H"/>
+                        <segue destination="0Y8-DG-4zn" kind="show" identifier="gotovonsultante" id="csS-N7-QQl"/>
+                        <segue destination="pln-Il-j5G" kind="show" identifier="gotobecomee" id="iWU-Mg-7hO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r8G-Ej-VDm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3079,9 +3081,9 @@ This Beta Test Agreement governs the disclosure of information by Xevo to the Re
         <segue reference="cds-Pt-J9I"/>
         <segue reference="sFM-z1-vKX"/>
         <segue reference="ck8-mB-fKB"/>
-        <segue reference="U0V-Ap-eH4"/>
+        <segue reference="csS-N7-QQl"/>
         <segue reference="fFH-Pb-hA1"/>
-        <segue reference="yLX-WX-dI9"/>
+        <segue reference="iWU-Mg-7hO"/>
         <segue reference="szN-p2-jMY"/>
         <segue reference="CAH-Yq-O2H"/>
     </inferredMetricsTieBreakers>
