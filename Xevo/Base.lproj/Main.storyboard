@@ -660,6 +660,7 @@ This Beta Test Agreement governs the disclosure of information by Xevo to the Re
                     <connections>
                         <outlet property="mainbtn" destination="Kb4-1H-2sy" id="VRO-q9-gkZ"/>
                         <outlet property="maintext" destination="D9v-sd-a2k" id="4HK-Gd-gkt"/>
+                        <outlet property="rateout" destination="p9t-FH-00J" id="TkJ-De-fvw"/>
                         <segue destination="xz0-rt-Ie5" kind="showDetail" identifier="gotorate" id="nCW-xU-zkH"/>
                     </connections>
                 </viewController>

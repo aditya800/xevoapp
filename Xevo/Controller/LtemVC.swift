@@ -81,8 +81,9 @@ class LtemVC: UIViewController {
             let snapshotValue = snapshot.value as? NSDictionary
             let main = snapshotValue?["title"] as? String
             let detail = snapshotValue?["description"] as? String
+            let has = snapshotValue?["hasAnswered"] as? String
             
-            questions.insert(questionStruct(main: main, detail: detail), at: 0)
+            questions.insert(questionStruct(main: main, detail: detail, has: has), at: 0)
             //self.tableView.reloadData()
             //self.reloadInputViews()
             

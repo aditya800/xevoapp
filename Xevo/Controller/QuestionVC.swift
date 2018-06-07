@@ -19,6 +19,7 @@ var countc = 0
 struct questionStruct {
     let main : String!
     let detail : String!
+    let has : String!
 }
 
 var questions = [questionStruct]()

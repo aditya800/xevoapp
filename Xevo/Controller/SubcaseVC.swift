@@ -25,10 +25,17 @@ class SubcaseVC: UIViewController {
         
         mainbtn.setTitle(questions[myIndex].main, for: .normal)
         maintext.text = questions[myIndex].detail
+        
+        let tem = questions[myIndex].has!
+        if tem == "none" {
+            rateout.setTitle("Awaiting Response", for: .normal)
+            rateout.isEnabled = false
+        }
 
         // Do any additional setup after loading the view.
     }
     
+    @IBOutlet weak var rateout: UIButton!
     
     @IBAction func gotorate(_ sender: Any) {
         performSegue(withIdentifier: "gotorate", sender: nil)

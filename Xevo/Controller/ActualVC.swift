@@ -123,7 +123,7 @@ class ActualVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
             
         let id = Auth.auth().currentUser?.uid
             let username = Auth.auth().currentUser?.uid
-            let question1 = ["caseType": labelMain.text, "description": first.text, "title": whatsup.text]
+            let question1 = ["caseType": labelMain.text!, "description": first.text!, "title": whatsup.text!, "hasAnswered": "none"] as [String : Any]
         dbReference = Database.database().reference()
         dbReference?.child("Questions").child(id!).childByAutoId().setValue(question1)
             
