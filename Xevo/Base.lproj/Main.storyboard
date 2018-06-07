@@ -1017,6 +1017,7 @@ This Beta Test Agreement governs the disclosure of information by Xevo to the Re
                         <outlet property="bcomaconsul" destination="PJT-zC-TUo" id="a20-MN-Dg7"/>
                         <outlet property="imgMain" destination="MNY-CT-ZWP" id="dhD-3g-IeY"/>
                         <outlet property="lblMain" destination="tjo-4i-B70" id="dia-ww-yzB"/>
+                        <outlet property="myCases" destination="RRx-1Z-RJu" id="4Gj-TG-0m4"/>
                         <segue destination="OLw-k5-HNh" kind="show" identifier="gotocas" id="CAH-Yq-O2H"/>
                     </connections>
                 </viewController>
@@ -1390,6 +1391,7 @@ This Beta Test Agreement governs the disclosure of information by Xevo to the Re
                     <connections>
                         <outlet property="askAQ" destination="Cwq-l3-oig" id="rrX-Ru-Qfp"/>
                         <outlet property="imageMain" destination="FmV-tD-f4M" id="r3I-zM-w1d"/>
+                        <outlet property="myCases" destination="wMM-pZ-dTf" id="pVs-tL-MKU"/>
                         <outlet property="showside" destination="VcH-om-fpm" id="be4-Lb-NPy"/>
                         <outlet property="sideName" destination="lSK-jF-W6v" id="o5d-fQ-VY3"/>
                         <outlet property="sideView" destination="ofu-31-CKo" id="lSn-sL-4ko"/>
@@ -3080,7 +3082,7 @@ This Beta Test Agreement governs the disclosure of information by Xevo to the Re
         <segue reference="U0V-Ap-eH4"/>
         <segue reference="fFH-Pb-hA1"/>
         <segue reference="yLX-WX-dI9"/>
-        <segue reference="1GY-YX-KeW"/>
-        <segue reference="eav-P0-9jX"/>
+        <segue reference="szN-p2-jMY"/>
+        <segue reference="CAH-Yq-O2H"/>
     </inferredMetricsTieBreakers>
 </document>

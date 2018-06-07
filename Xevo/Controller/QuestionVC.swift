@@ -98,6 +98,9 @@ class QuestionVC: UIViewController {
     
     @IBOutlet weak var askAQ: UIButton!
 
+    @IBOutlet weak var myCases: UIButton!
+    
+   // @IBOutlet weak var controller: FeedVC!
     
     @IBAction func AskaQ(_ sender: Any) {
         sideView.isHidden = !sideView.isHidden
@@ -125,7 +128,21 @@ class QuestionVC: UIViewController {
     }
     
     @IBAction func myCases(_ sender: Any) {
-        performSegue(withIdentifier: "gotocases", sender: nil)
+        //var questions = [questionStruct]()
+      //  let id = Auth.auth().currentUser?.uid
+        //let username = Auth.auth().currentUser?.uid
+        print("questions!", questions)
+        print("true")
+       // print("questions!", questions)
+        if (questions.isEmpty) {
+            print("true")
+            myCases.isEnabled = false
+            myCases.setTitle("My Cases (0)", for: .normal)
+        }
+        else {
+            print("segue performed")
+       // performSegue(withIdentifier: "gotocases", sender: nil)
+        }
     }
     
     

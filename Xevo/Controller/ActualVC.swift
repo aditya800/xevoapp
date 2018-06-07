@@ -123,6 +123,7 @@ class ActualVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
         dbReference = Database.database().reference()
         dbReference?.child("Questions").child(id!).childByAutoId().setValue(question1)
             
+            
             let image = mainImage.image
             
             if image != nil {

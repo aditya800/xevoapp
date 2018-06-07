@@ -49,10 +49,15 @@
 			<key>orderHint</key>
 			<integer>11</integer>
 		</dict>
-		<key>SwiftKeychainWrapper.xcscheme</key>
+		<key>SideMenu.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>12</integer>
+		</dict>
+		<key>SwiftKeychainWrapper.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>13</integer>
 		</dict>
 		<key>leveldb-library.xcscheme</key>
 		<dict>

@@ -66,15 +66,31 @@ class LtemVC: UIViewController {
             
         })
         
+        if (questions.isEmpty) {
+            print("true")
+            myCases.isEnabled = false
+            myCases.setTitle("My Cases (0)", for: .normal)
+            myCases.sizeToFit()
+        }
+        
         // Do any additional setup after loading the view.
     }
     
     @IBOutlet weak var imgMain: UIImageView!
     
+    @IBOutlet weak var myCases: UIButton!
+    
     @IBOutlet weak var lblMain: UILabel!
     
     @IBAction func myCases(_ sender: Any) {
+//        if (questions.isEmpty) {
+//            myCases.isEnabled = false
+//            myCases.setTitle("My Cases (0)", for: .normal)
+//            myCases.sizeToFit()
+//        }
+//        else {
         performSegue(withIdentifier: "gotocas", sender: nil)
+        //}
     }
     
     @IBAction func askaques(_ sender: Any) {
