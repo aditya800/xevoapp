@@ -69,9 +69,9 @@ class LtemVC: UIViewController {
         let uid = Auth.auth().currentUser?.uid
         let ref = Database.database().reference()
         
-        print(questions.count)
-        print(mainc)
-        print(countc)
+        print("questionscount1", questions.count)
+        print("mainc1", mainc)
+        print("countc1", countc)
         
         if(mainc == 0 || mainc != countc) {
         
@@ -91,21 +91,22 @@ class LtemVC: UIViewController {
             
         }
         
-        print(questions.count)
+        print("questionscount", questions.count)
         countc = questions.count
         mainc = countc
-        print(mainc)
-        print(countc)
+        print("mainc", mainc)
+        print("countc", countc)
         
-        if (questions.count == 0) {
-            print("truldkflke")
-            myCases.isEnabled = false
-            myCases.setTitle("My Cases (0)", for: .normal)
-            myCases.sizeToFit()
-        }
+//        if (questions.count == 0) {
+//            print("truldkflke")
+//            myCases.isEnabled = false
+//            myCases.setTitle("My Cases (0)", for: .normal)
+//            myCases.sizeToFit()
+//        }
+    }
  
         // Do any additional setup after loading the view.
-    }
+    
     
     @IBOutlet weak var imgMain: UIImageView!
     
@@ -121,6 +122,7 @@ class LtemVC: UIViewController {
 //        }
 //        else {
         performSegue(withIdentifier: "gotocas", sender: nil)
+        print("test", questions.count)
         //}
     }
     
@@ -183,3 +185,5 @@ class LtemVC: UIViewController {
     */
 
 }
+
+

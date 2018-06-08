@@ -135,23 +135,23 @@ class QuestionVC: UIViewController {
         })
     }
     
-    @IBAction func myCases(_ sender: Any) {
+   // @IBAction func myCases(_ sender: Any) {
         //var questions = [questionStruct]()
       //  let id = Auth.auth().currentUser?.uid
         //let username = Auth.auth().currentUser?.uid
-        print("questions!", questions)
-        print("true")
-       // print("questions!", questions)
-        if (questions.isEmpty) {
-            print("true")
-            myCases.isEnabled = false
-            myCases.setTitle("My Cases (0)", for: .normal)
-        }
-        else {
-            print("segue performed")
-       // performSegue(withIdentifier: "gotocases", sender: nil)
-        }
-    }
+//        print("questions!", questions)
+//        print("true")
+//       // print("questions!", questions)
+//        if (questions.isEmpty) {
+//            print("true")
+//            myCases.isEnabled = false
+//            myCases.setTitle("My Cases (0)", for: .normal)
+//        }
+//        else {
+//            print("segue performed")
+//       // performSegue(withIdentifier: "gotocases", sender: nil)
+       // }
+   // }
     
     
     @IBAction func showSide(_ sender: Any) {
@@ -175,16 +175,36 @@ class QuestionVC: UIViewController {
             
         else{
             
+//            let transition:CATransition = CATransition()
+//            transition.duration = 0.5
+//            transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+//            transition.type = kCATransitionPush
+//            transition.subtype = kCATransitionFromBottom
+//            self.navigationController!.view.layer.add(transition, forKey: kCATransition)
+//            self.navigationController?.pushViewController(dstVC, animated: false)
+            
             let transition = CATransition()
-            
+            //let ltemvc = LtemVC()
+
             let withDuration = 0.4
-            
+            transition.startProgress = 0.9;
+            transition.endProgress = 1;
+
             transition.duration = withDuration
             transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-            transition.type = kCATransitionPush
+            transition.type = kCATransitionMoveIn
             transition.subtype = kCATransitionFromLeft
 
             sideMenuViewController.view.layer.add(transition, forKey: kCATransition)
+           // sideMenuViewController.navigationController?.pushViewController(ltemvc, animated: false)
+            
+            //view.window!.layer.add(transition, forKey: kCATransition)
+           // present(ltemvc, animated: false, completion: nil)
+            
+            
+            
+        
+            
             
             isMenuOpened = true
             showside.setImage(#imageLiteral(resourceName: "close_symbol"), for: .normal)
