@@ -21,6 +21,8 @@ class ActualVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
     
     @IBOutlet weak var labelMain: UILabel!
     
+    @IBOutlet weak var questionDifficult: UILabel!
+    
     @IBOutlet weak var whatsup: UITextField!
     
     @IBOutlet weak var first: UITextField!
@@ -29,7 +31,15 @@ class ActualVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
     
     @IBOutlet weak var third: UITextField!
     
+    @IBOutlet weak var fourth: UITextField!
+    
     @IBOutlet weak var mainImage: UIImageView!
+    
+    @IBOutlet  var questionDiffConstraint: NSLayoutConstraint!
+    
+    @IBOutlet  var fourthConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var categoryConstraint: NSLayoutConstraint!
     
     @IBAction func gobv(_ sender: Any) {
         self.dismiss(animated: false, completion: nil)
@@ -75,11 +85,25 @@ class ActualVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
        // placeholderLabel.textColor = UIColor.lightGray
        // placeholderLabel.isHidden = !textView.text.isEmpty
         
+        
         whatsup.setBottomBorder()
         first.setBottomBorder()
         second.setBottomBorder()
         third.setBottomBorder()
+        fourth.setBottomBorder()
         category.setBottomBorder()
+        
+        if (whichquestion == 0) {
+            fourth.removeFromSuperview()
+            questionDifficult.removeFromSuperview()
+            self.categoryConstraint.constant = self.categoryConstraint.constant + 200;
+            //fourth.isHidden = true
+         //   questionDifficult.isHidden = true
+          //  questionDiffConstraint.isActive = false
+            //fourthConstraint.isActive = false
+            
+          //  self.toChangeConstraint.constant = -20;
+        }
         
         category.filterStrings(["Architecture", "Architecture/Architectural Engineering",
                                 "Interior Design", "Accounting", "Business Honors Program",
@@ -123,7 +147,7 @@ class ActualVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
             
         let id = Auth.auth().currentUser?.uid
             let username = Auth.auth().currentUser?.uid
-            let question1 = ["caseType": labelMain.text!, "description": first.text!, "title": whatsup.text!, "hasAnswered": "none"] as [String : Any]
+            let question1 = ["caseType": labelMain.text!, "description": first.text!, "title": whatsup.text!, "hasAnswered": "none", "reasonForDifficulty": fourth.text!] as [String : Any]
         dbReference = Database.database().reference()
         dbReference?.child("Questions").child(id!).childByAutoId().setValue(question1)
             

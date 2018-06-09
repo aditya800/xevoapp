@@ -15,6 +15,7 @@ import FBSDKLoginKit
 
 var mainc = 0
 var countc = 0
+var whichquestion = 0
 
 struct questionStruct {
     let main : String!
@@ -185,6 +186,7 @@ class QuestionVC: UIViewController {
             
             let transition = CATransition()
             //let ltemvc = LtemVC()
+            //let questionvc = QuestionVC()
 
             let withDuration = 0.4
             transition.startProgress = 0.9;
@@ -194,7 +196,8 @@ class QuestionVC: UIViewController {
             transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
             transition.type = kCATransitionMoveIn
             transition.subtype = kCATransitionFromLeft
-
+            
+            
             sideMenuViewController.view.layer.add(transition, forKey: kCATransition)
            // sideMenuViewController.navigationController?.pushViewController(ltemvc, animated: false)
             
@@ -202,8 +205,8 @@ class QuestionVC: UIViewController {
            // present(ltemvc, animated: false, completion: nil)
             
             
-            
-        
+         //   sideMenuViewController.view.clipsToBounds = true
+
             
             
             isMenuOpened = true
@@ -242,17 +245,20 @@ class QuestionVC: UIViewController {
     
     @IBAction func goTo(_ sender: Any) {
         text = "Quick Hit"
+        whichquestion = 0
         performSegue(withIdentifier: "goToActual", sender: self)
     }
     
     @IBAction func goToDeep(_ sender: Any) {
         text = "Deep Dive"
+        whichquestion = 1
         performSegue(withIdentifier: "goToActual", sender: self)
     }
     
     
     @IBAction func goToHeavy(_ sender: Any) {
         text = "Heavy Lift"
+        whichquestion = 2
         performSegue(withIdentifier: "goToActual", sender: self)
     }
     
