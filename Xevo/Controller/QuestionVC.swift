@@ -15,7 +15,7 @@ import FBSDKLoginKit
 
 var mainc = 0
 var countc = 0
-var whichquestion = 0
+//var whichquestion = 0
 
 struct questionStruct {
     let main : String!
@@ -29,6 +29,7 @@ class QuestionVC: UIViewController {
     
     var sideMenuViewController = LtemVC()
     var isMenuOpened:Bool = false
+    var whichquestion = 0
     
     var text = "error"
 
@@ -245,20 +246,20 @@ class QuestionVC: UIViewController {
     
     @IBAction func goTo(_ sender: Any) {
         text = "Quick Hit"
-        whichquestion = 0
+        whichquestion = 1
         performSegue(withIdentifier: "goToActual", sender: self)
     }
     
     @IBAction func goToDeep(_ sender: Any) {
         text = "Deep Dive"
-        whichquestion = 1
+        whichquestion = 0
         performSegue(withIdentifier: "goToActual", sender: self)
     }
     
     
     @IBAction func goToHeavy(_ sender: Any) {
         text = "Heavy Lift"
-        whichquestion = 2
+        whichquestion = 0
         performSegue(withIdentifier: "goToActual", sender: self)
     }
     
@@ -266,6 +267,7 @@ class QuestionVC: UIViewController {
         if segue.identifier == "goToActual" {
         let sc = segue.destination as! ActualVC
         sc.tempVal = text
+        sc.whichquestion = whichquestion
         }
     }
     

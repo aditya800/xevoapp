@@ -37,7 +37,7 @@ class ActualVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
     
     @IBOutlet  var questionDiffConstraint: NSLayoutConstraint!
     
-    @IBOutlet  var fourthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var fourthConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var categoryConstraint: NSLayoutConstraint!
     
@@ -50,6 +50,7 @@ class ActualVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
     }
 
     var tempVal: String!
+    var whichquestion: Int!
     
     let optionss = ["Agriculture", "Agricultural Technology","Astronomy and Astrophysics", "Chemical Engineering", "Chemistry", "Computer Science", "Culinary", "Math", "Physics"]
     
@@ -93,17 +94,50 @@ class ActualVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
         fourth.setBottomBorder()
         category.setBottomBorder()
         
-        if (whichquestion == 0) {
-            fourth.removeFromSuperview()
-            questionDifficult.removeFromSuperview()
-            self.categoryConstraint.constant = self.categoryConstraint.constant + 200;
+      //  let dir = ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"]
+        if UIDevice().userInterfaceIdiom == .phone {
+            switch UIScreen.main.nativeBounds.height {
+            case 1136: //iphone 5/5s/5c
+                questionDiffConstraint.constant = 0
+                fourthConstraint.constant = 0
+            case 1334: //iphone 6/6S/7/8
+                if (whichquestion == 1) { //fourth-textview. questionDiff-label
+                    questionDiffConstraint.constant = 0
+                    fourthConstraint.constant = 0
+                }
+            case 2208: //iphone 6+/6S+/7+/8+
+                    if (whichquestion == 1) { //fourth-textview. questionDiff-label
+                        questionDiffConstraint.constant = 0
+                        fourthConstraint.constant = 0
+                }
+            case 2436: //iphone X
+                        if (whichquestion == 1) { //fourth-textview. questionDiff-label
+                            questionDiffConstraint.constant = 0
+                            fourthConstraint.constant = 0
+                }
+            default:
+                if (whichquestion == 1) { //fourth-textview. questionDiff-label
+                    questionDiffConstraint.constant = 0
+                    fourthConstraint.constant = 0
+                }
+            }
+        }
+//        if (whichquestion == 1) { //fourth-textview. questionDiff-label
+//            questionDiffConstraint.constant = 0
+//            fourthConstraint.constant = 0
+           // fourthConstraint.isActive = false
+//            fourth.removeFromSuperview()
+//            questionDifficult.removeFromSuperview()
+//            self.categoryConstraint.constant = self.categoryConstraint.constant + 300;
+//            self.fourthConstraint.constant = self.fourthConstraint.constant + 250;
             //fourth.isHidden = true
+            
          //   questionDifficult.isHidden = true
-          //  questionDiffConstraint.isActive = false
+            //questionDiffConstraint.isActive = false
             //fourthConstraint.isActive = false
             
           //  self.toChangeConstraint.constant = -20;
-        }
+        //}
         
         category.filterStrings(["Architecture", "Architecture/Architectural Engineering",
                                 "Interior Design", "Accounting", "Business Honors Program",
