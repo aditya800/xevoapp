@@ -98,28 +98,11 @@ class ActualVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
         if UIDevice().userInterfaceIdiom == .phone {
             switch UIScreen.main.nativeBounds.height {
             case 1136: //iphone 5/5s/5c
-                questionDiffConstraint.constant = 0
-                fourthConstraint.constant = 0
-            case 1334: //iphone 6/6S/7/8
-                if (whichquestion == 1) { //fourth-textview. questionDiff-label
-                    questionDiffConstraint.constant = 0
-                    fourthConstraint.constant = 0
-                }
-            case 2208: //iphone 6+/6S+/7+/8+
-                    if (whichquestion == 1) { //fourth-textview. questionDiff-label
-                        questionDiffConstraint.constant = 0
-                        fourthConstraint.constant = 0
-                }
-            case 2436: //iphone X
-                        if (whichquestion == 1) { //fourth-textview. questionDiff-label
-                            questionDiffConstraint.constant = 0
-                            fourthConstraint.constant = 0
-                }
+                questionDifficult.isHidden = true
+                fourth.isHidden = true
+          
             default:
-                if (whichquestion == 1) { //fourth-textview. questionDiff-label
-                    questionDiffConstraint.constant = 0
-                    fourthConstraint.constant = 0
-                }
+                break
             }
         }
 //        if (whichquestion == 1) { //fourth-textview. questionDiff-label
@@ -147,6 +130,11 @@ class ActualVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
         
         
         // Do any additional setup after loading the view.
+        
+        if(labelMain.text == "Quick Hit") {
+            questionDifficult.isHidden = true
+            fourth.isHidden = true
+        }
     }
     
     func textViewDidChange(_ textView: UITextView) {
