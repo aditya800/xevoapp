@@ -115,8 +115,13 @@ class QuestionVC: UIViewController {
    // @IBOutlet weak var controller: FeedVC!
     
     @IBAction func AskaQ(_ sender: Any) {
-        sideView.isHidden = !sideView.isHidden
+        isMenuOpened = false
         showside.setImage(#imageLiteral(resourceName: "Hamburger_icon.svg"), for: .normal)
+        sideMenuViewController.willMove(toParentViewController: nil)
+        sideMenuViewController.view.removeFromSuperview()
+        sideMenuViewController.removeFromParentViewController()
+//        sideView.isHidden = !sideView.isHidden
+//        showside.setImage(#imageLiteral(resourceName: "Hamburger_icon.svg"), for: .normal)
     }
     
     @IBAction func become(_ sender: Any) {

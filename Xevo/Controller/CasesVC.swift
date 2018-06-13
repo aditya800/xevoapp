@@ -13,6 +13,7 @@ import FirebaseDatabase
 struct DetailStruct {
     let main : String!
     let detail : String!
+    let rating: Int!
 }
 
 var details = [DetailStruct]()
@@ -70,8 +71,9 @@ class CasesVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
             let snapshotValue = snapshot.value as? NSDictionary
             let main = snapshotValue?["title"] as? String
             let detail = snapshotValue?["description"] as? String
+            let rating = snapshotValue?["rating"] as? Int
             
-            details.insert(DetailStruct(main: main, detail: detail), at: 0)
+            details.insert(DetailStruct(main: main, detail: detail, rating: rating), at: 0)
             self.tableView.reloadData()
             
             
