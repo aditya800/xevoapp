@@ -14,9 +14,9 @@ import FBSDKLoginKit
 import FBSDKCoreKit
 
 //struct DetailStruct {
-//    let main : String!
-//    let detail : String!
-//    let rating: String!
+//      let main : String!
+//      let detail : String!
+//      let rating: String!
 //}
 
 class ConsultCasesVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {

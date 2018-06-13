@@ -96,7 +96,19 @@ class QuestionVC: UIViewController {
         sideMenuViewController = storyboard!.instantiateViewController(withIdentifier: "LtemVC") as! LtemVC
         sideMenuViewController.view.frame = CGRect(x: 0, y: 80, width: 280, height: self.view.frame.height)
         
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+    
+        view.addGestureRecognizer(tap)
+        view.isUserInteractionEnabled = true
      
+    }
+    
+    @objc func handleTap(_ sender: UITapGestureRecognizer) {
+        isMenuOpened = false
+        showside.setImage(#imageLiteral(resourceName: "Hamburger_icon.svg"), for: .normal)
+        sideMenuViewController.willMove(toParentViewController: nil)
+        sideMenuViewController.view.removeFromSuperview()
+        sideMenuViewController.removeFromParentViewController()
     }
     
     

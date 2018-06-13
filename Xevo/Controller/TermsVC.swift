@@ -15,7 +15,6 @@ class TermsVC: UIViewController {
         self.dismiss(animated: false, completion: nil)
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 

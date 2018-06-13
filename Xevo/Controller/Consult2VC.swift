@@ -14,7 +14,6 @@ var sMotivation: String!
 
 class Consult2VC: UIViewController {
 
-    
     @IBOutlet weak var firstexp: SearchTextField!
     
     @IBOutlet weak var first: UITextField!

@@ -14,7 +14,10 @@ import FBSDKLoginKit
 import FBSDKCoreKit
 
 class LtemVC: UIViewController {
-
+    
+    @IBOutlet weak var askd: UIButton!
+    @IBOutlet weak var bcomd: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,6 +49,17 @@ class LtemVC: UIViewController {
         let id = Auth.auth().currentUser?.uid
         
         let databaseRef = Database.database().reference()
+        
+       //let databaseRef = Database.database().reference()
+        
+        databaseRef.child("Users").child(id!).child("isConsultant").observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
+            
+            let temp = snapshot.value as? String
+            if temp == "Verified" {
+                self.bcomd.setTitle("Answer a case", for: .normal)
+            }
+            
+        })
         
         var fn: String!
         var sn: String!
@@ -121,8 +135,22 @@ class LtemVC: UIViewController {
 //            myCases.sizeToFit()
 //        }
 //        else {
-        performSegue(withIdentifier: "gotocas", sender: nil)
+        
+       let id = Auth.auth().currentUser?.uid
+        
+       let databaseRef = Database.database().reference()
+        
+        databaseRef.child("Users").child(id!).child("isConsultant").observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
+            
+            let temp = snapshot.value as? String
+            if temp == "Verified" {
+              self.performSegue(withIdentifier: "gotov", sender: nil)
+            } else {
+        
+        self.performSegue(withIdentifier: "gotocas", sender: nil)
         print("test", questions.count)
+            }
+        })
         //}
     }
     
@@ -147,6 +175,8 @@ class LtemVC: UIViewController {
             let temp = snapshot.value as? String
             if temp == "Applied" {
                 self.performSegue(withIdentifier: "gotovonsultante", sender: nil)
+            } else if temp == "Verified" {
+                self.performSegue(withIdentifier: "gotob", sender: nil)
             } else {
                 self.performSegue(withIdentifier: "gotobecomee", sender: nil)
             }
