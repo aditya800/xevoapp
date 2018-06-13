@@ -195,7 +195,6 @@ class CasesVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
         vsideMenuViewController = storyboard!.instantiateViewController(withIdentifier: "LtemVC") as! LtemVC
         vsideMenuViewController.view.frame = CGRect(x: 0, y: 80, width: 280, height: self.view.frame.height)
         
-        
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
         
         view.addGestureRecognizer(tap)

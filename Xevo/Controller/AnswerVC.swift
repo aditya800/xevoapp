@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class AnswerVC: UIViewController, UITextViewDelegate {
+    
+    @IBOutlet weak var mainImage: UIImageView!
     
     @IBOutlet weak var textView: UITextView!
     
@@ -18,6 +22,11 @@ class AnswerVC: UIViewController, UITextViewDelegate {
         self.dismiss(animated: false, completion: nil)
     }
     
+    @IBAction func camera(_ sender: Any) {
+        self.present(imagePicker, animated: true, completion: nil)
+    }
+    
+    var imagePicker: UIImagePickerController!
     
     var seconds = 60
     var minutes = 29
@@ -31,6 +40,11 @@ class AnswerVC: UIViewController, UITextViewDelegate {
         if isTimerRunning == false {
             runTimer()
         }
+        
+        imagePicker = UIImagePickerController()
+        imagePicker.allowsEditing = true
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.delegate = self
 
         //textView.layer.borderWidth = 0
         //textView.layer.borderColor =
@@ -89,7 +103,37 @@ class AnswerVC: UIViewController, UITextViewDelegate {
         let seconds = Int(time) % 60
         return String(minutes)
     }
-
+    
+    
+    @IBAction func submit(_ sender: Any) {
+        
+        
+    }
+    
+    func uploadProfileImage(_ image:UIImage, completion: @escaping ((_ url:URL?)->())) {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        let storageRef = Storage.storage().reference().child("user/\(uid)")
+        
+        guard let imageData = UIImageJPEGRepresentation(image, 0.75) else { return }
+        
+        let metaData = StorageMetadata()
+        metaData.contentType = "image/jpg"
+        
+        storageRef.putData(imageData, metadata: metaData) { metaData, error in
+            if error == nil, metaData != nil {
+                if let url = metaData?.downloadURL() {
+                    completion(url)
+                } else {
+                    completion(nil)
+                }
+                // success!
+            } else {
+                // failed
+                completion(nil)
+            }
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

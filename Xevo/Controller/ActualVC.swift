@@ -56,7 +56,6 @@ class ActualVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
     
     var imagePicker: UIImagePickerController!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -208,6 +207,9 @@ class ActualVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    
     
     @objc func openImagePicker(_ sender:Any) {
         // Open Image Picker
