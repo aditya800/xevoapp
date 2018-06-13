@@ -127,6 +127,11 @@ class LtemVC: UIViewController {
     }
     
     @IBAction func askaques(_ sender: Any) {
+      //  self.willMove(toParentViewController: nil)
+        self.view.removeFromSuperview()
+        
+       // self.removeFromParentViewController()
+        
     }
     
     @IBOutlet weak var bcomaconsul: UIButton!
