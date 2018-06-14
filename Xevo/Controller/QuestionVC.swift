@@ -15,6 +15,7 @@ import FBSDKLoginKit
 
 var mainc = 0
 var countc = 0
+var area: CGRect?
 //var whichquestion = 0
 
 struct questionStruct {
@@ -100,15 +101,34 @@ class QuestionVC: UIViewController {
     
         view.addGestureRecognizer(tap)
         view.isUserInteractionEnabled = true
+        
+        area = CGRect(x: 0, y: 80, width: 280, height: self.view.frame.height)
+        
      
     }
     
+//    let p = gestureRecognizer.location(in: self.view)
+//    if mySensitiveArea!.contains(p) {
+//    print("it's inside")
+//    showMainViewController()
+//    }
+//    else {
+//    print("it's outside")
+//    }
+//}
+    
     @objc func handleTap(_ sender: UITapGestureRecognizer) {
+        let p = sender.location(in: self.view)
+        if area!.contains(p) {
+            isMenuOpened = true
+        }
+        else {
         isMenuOpened = false
         showside.setImage(#imageLiteral(resourceName: "Hamburger_icon.svg"), for: .normal)
         sideMenuViewController.willMove(toParentViewController: nil)
         sideMenuViewController.view.removeFromSuperview()
         sideMenuViewController.removeFromParentViewController()
+        }
     }
     
     

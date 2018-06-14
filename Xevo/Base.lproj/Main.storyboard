@@ -1187,7 +1187,7 @@ This Beta Test Agreement governs the disclosure of information by Xevo to the Re
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="X" translatesAutoresizingMaskIntoConstraints="NO" id="l8X-yj-5fD">
-                                <rect key="frame" x="135" y="36" width="50" height="99.5"/>
+                                <rect key="frame" x="135" y="36" width="50" height="80"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zaW-n2-z1p">
                                 <rect key="frame" x="16" y="151" width="343" height="43"/>
@@ -1196,7 +1196,7 @@ This Beta Test Agreement governs the disclosure of information by Xevo to the Re
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vlq-Nz-Wcv">
-                                <rect key="frame" x="28" y="71.5" width="35" height="30"/>
+                                <rect key="frame" x="28" y="71.5" width="35" height="10.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="35" id="EGh-qt-sNB"/>
                                     <constraint firstAttribute="height" constant="30" id="ErJ-NA-fna"/>
