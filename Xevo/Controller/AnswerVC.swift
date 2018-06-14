@@ -44,7 +44,7 @@ class AnswerVC: UIViewController, UITextViewDelegate {
         imagePicker = UIImagePickerController()
         imagePicker.allowsEditing = true
         imagePicker.sourceType = .photoLibrary
-        imagePicker.delegate = self
+        imagePicker.delegate = self as! UIImagePickerControllerDelegate & UINavigationControllerDelegate
 
         //textView.layer.borderWidth = 0
         //textView.layer.borderColor =

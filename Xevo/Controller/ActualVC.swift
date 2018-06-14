@@ -198,7 +198,21 @@ class ActualVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
             }
             }
             
-        performSegue(withIdentifier: "gototemp", sender: nil)
+            let alertController = UIAlertController(title: "Submit",
+                                                    message: "Are you sure you want to submit this question?", preferredStyle: UIAlertControllerStyle.alert)
+            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
+                (result : UIAlertAction) -> Void in
+                self.performSegue(withIdentifier: "gototemp", sender: nil)
+            }
+            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default) {
+                (result : UIAlertAction) -> Void in
+                
+            }
+            alertController.addAction(cancelAction)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+            
+        //performSegue(withIdentifier: "gototemp", sender: nil)
         
         }
     }
