@@ -18,6 +18,7 @@ import SwiftKeychainWrapper
 class SignInVC: UIViewController {
     
     var userId: String!
+    var cba = false
     
     @IBOutlet weak var fbImage: UIButton!
     
@@ -44,13 +45,13 @@ class SignInVC: UIViewController {
         
     }
     
-    /*
+    
     override func viewDidAppear(_ animated: Bool) {
         if let _ = KeychainWrapper.standard.string(forKey: "uid") {
             performSegue(withIdentifier: "gotofeed", sender: nil)
     }
     }
-    */
+ 
     
     @IBOutlet weak var emailField: UITextField!
     
@@ -107,6 +108,7 @@ class SignInVC: UIViewController {
                         databaseRef.child("Users").child(user.uid).setValue(userr)
                             
                         print("false room doesn't exist \(fn) \(sn) \(email!)")
+                            self.cba = true
                         }
                     })
                     
@@ -149,9 +151,9 @@ class SignInVC: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "gotofeed" {
-            if let destination = segue.destination as? FeedVC {
-            if userId != nil {
-                  destination.userId = userId
+            if let destination = segue.destination as? QuestionVC {
+            if(cba) {
+                  destination.read = 1
             }
             }
         }
