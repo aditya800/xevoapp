@@ -90,7 +90,7 @@ class SignUpVC: UIViewController {
                     self.useruid = user?.uid
                     print("Successfully authenticated with firebase with user id: ")
                     
-                    let userr = ["casesAnswered": "0", "email": email, "firstName": fn, "lastName": sn, "isConsultant": "none", "rating": "-1", "device": UIDevice.current.identifierForVendor!.uuidString]
+                    let userr = ["casesAnswered": "0", "email": email, "firstName": fn, "lastName": sn, "isConsultant": "none", "rating": "-1", "device": UIDevice.current.identifierForVendor!.uuidString, "cases": "no"]
                     
                     self.dbReference = Database.database().reference()
                     self.dbReference?.child("Users").child(self.useruid).setValue(userr)
@@ -116,6 +116,11 @@ class SignUpVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //      let sc = segue.destination as! FeedVC
         //    sc.tempVal = text
+        
+            if segue.identifier == "gotofed" {
+                let sc = segue.destination as! QuestionVC
+                sc.read = 1
+            }
     }
     
     /*

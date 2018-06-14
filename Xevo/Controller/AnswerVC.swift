@@ -44,7 +44,7 @@ class AnswerVC: UIViewController, UITextViewDelegate {
         imagePicker = UIImagePickerController()
         imagePicker.allowsEditing = true
         imagePicker.sourceType = .photoLibrary
-        imagePicker.delegate = self as! UIImagePickerControllerDelegate & UINavigationControllerDelegate
+        imagePicker.delegate = self 
 
         //textView.layer.borderWidth = 0
         //textView.layer.borderColor =
@@ -150,4 +150,21 @@ class AnswerVC: UIViewController, UITextViewDelegate {
     }
     */
 
+}
+
+extension AnswerVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        if let pickedImage = info[UIImagePickerControllerEditedImage] as? UIImage {
+            self.mainImage.image = pickedImage
+        }
+        
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
 }

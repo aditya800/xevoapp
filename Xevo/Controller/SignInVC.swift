@@ -31,6 +31,17 @@ class SignInVC: UIViewController {
         
        pwdField.isSecureTextEntry = true
         
+        
+        if UIDevice().userInterfaceIdiom == .phone {
+            switch UIScreen.main.nativeBounds.height {
+            case 1136: //iphone 5/5s/5c
+                emailField.isHidden = true
+                
+            default:
+                break
+            }
+        }
+        
     }
     
     /*
@@ -91,7 +102,7 @@ class SignInVC: UIViewController {
                             let fn: String = myStringArr! [0]
                             let sn: String = myStringArr! [1]
                             
-                    let userr = ["casesAnswered": "0", "email": email!, "firstName": fn, "lastName": sn, "isConsultant": "none", "rating": "-1", "device": UIDevice.current.identifierForVendor!.uuidString]
+                            let userr = ["casesAnswered": "0", "email": email!, "firstName": fn, "lastName": sn, "isConsultant": "none", "rating": "-1", "device": UIDevice.current.identifierForVendor!.uuidString, "cases": "no"]
                             
                         databaseRef.child("Users").child(user.uid).setValue(userr)
                             

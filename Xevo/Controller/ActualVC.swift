@@ -242,6 +242,8 @@ class ActualVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
             }
             }
             
+            dbReference?.child("Users").child(id!).child("cases").setValue("yes")
+            
             let alertController = UIAlertController(title: "Submit",
                                                     message: "Are you sure you want to submit this question?", preferredStyle: UIAlertControllerStyle.alert)
             let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {

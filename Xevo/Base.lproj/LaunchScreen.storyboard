@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="X" translatesAutoresizingMaskIntoConstraints="NO" id="Gox-hh-qbl">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="middle thickness x-1" translatesAutoresizingMaskIntoConstraints="NO" id="Gox-hh-qbl">
                                 <rect key="frame" x="41.5" y="110" width="237" height="154"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="154" id="lG5-aE-HrZ"/>
@@ -40,6 +40,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="X" width="1563" height="2780"/>
+        <image name="middle thickness x-1" width="2084" height="2084"/>
     </resources>
 </document>

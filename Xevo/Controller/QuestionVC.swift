@@ -31,11 +31,22 @@ class QuestionVC: UIViewController {
     var sideMenuViewController = LtemVC()
     var isMenuOpened:Bool = false
     var whichquestion = 0
+    var read = 0
     
     var text = "error"
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if read == 1 {
+            performSegue(withIdentifier: "gotomarn", sender: nil)
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        if(gtop == 1) {
+//            performSegue(withIdentifier: "gotomarn", sender: nil)
+//        }
         
        /* imageMain.layer.cornerRadius = imageMain.frame.size.width / 2
         imageMain.clipsToBounds = true
@@ -95,14 +106,14 @@ class QuestionVC: UIViewController {
         // Do any additional setup after loading the view.
         
         sideMenuViewController = storyboard!.instantiateViewController(withIdentifier: "LtemVC") as! LtemVC
-        sideMenuViewController.view.frame = CGRect(x: 0, y: 80, width: 280, height: self.view.frame.height)
+        sideMenuViewController.view.frame = CGRect(x: 0, y: 0, width: 280, height: self.view.frame.height)
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
     
         view.addGestureRecognizer(tap)
         view.isUserInteractionEnabled = true
         
-        area = CGRect(x: 0, y: 80, width: 280, height: self.view.frame.height)
+        area = CGRect(x: 0, y: 0, width: 280, height: self.view.frame.height)
         
      
     }
@@ -283,20 +294,20 @@ class QuestionVC: UIViewController {
     
     @IBAction func goTo(_ sender: Any) {
         text = "Quick Hit"
-        whichquestion = 1
+        //whichquestion = 1
         performSegue(withIdentifier: "goToActual", sender: self)
     }
     
     @IBAction func goToDeep(_ sender: Any) {
         text = "Deep Dive"
-        whichquestion = 0
+        //whichquestion = 0
         performSegue(withIdentifier: "goToActual", sender: self)
     }
     
     
     @IBAction func goToHeavy(_ sender: Any) {
         text = "Heavy Lift"
-        whichquestion = 0
+       // whichquestion = 0
         performSegue(withIdentifier: "goToActual", sender: self)
     }
     

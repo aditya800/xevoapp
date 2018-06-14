@@ -207,8 +207,7 @@ class ConsultCasesVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         myIndex = indexPath.row
         performSegue(withIdentifier: "goQuestion", sender: self)
        // performSegue(withIdentifier: "gotoanswer", sender: self)
-        
-        
+
     }
     
     
