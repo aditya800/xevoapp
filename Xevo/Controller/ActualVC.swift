@@ -11,7 +11,7 @@ import FirebaseDatabase
 import Firebase
 import SearchTextField
 
-class ActualVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate {
+class ActualVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate, UITextFieldDelegate {
     
     var dbReference: DatabaseReference?
     
@@ -127,13 +127,20 @@ class ActualVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
                                 "Communication and Leadership", "Communication Studies", "Corporate Communication", "Human Relations", "Political Communication", "Communication Sciences and Disorders",
                                 "Audiology", "Education of the Deaf/Hearing Impaired", "Speech/Language Pathology", "Journalism", "Public Relations", "Radio-Television-Film", "Applied Movement Science", "Health Promotion", "Physical Culture and Sports", "Sport Management", "Aerospace Engineering", "Architectural Engineering", "Biomedical Engineering", "Chemical Engineering", "Civil Engineering", "Computational Engineering", "Electrical and Computer Engineering", "Environmental Engineering", "Geosystems Engineering and Hydrogeology", "Mechanical Engineering", "Petroleum Engineering", "Acting", "Art History", "Arts and Entertainment Technologies", "Dance", "Dance Studies", "Design", "Jazz", "Music", "Music Composition", "Music Performance", "Music Studies", "Choral Music Emphasis", "Instrumental Emphasis", "Studio Art", "Theatre and Dance", "Theatre Studies", "Visual Art Studies", "Environmental Sciences", "Geological Sciences", "Pharmacy", "Nursing", "Chemistry", "Biology", "Computer Science", "Astronomy", "Biochemistry", "Teaching", "BSA", "Human Development", "Families and Society", "Mathematics", "Physics", "Textiles and Apparel", "Consumer Science", "African and African Diaspora Studies", "American Studies", "Anthropology", "Chinese", "Hindi/Urdu", "Japanese", "Korean", "Malayalam", "Sanskrit", "Tamil", "Greek", "Latin", "Classical Studies", "Ancient History", "Classical Archaeology", "Economics", "English", "Ethnic Studies", "Asian American", "Mexican American", "European Studies", "French", "Geography", "German", "Government", "Health and Society", "History", "Human Dimensions of Organizations", "Humanities", "Iberian and Latin American Languages and Cultures", "International Relations and Global Studies", "Islamic Studies", "Italian", "Jewish Studies", "Latin American Studies", "Linguistics", "Middle Eastern Languages and Cultures", "Middle Eastern Studies", "Philosophy", "Psychology", "Religious Studies", "Rhetoric and Writing", "Russian, East European and Eurasian Studies", "Sociology", "Sustainability Studies", "Culinary", "Styling" ])
         
-        
         // Do any additional setup after loading the view.
         
         if(labelMain.text == "Quick Hit") {
             questionDifficult.isHidden = true
             fourth.isHidden = true
         }
+        first.delegate = self
+        second.delegate = self
+        third.delegate = self
+        
+        first.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControlEvents.editingChanged)
+        second.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControlEvents.editingChanged)
+        third.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControlEvents.editingChanged)
+
     }
     
     func textViewDidChange(_ textView: UITextView) {
@@ -156,6 +163,42 @@ class ActualVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
         //TODO
     }
     
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+      //  print("test???")
+        let maxLength = 56
+        let currentString: NSString = textField.text! as NSString
+        let newString: NSString =
+            currentString.replacingCharacters(in: range, with: string) as NSString
+        return newString.length <= maxLength
+    }
+    
+    @objc func textFieldDidChange(textField: UITextField){
+        
+        let text = textField.text
+        
+        if (text?.utf16.count)! >= 56{
+            switch textField{
+            case first:
+                third.becomeFirstResponder()
+            case third:
+                second.becomeFirstResponder()
+            case second:
+                second.resignFirstResponder()
+            default:
+                break
+            }
+        }else{
+            
+        }
+    }
+    
+//    extension ActualVC: UITextFieldDelegate{
+//        func textFieldDidBeginEditing(textField: UITextField) {
+//            textField.text = ""
+//        }
+//    }
+ 
+    
     @IBAction func submit(_ sender: Any) {
         
         if(whatsup.text == "") {
@@ -167,8 +210,9 @@ class ActualVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
         //a  = true
             
         let id = Auth.auth().currentUser?.uid
+            let desc = first.text! + second.text! + third.text!
             let username = Auth.auth().currentUser?.uid
-            let question1 = ["caseType": labelMain.text!, "description": first.text!, "title": whatsup.text!, "hasAnswered": "none", "reasonForDifficulty": fourth.text!] as [String : Any]
+            let question1 = ["caseType": labelMain.text!, "description": desc, "title": whatsup.text!, "hasAnswered": "none", "reasonForDifficulty": fourth.text!] as [String : Any]
         dbReference = Database.database().reference()
         dbReference?.child("Questions").child(id!).childByAutoId().setValue(question1)
             
