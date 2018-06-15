@@ -11,6 +11,19 @@ import FirebaseDatabase
 import Firebase
 import SearchTextField
 
+// Put this piece of code anywhere you like
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
+
 class ActualVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate, UITextFieldDelegate {
     
     var dbReference: DatabaseReference?
@@ -316,5 +329,7 @@ extension ActualVC: UIImagePickerControllerDelegate, UINavigationControllerDeleg
         
         picker.dismiss(animated: true, completion: nil)
 }
+    
+    
 
 }
