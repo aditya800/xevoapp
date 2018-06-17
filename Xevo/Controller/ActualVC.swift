@@ -265,6 +265,7 @@ class ActualVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
             }
             let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default) {
                 (result : UIAlertAction) -> Void in
+                self.dismiss(animated: false, completion: nil)
                 
             }
             alertController.addAction(cancelAction)
