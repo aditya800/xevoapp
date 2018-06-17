@@ -32,6 +32,7 @@ class QuestionVC: UIViewController {
     var isMenuOpened:Bool = false
     var whichquestion = 0
     var read = 0
+    var statusBarHidden = false
     
     var text = "error"
     
@@ -139,6 +140,8 @@ class QuestionVC: UIViewController {
         sideMenuViewController.willMove(toParentViewController: nil)
         sideMenuViewController.view.removeFromSuperview()
         sideMenuViewController.removeFromParentViewController()
+        self.statusBarHidden = false
+        setNeedsStatusBarAppearanceUpdate()
         }
     }
     
@@ -203,9 +206,14 @@ class QuestionVC: UIViewController {
        // }
    // }
     
+    override var prefersStatusBarHidden: Bool {
+        return self.statusBarHidden
+    }
     
     @IBAction func showSide(_ sender: Any) {
         
+//        self.statusBarHidden = false
+//        setNeedsStatusBarAppearanceUpdate()
         
         if(isMenuOpened){
             
@@ -214,6 +222,8 @@ class QuestionVC: UIViewController {
          //   transition.subtype = kCATransitionFromRight
            // sideMenuViewController.view.layer.add(transition, forKey: kCATransition)
 
+//            self.statusBarHidden = false
+//            setNeedsStatusBarAppearanceUpdate()
             isMenuOpened = false
             showside.setImage(#imageLiteral(resourceName: "Hamburger_icon.svg"), for: .normal)
             sideMenuViewController.willMove(toParentViewController: nil)
@@ -263,6 +273,8 @@ class QuestionVC: UIViewController {
             self.addChildViewController(sideMenuViewController)
             self.view.addSubview(sideMenuViewController.view)
             sideMenuViewController.didMove(toParentViewController: self)
+            self.statusBarHidden = true
+            setNeedsStatusBarAppearanceUpdate()
         }
 
         

@@ -161,8 +161,15 @@ class ConsultCasesVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         //let avg = Double(total/count)
         //print("AVERAGE", avg)
        // avgRating.text = String(avg) + "/5"
+//        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeaction(swipe:)))
+//        rightSwipe.direction = UISwipeGestureRecognizerDirection.right
+//        self.view.addGestureRecognizer(rightSwipe)
         
     }
+    
+//    @objc func swipeaction(swipe: UISwipeGestureRecognizer) {
+//        self.dismiss(animated: false, completion: nil)
+//    }
 
     
     override func didReceiveMemoryWarning() {

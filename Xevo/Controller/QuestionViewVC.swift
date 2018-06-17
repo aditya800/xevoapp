@@ -23,6 +23,15 @@ class QuestionViewVC: UIViewController {
         detailLabel.text = details[myIndex].detail
 
         // Do any additional setup after loading the view.
+        
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeaction(swipe:)))
+        rightSwipe.direction = UISwipeGestureRecognizerDirection.right
+        self.view.addGestureRecognizer(rightSwipe)
+        
+    }
+    
+    @objc func swipeaction(swipe: UISwipeGestureRecognizer) {
+        self.dismiss(animated: false, completion: nil)
     }
     @IBAction func backPressed(_ sender: Any) {
         self.dismiss(animated: false, completion: nil)

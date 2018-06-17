@@ -120,6 +120,13 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
       //self.tableView.reloadData()
         
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeaction(swipe:)))
+        rightSwipe.direction = UISwipeGestureRecognizerDirection.right
+        self.view.addGestureRecognizer(rightSwipe)
+    }
+    
+    @objc func swipeaction(swipe: UISwipeGestureRecognizer) {
+        self.dismiss(animated: false, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -211,6 +218,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         myIndex = indexPath.row
         performSegue(withIdentifier: "gotote", sender: self)
+        
         
     }
 

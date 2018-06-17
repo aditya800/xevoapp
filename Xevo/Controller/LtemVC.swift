@@ -174,6 +174,7 @@ class LtemVC: UIViewController {
         
     }
     
+    
     @IBOutlet weak var bcomaconsul: UIButton!
     
     @IBAction func bcomeaconsult(_ sender: Any) {
@@ -219,6 +220,8 @@ class LtemVC: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+
     
 
     /*

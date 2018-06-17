@@ -153,7 +153,15 @@ class ActualVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
         first.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControlEvents.editingChanged)
         second.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControlEvents.editingChanged)
         third.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: UIControlEvents.editingChanged)
+        
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeaction(swipe:)))
+        rightSwipe.direction = UISwipeGestureRecognizerDirection.right
+        self.view.addGestureRecognizer(rightSwipe)
 
+    }
+    
+    @objc func swipeaction(swipe: UISwipeGestureRecognizer) {
+       self.dismiss(animated: false, completion: nil)
     }
     
     func textViewDidChange(_ textView: UITextView) {

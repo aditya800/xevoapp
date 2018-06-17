@@ -72,7 +72,16 @@ class ConsultantVC: UIViewController {
         let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeaction(swipe:)))
         leftSwipe.direction = UISwipeGestureRecognizerDirection.left
         self.view.addGestureRecognizer(leftSwipe)
+        
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeaction1(swipe:)))
+        rightSwipe.direction = UISwipeGestureRecognizerDirection.right
+        self.view.addGestureRecognizer(rightSwipe)
+        
                
+    }
+    
+    @objc func swipeaction1(swipe: UISwipeGestureRecognizer) {
+        self.dismiss(animated: false, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
