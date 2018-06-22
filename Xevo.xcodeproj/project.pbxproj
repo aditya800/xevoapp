@@ -48,7 +48,7 @@
 		485DCBDA20AF534100DE0DB0 /* customCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485DCBD920AF534100DE0DB0 /* customCell.swift */; };
 		485DCBDC20AF5E2900DE0DB0 /* SubcaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485DCBDB20AF5E2900DE0DB0 /* SubcaseVC.swift */; };
 		485DCBDE20AF61FB00DE0DB0 /* RatingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485DCBDD20AF61FB00DE0DB0 /* RatingVC.swift */; };
-		48819C6020DD428E00648FB6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48819C5F20DD428D00648FB6 /* GoogleService-Info.plist */; };
+		48819C6220DD487100648FB6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48819C6120DD487000648FB6 /* GoogleService-Info.plist */; };
 		4885E71620D2136500BD243A /* PoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4885E71520D2136500BD243A /* PoverVC.swift */; };
 		489CD7EE20D18A36004BDAAB /* MtemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489CD7ED20D18A36004BDAAB /* MtemVC.swift */; };
 		48A8D52D20A919D100722628 /* RoundTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A8D52C20A919D100722628 /* RoundTextField.swift */; };
@@ -106,7 +106,7 @@
 		485DCBD920AF534100DE0DB0 /* customCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customCell.swift; sourceTree = "<group>"; };
 		485DCBDB20AF5E2900DE0DB0 /* SubcaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubcaseVC.swift; sourceTree = "<group>"; };
 		485DCBDD20AF61FB00DE0DB0 /* RatingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingVC.swift; sourceTree = "<group>"; };
-		48819C5F20DD428D00648FB6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		48819C6120DD487000648FB6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4885E71520D2136500BD243A /* PoverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoverVC.swift; sourceTree = "<group>"; };
 		489CD7ED20D18A36004BDAAB /* MtemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MtemVC.swift; sourceTree = "<group>"; };
 		48A8D52C20A919D100722628 /* RoundTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundTextField.swift; sourceTree = "<group>"; };
@@ -230,7 +230,7 @@
 				4829C5252071D3CD007C29E6 /* Assets.xcassets */,
 				4829C5272071D3CD007C29E6 /* LaunchScreen.storyboard */,
 				4829C52A2071D3CD007C29E6 /* Info.plist */,
-				48819C5F20DD428D00648FB6 /* GoogleService-Info.plist */,
+				48819C6120DD487000648FB6 /* GoogleService-Info.plist */,
 			);
 			path = Xevo;
 			sourceTree = "<group>";
@@ -315,7 +315,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4829C5292071D3CD007C29E6 /* LaunchScreen.storyboard in Resources */,
-				48819C6020DD428E00648FB6 /* GoogleService-Info.plist in Resources */,
+				48819C6220DD487100648FB6 /* GoogleService-Info.plist in Resources */,
 				4829C5262071D3CD007C29E6 /* Assets.xcassets in Resources */,
 				4829C5242071D3CD007C29E6 /* Main.storyboard in Resources */,
 			);
@@ -597,7 +597,7 @@
 				DEVELOPMENT_TEAM = GC9H5GHQAE;
 				INFOPLIST_FILE = Xevo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.xevokdlskdlsknjnfjnednjd.cjdkldklksak;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xevokdlskdlsknjkjsdncjksdncscnsjcnsdcnfjnednjd.cjdkldklksak;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -615,7 +615,7 @@
 				DEVELOPMENT_TEAM = GC9H5GHQAE;
 				INFOPLIST_FILE = Xevo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.xevokdlskdlsknjnfjnednjd.cjdkldklksak;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xevokdlskdlsknjkjsdncjksdncscnsjcnsdcnfjnednjd.cjdkldklksak;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
