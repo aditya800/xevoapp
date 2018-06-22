@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -447,7 +447,7 @@ This Beta Test Agreement governs the disclosure of information by Xevo to the Re
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Bz-qH-swD">
-                                <rect key="frame" x="79" y="122" width="162" height="63"/>
+                                <rect key="frame" x="79" y="120" width="162" height="63"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="37"/>
                                 <state key="normal" title="My Cases">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -479,7 +479,7 @@ This Beta Test Agreement governs the disclosure of information by Xevo to the Re
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Alp-mb-NBu">
-                                <rect key="frame" x="0.0" y="220" width="320" height="348"/>
+                                <rect key="frame" x="0.0" y="218" width="320" height="350"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="celli" rowHeight="93" id="STt-6K-HbR" customClass="customCell" customModule="Xevo" customModuleProvider="target">
@@ -533,28 +533,28 @@ This Beta Test Agreement governs the disclosure of information by Xevo to the Re
                                     <outlet property="delegate" destination="OLw-k5-HNh" id="ley-7B-iea"/>
                                 </connections>
                             </tableView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Xevo-X" translatesAutoresizingMaskIntoConstraints="NO" id="igW-Aq-r2V">
-                                <rect key="frame" x="127" y="22" width="66" height="54"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Xevo-X" translatesAutoresizingMaskIntoConstraints="NO" id="igW-Aq-r2V">
+                                <rect key="frame" x="127" y="30" width="66" height="54"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="66" id="cyD-9H-jkm"/>
-                                    <constraint firstAttribute="height" constant="54" id="omS-ZC-rxz"/>
+                                    <constraint firstAttribute="width" constant="66" id="3Nf-xb-N8h"/>
+                                    <constraint firstAttribute="height" constant="54" id="hBo-dQ-0T4"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="Alp-mb-NBu" secondAttribute="bottom" id="11i-dn-yct"/>
+                            <constraint firstItem="Alp-mb-NBu" firstAttribute="top" secondItem="4Bz-qH-swD" secondAttribute="bottom" constant="35" id="0Em-i3-lRL"/>
                             <constraint firstItem="a5d-Cn-9O1" firstAttribute="centerX" secondItem="hGO-1T-Egp" secondAttribute="centerX" id="3cL-Wn-6zP"/>
-                            <constraint firstItem="igW-Aq-r2V" firstAttribute="centerX" secondItem="hGO-1T-Egp" secondAttribute="centerX" id="B0f-GQ-C5y"/>
+                            <constraint firstItem="Alp-mb-NBu" firstAttribute="leading" secondItem="mzn-M2-8QQ" secondAttribute="leading" id="CZA-qC-EGl"/>
                             <constraint firstItem="gxH-3z-4zT" firstAttribute="top" secondItem="mzn-M2-8QQ" secondAttribute="top" constant="14" id="F5F-lT-4gK"/>
+                            <constraint firstItem="igW-Aq-r2V" firstAttribute="top" secondItem="mzn-M2-8QQ" secondAttribute="top" constant="10" id="NJ5-Yg-ehm"/>
+                            <constraint firstAttribute="bottom" secondItem="Alp-mb-NBu" secondAttribute="bottom" id="Ojl-0C-p9c"/>
+                            <constraint firstItem="igW-Aq-r2V" firstAttribute="centerX" secondItem="hGO-1T-Egp" secondAttribute="centerX" id="PJV-mN-sEI"/>
+                            <constraint firstItem="Alp-mb-NBu" firstAttribute="trailing" secondItem="mzn-M2-8QQ" secondAttribute="trailing" id="Sld-3M-bL1"/>
                             <constraint firstItem="a5d-Cn-9O1" firstAttribute="centerY" secondItem="hGO-1T-Egp" secondAttribute="centerY" id="VPL-hd-05E"/>
-                            <constraint firstItem="igW-Aq-r2V" firstAttribute="top" secondItem="mzn-M2-8QQ" secondAttribute="top" constant="2" id="VcA-GH-gej"/>
-                            <constraint firstItem="Alp-mb-NBu" firstAttribute="leading" secondItem="mzn-M2-8QQ" secondAttribute="leading" id="apn-CI-tMk"/>
-                            <constraint firstItem="Alp-mb-NBu" firstAttribute="top" secondItem="4Bz-qH-swD" secondAttribute="bottom" constant="35" id="dCL-8O-ovN"/>
                             <constraint firstItem="gxH-3z-4zT" firstAttribute="leading" secondItem="mzn-M2-8QQ" secondAttribute="leading" constant="16" id="epy-hP-Mgj"/>
-                            <constraint firstItem="4Bz-qH-swD" firstAttribute="centerX" secondItem="hGO-1T-Egp" secondAttribute="centerX" id="fuD-0b-FLK"/>
-                            <constraint firstItem="4Bz-qH-swD" firstAttribute="top" secondItem="igW-Aq-r2V" secondAttribute="bottom" constant="46" id="xdh-8c-SQ1"/>
-                            <constraint firstItem="Alp-mb-NBu" firstAttribute="trailing" secondItem="mzn-M2-8QQ" secondAttribute="trailing" id="zlH-zM-IBX"/>
+                            <constraint firstItem="4Bz-qH-swD" firstAttribute="centerX" secondItem="hGO-1T-Egp" secondAttribute="centerX" id="o4b-Pg-pnS"/>
+                            <constraint firstItem="4Bz-qH-swD" firstAttribute="top" secondItem="igW-Aq-r2V" secondAttribute="bottom" constant="36" id="qei-L0-hhl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mzn-M2-8QQ"/>
                     </view>
@@ -1188,7 +1188,7 @@ This Beta Test Agreement governs the disclosure of information by Xevo to the Re
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Xevo-X" translatesAutoresizingMaskIntoConstraints="NO" id="l8X-yj-5fD">
-                                <rect key="frame" x="135" y="36" width="50" height="100.5"/>
+                                <rect key="frame" x="135" y="36" width="50" height="80.5"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zaW-n2-z1p">
                                 <rect key="frame" x="16" y="151" width="343" height="43"/>
@@ -1197,7 +1197,7 @@ This Beta Test Agreement governs the disclosure of information by Xevo to the Re
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vlq-Nz-Wcv">
-                                <rect key="frame" x="28" y="71.5" width="35" height="30"/>
+                                <rect key="frame" x="28" y="71.5" width="35" height="10"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="35" id="EGh-qt-sNB"/>
                                     <constraint firstAttribute="height" constant="30" id="ErJ-NA-fna"/>
