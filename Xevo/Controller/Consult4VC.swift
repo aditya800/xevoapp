@@ -147,6 +147,41 @@ class Consult4VC: UIViewController {
         //firstexp.startVisible = true
         firstexp.theme.borderColor = UIColor.lightGray
         
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        
+        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+        tap.cancelsTouchesInView = false
+        
+        view.addGestureRecognizer(tap)
+        
+    }
+    
+    @IBAction func sbmitj(_ sender: Any) {
+        ffChoice = firstexp.text
+        ffMotivation = first.text! + second.text! + third.text!
+        performSegue(withIdentifier: "gofromfourth", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "gofromfourth" {
+            let sc = segue.destination as! FinalVC
+            sc.fChoice = fChoice
+            sc.fMotivation = fMotivation
+            sc.fBio = fBio
+            sc.fName = fName
+            sc.sChoice = sChoice
+            sc.sMotivation = sMotivation
+            sc.tChoice = tChoice
+            sc.tMotivation = tMotivation
+            sc.ffChoice = ffChoice
+            sc.ffMotivation = ffMotivation
+        }
+    }
+    
+    
+    override func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
     override func didReceiveMemoryWarning() {

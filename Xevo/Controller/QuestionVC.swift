@@ -38,6 +38,7 @@ class QuestionVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         if read == 1 {
+            read = 0
             performSegue(withIdentifier: "gotomarn", sender: nil)
         }
     }
@@ -144,7 +145,6 @@ class QuestionVC: UIViewController {
         setNeedsStatusBarAppearanceUpdate()
         }
     }
-    
     
     @IBOutlet weak var imageMain: UIImageView!
     

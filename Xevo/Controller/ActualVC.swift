@@ -26,9 +26,14 @@ extension UIViewController {
 
 class ActualVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate, UITextFieldDelegate {
     
+    @IBOutlet weak var sbmit: UIButton!
+    
     var dbReference: DatabaseReference?
     
     var placeholderLabel : UILabel!
+    var sideMenuViewController = LtemVC()
+    var isMenuOpened:Bool = false
+    var statusBarHidden = false
     
     @IBOutlet weak var category: SearchTextField!
     
@@ -54,8 +59,88 @@ class ActualVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
     
     @IBOutlet weak var categoryConstraint: NSLayoutConstraint!
     
+    @objc func handleTap(_ sender: UITapGestureRecognizer) {
+        let p = sender.location(in: self.view)
+        if area!.contains(p) {
+            isMenuOpened = true
+        }
+        else {
+            isMenuOpened = false
+            //showside.setImage(#imageLiteral(resourceName: "Hamburger_icon.svg"), for: .normal)
+            sideMenuViewController.willMove(toParentViewController: nil)
+            sideMenuViewController.view.removeFromSuperview()
+            sideMenuViewController.removeFromParentViewController()
+            self.statusBarHidden = false
+            setNeedsStatusBarAppearanceUpdate()
+        }
+    }
+    
     @IBAction func gobv(_ sender: Any) {
-        self.dismiss(animated: false, completion: nil)
+       // self.dismiss(animated: false, completion: nil)
+        
+        
+        if(isMenuOpened){
+            
+            
+            
+            //   transition.subtype = kCATransitionFromRight
+            // sideMenuViewController.view.layer.add(transition, forKey: kCATransition)
+            
+            //            self.statusBarHidden = false
+            //            setNeedsStatusBarAppearanceUpdate()
+            isMenuOpened = false
+            //showside.setImage(#imageLiteral(resourceName: "Hamburger_icon.svg"), for: .normal)
+            sideMenuViewController.willMove(toParentViewController: nil)
+            sideMenuViewController.view.removeFromSuperview()
+            sideMenuViewController.removeFromParentViewController()
+            
+            
+        }
+            
+        else{
+            
+            //            let transition:CATransition = CATransition()
+            //            transition.duration = 0.5
+            //            transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+            //            transition.type = kCATransitionPush
+            //            transition.subtype = kCATransitionFromBottom
+            //            self.navigationController!.view.layer.add(transition, forKey: kCATransition)
+            //            self.navigationController?.pushViewController(dstVC, animated: false)
+            
+            let transition = CATransition()
+            //let ltemvc = LtemVC()
+            //let questionvc = QuestionVC()
+            
+            let withDuration = 0.4
+            transition.startProgress = 0.9;
+            transition.endProgress = 1;
+            
+            transition.duration = withDuration
+            transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+            transition.type = kCATransitionMoveIn
+            transition.subtype = kCATransitionFromLeft
+            
+            
+            sideMenuViewController.view.layer.add(transition, forKey: kCATransition)
+            // sideMenuViewController.navigationController?.pushViewController(ltemvc, animated: false)
+            
+            //view.window!.layer.add(transition, forKey: kCATransition)
+            // present(ltemvc, animated: false, completion: nil)
+            
+            
+            //   sideMenuViewController.view.clipsToBounds = true
+            
+            
+            
+            isMenuOpened = true
+            //showside.setImage(#imageLiteral(resourceName: "close_symbol"), for: .normal)
+            self.addChildViewController(sideMenuViewController)
+            self.view.addSubview(sideMenuViewController.view)
+            sideMenuViewController.didMove(toParentViewController: self)
+            self.statusBarHidden = true
+            setNeedsStatusBarAppearanceUpdate()
+        }
+        
     }
     
     @IBAction func camera(_ sender: Any) {
@@ -80,6 +165,10 @@ class ActualVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
         imagePicker.sourceType = .photoLibrary
         imagePicker.delegate = self
         
+        sbmit.layer.backgroundColor = UIColor(red: 176/255, green: 32/255, blue: 0/255, alpha: 1.0).cgColor
+        sbmit.layer.borderColor = UIColor.darkGray.cgColor
+        sbmit.contentEdgeInsets = UIEdgeInsets(top:10.5,left:10.5, bottom:10.5, right:10.5)
+        
         //textView.delegate = self
        // textView.text = ""
         // textView.text = "Bio (Ex:- Sophomore at Stanford with 2 years of work experience at Airbnb)"
@@ -98,13 +187,66 @@ class ActualVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
        // placeholderLabel.textColor = UIColor.lightGray
        // placeholderLabel.isHidden = !textView.text.isEmpty
         
+        whatsup.layer.borderWidth = 1
+        whatsup.layer.borderColor = UIColor.white.cgColor
         
-        whatsup.setBottomBorder()
-        first.setBottomBorder()
-        second.setBottomBorder()
-        third.setBottomBorder()
-        fourth.setBottomBorder()
-        category.setBottomBorder()
+        fourth.layer.borderWidth = 1
+        fourth.layer.borderColor = UIColor.white.cgColor
+        
+       // whatsup.setBottomBorder()
+//        whatsup.layer.shadowRadius = 7
+//        whatsup.layer.shadowColor = UIColor.lightGray.cgColor
+//        whatsup.layer.masksToBounds = false
+//       // whatsup.layer.shadowOffset = CGSize(1.0, 1.0)
+//        whatsup.layer.shadowOpacity = 1.0
+//        whatsup.layer.borderWidth = 0
+//        //whatsup.layer.borderColor = UIColor.lightGray.cgColor
+//        //first.setBottomBorder()
+//        //second.setBottomBorder()
+        //third.setBottomBorder()
+        //fourth.setBottomBorder()
+//        fourth.layer.shadowColor = UIColor.lightGray.cgColor
+//        fourth.layer.masksToBounds = false
+//        // whatsup.layer.shadowOffset = CGSize(1.0, 1.0)
+//        fourth.layer.shadowOpacity = 1.0
+//        fourth.layer.borderWidth = 0
+        
+//        category.layer.shadowColor = UIColor.lightGray.cgColor
+//        category.layer.masksToBounds = false
+//        // whatsup.layer.shadowOffset = CGSize(1.0, 1.0)
+//        category.layer.shadowOpacity = 1.0
+//        category.layer.borderWidth = 0
+//
+        category.layer.borderWidth = 1
+        category.layer.borderColor = UIColor.white.cgColor
+        
+//        first.layer.shadowColor = UIColor.lightGray.cgColor
+//        first.layer.masksToBounds = false
+//        // whatsup.layer.shadowOffset = CGSize(1.0, 1.0)
+//        first.layer.shadowOpacity = 1.0
+        
+        first.layer.borderColor = UIColor.white.cgColor
+        first.layer.borderWidth = 1
+        
+          second.layer.borderWidth = 1
+          second.layer.borderColor = UIColor.white.cgColor
+        
+          third.layer.borderWidth = 1
+          third.layer.borderColor = UIColor.white.cgColor
+//
+//        second.layer.shadowColor = UIColor.lightGray.cgColor
+//        second.layer.masksToBounds = false
+//        // whatsup.layer.shadowOffset = CGSize(1.0, 1.0)
+//        second.layer.shadowOpacity = 1.0
+//        second.layer.borderWidth = 0
+//
+//        third.layer.shadowColor = UIColor.lightGray.cgColor
+//        third.layer.masksToBounds = false
+//        // whatsup.layer.shadowOffset = CGSize(1.0, 1.0)
+//        third.layer.shadowOpacity = 1.0
+//        third.layer.borderWidth = 0
+        
+        //category.setBottomBorder()
         
       //  let dir = ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"]
         if UIDevice().userInterfaceIdiom == .phone {
@@ -158,7 +300,34 @@ class ActualVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
         rightSwipe.direction = UISwipeGestureRecognizerDirection.right
         self.view.addGestureRecognizer(rightSwipe)
 
+        sideMenuViewController = storyboard!.instantiateViewController(withIdentifier: "LtemVC") as! LtemVC
+        sideMenuViewController.view.frame = CGRect(x: 0, y: 0, width: 280, height: self.view.frame.height)
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        
+        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+        tap.cancelsTouchesInView = false
+        
+        view.addGestureRecognizer(tap)
+        
+        let tap1 = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+        
+        view.addGestureRecognizer(tap1)
+        view.isUserInteractionEnabled = true
+        
+        area = CGRect(x: 0, y: 0, width: 280, height: self.view.frame.height)
+        
     }
+    
+    override var prefersStatusBarHidden: Bool {
+        return self.statusBarHidden
+    }
+    
+    override func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+    
     
     @objc func swipeaction(swipe: UISwipeGestureRecognizer) {
        self.dismiss(animated: false, completion: nil)
@@ -262,23 +431,11 @@ class ActualVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
                 
             }
             }
+        
+    
+        dbReference?.child("Users").child(id!).child("cases").setValue("yes")
+        self.performSegue(withIdentifier: "gototemp", sender: nil)
             
-            dbReference?.child("Users").child(id!).child("cases").setValue("yes")
-            
-            let alertController = UIAlertController(title: "Submit",
-                                                    message: "Are you sure you want to submit this question?", preferredStyle: UIAlertControllerStyle.alert)
-            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
-                (result : UIAlertAction) -> Void in
-                self.performSegue(withIdentifier: "gototemp", sender: nil)
-            }
-            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default) {
-                (result : UIAlertAction) -> Void in
-                self.dismiss(animated: false, completion: nil)
-                
-            }
-            alertController.addAction(cancelAction)
-            alertController.addAction(okAction)
-            self.present(alertController, animated: true, completion: nil)
             
         //performSegue(withIdentifier: "gototemp", sender: nil)
         
@@ -289,8 +446,6 @@ class ActualVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
     
     
     @objc func openImagePicker(_ sender:Any) {

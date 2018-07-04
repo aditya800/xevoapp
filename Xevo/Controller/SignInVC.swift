@@ -32,19 +32,30 @@ class SignInVC: UIViewController {
         
        pwdField.isSecureTextEntry = true
         
-        
         if UIDevice().userInterfaceIdiom == .phone {
             switch UIScreen.main.nativeBounds.height {
             case 1136: //iphone 5/5s/5c
-                emailField.isHidden = true
+                //emailField.isHidden = true
+                fbImage.isHidden = true
                 
             default:
                 break
             }
         }
         
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        
+        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+        tap.cancelsTouchesInView = false
+        
+        view.addGestureRecognizer(tap)
+        
     }
     
+    override func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         if let _ = KeychainWrapper.standard.string(forKey: "uid") {

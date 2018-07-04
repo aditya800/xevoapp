@@ -16,24 +16,27 @@ class PoverVC: UIViewController {
     
     @IBOutlet weak var mainText: UITextView!
     
+    @IBOutlet weak var skip: UIButton!
+    
     @IBOutlet weak var viewmain: UIView!
     
     @IBAction func next(_ sender: Any) {
         if read == 0 {
-            mainText.text = "To see all your asked questions, navigate to your cases by tapping the hamburger button on the top left and selecting \"My Cases\". You can then select any particular case to check its details."
+            mainText.text = "To view all your asked questions, navigate to your cases by tapping the hamburger button on the top left and selecting \"My Cases\". You can then select any particular case to review it."
             
             read += 1
             
         } else if read == 1 {
-            mainText.text = "For submitting your consultant application for review, navigate to this option by tapping the hamburger button again on the top left and selecting \"Become a consultant\" and answer the questions asked."
+            mainText.text = "Interested in Consulting? Submit your application by navigating to the \"Become a consultant\" option in the sidebar."
             
             read += 1
             
         } else if read == 2{
             
             gonext.setTitle("Finish", for: .normal)
+            skip.isHidden = true
             
-            mainText.text = "You are all set to use the Xevo app. Enjoy your experience!"
+            mainText.text = "You are all set to use Xevo. Enjoy!"
             
             read += 1
             

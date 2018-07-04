@@ -188,6 +188,28 @@ class ConsultVC: UIViewController {
     }
     */
     
+    @IBAction func sbmitj(_ sender: Any) {
+        fChoice = firstexp.text
+        fMotivation = first.text! + second.text! + third.text!
+        
+        if(fChoice == "") {
+            firstexp.layer.shadowColor = UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 1.0).cgColor
+        } else {
+            
+            performSegue(withIdentifier: "gofromfirst", sender: self)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "gofromfirst" {
+            let sc = segue.destination as! FinalVC
+              sc.fChoice = fChoice
+              sc.fMotivation = fMotivation
+              sc.fBio = fBio
+              sc.fName = fName
+        }
+    }
+    
     @objc func swipeaction(swipe: UISwipeGestureRecognizer) {
         
         switch swipe.direction.rawValue {

@@ -147,6 +147,18 @@ class Consult3VC: UIViewController {
         //firstexp.startVisible = true
         firstexp.theme.borderColor = UIColor.lightGray
         
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        
+        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+        tap.cancelsTouchesInView = false
+        
+        view.addGestureRecognizer(tap)
+        
+    }
+    
+    override func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -185,6 +197,27 @@ class Consult3VC: UIViewController {
      // Pass the selected object to the new view controller.
      }
      */
+    
+    
+    @IBAction func sbmitj(_ sender: Any) {
+        tChoice = firstexp.text
+        tMotivation = first.text! + second.text! + third.text!
+        performSegue(withIdentifier: "gofromthird", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "gofromthird" {
+            let sc = segue.destination as! FinalVC
+            sc.fChoice = fChoice
+            sc.fMotivation = fMotivation
+            sc.fBio = fBio
+            sc.fName = fName
+            sc.sChoice = sChoice
+            sc.sMotivation = sMotivation
+            sc.tChoice = tChoice
+            sc.tMotivation = tMotivation
+        }
+    }
     
     @objc func swipeaction(swipe: UISwipeGestureRecognizer) {
         

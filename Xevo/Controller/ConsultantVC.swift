@@ -77,7 +77,18 @@ class ConsultantVC: UIViewController {
         rightSwipe.direction = UISwipeGestureRecognizerDirection.right
         self.view.addGestureRecognizer(rightSwipe)
         
-               
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        
+        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+        tap.cancelsTouchesInView = false
+        
+        view.addGestureRecognizer(tap)
+        
+    }
+    
+    override func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
     @objc func swipeaction1(swipe: UISwipeGestureRecognizer) {

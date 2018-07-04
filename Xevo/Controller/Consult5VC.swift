@@ -27,6 +27,8 @@ class Consult5VC: UIViewController {
     //var count = 1
     var name: String!
     var bio: String!
+    var fffChoice = ""
+    var fffMotivation = ""
     //var dbReference: DatabaseReference?
     /*
      @IBOutlet weak var Lbl1: UILabel!
@@ -144,6 +146,18 @@ class Consult5VC: UIViewController {
         //firstexp.startVisible = true
         firstexp.theme.borderColor = UIColor.lightGray
         
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        
+        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+        tap.cancelsTouchesInView = false
+        
+        view.addGestureRecognizer(tap)
+        
+    }
+    
+    override func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -189,22 +203,29 @@ class Consult5VC: UIViewController {
             
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "gootvb" {
+            let sc = segue.destination as! FinalVC
+            sc.fName = fName
+            sc.fBio = fBio
+            sc.fChoice = fChoice
+            sc.fMotivation = fMotivation
+            sc.tChoice = tChoice
+            sc.tMotivation = tMotivation
+            sc.ffChoice = ffChoice
+            sc.ffMotivation = ffMotivation
+            sc.fffChoice = fffChoice
+            sc.fffMotivation = fffMotivation
+        }
+    }
+    
     @IBAction func submitf(_ sender: Any) {
       
-        let fffChoice = firstexp.text
-        let fffMotivation = first.text! + second.text! + third.text!
+        fffChoice = firstexp.text!
+        fffMotivation = first.text! + second.text! + third.text!
         
-        let question1 = ["Full Name": fName!, "Bio": fBio, "Expertise1": fChoice!, "Motivation1": fMotivation, "Expertise2": sChoice!, "Motivation2": sMotivation, "Expertise3": tChoice!, "Motivation3": tMotivation, "Expertise4": ffChoice!, "Motivation4": ffMotivation, "Expertise5": fffChoice!, "Motivation5": fffMotivation]
-        
-        let id = Auth.auth().currentUser?.uid
-        
-        dbReference = Database.database().reference()
-        dbReference?.child("Applied").child(id!).setValue(question1)
-        
-        dbReference?.child("Users").child(id!).child("isConsultant").setValue("Applied")
-        
-        performSegue(withIdentifier: "gotosbmit", sender: nil)
-        
+        performSegue(withIdentifier: "gootvb", sender: nil)
+
     }
     
     
