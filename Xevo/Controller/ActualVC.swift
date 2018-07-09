@@ -342,12 +342,9 @@ class ActualVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
         sideMenuViewController = storyboard!.instantiateViewController(withIdentifier: "LtemVC") as! LtemVC
         sideMenuViewController.view.frame = CGRect(x: 0, y: 0, width: 280, height: self.view.frame.height)
         
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         
         //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
-        tap.cancelsTouchesInView = false
-        
-        view.addGestureRecognizer(tap)
+      
         
         let tap1 = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
         
@@ -356,15 +353,22 @@ class ActualVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
         
         area = CGRect(x: 0, y: 0, width: 280, height: self.view.frame.height)
         
-    }
-    
-    override var prefersStatusBarHidden: Bool {
-        return self.statusBarHidden
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        
+        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+        tap.cancelsTouchesInView = false
+        
+        view.addGestureRecognizer(tap)
+        
     }
     
     override func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return self.statusBarHidden
     }
     
     
