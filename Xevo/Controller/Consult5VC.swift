@@ -125,10 +125,22 @@ class Consult5VC: UIViewController {
          */
         // Do any additional setup after loading the view.
         
-        firstexp.setBottomBorder()
-        first.setBottomBorder()
-        second.setBottomBorder()
-        third.setBottomBorder()
+//        firstexp.setBottomBorder()
+//        first.setBottomBorder()
+//        second.setBottomBorder()
+//        third.setBottomBorder()
+        
+        firstexp.layer.borderWidth = 1
+        firstexp.layer.borderColor = UIColor.white.cgColor
+        
+        first.layer.borderWidth = 1
+        first.layer.borderColor = UIColor.white.cgColor
+        
+        second.layer.borderWidth = 1
+        second.layer.borderColor = UIColor.white.cgColor
+        
+        third.layer.borderWidth = 1
+        third.layer.borderColor = UIColor.white.cgColor
         
         let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeaction(swipe:)))
         rightSwipe.direction = UISwipeGestureRecognizerDirection.right

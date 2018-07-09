@@ -29,6 +29,10 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var imgmain: UIImageView!
+    
+    @IBOutlet weak var mainName: UILabel!
+    
    // @IBOutlet weak var mainLbl: UIButton!
     
    // @IBAction func gotod(_ sender: Any) {
@@ -79,8 +83,48 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         */
         ref = Database.database().reference()
         let user = Auth.auth().currentUser
+        let id = user?.uid
         
         self.tableView.separatorStyle = .none
+        
+        var fn: String!
+        var sn: String!
+        
+        ref.child("Users").child(id!).child("firstName").observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
+            
+            fn = snapshot.value as? String
+            print(fn!)
+            
+            self.ref.child("Users").child(id!).child("lastName").observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
+                
+                sn = snapshot.value as? String
+                print(sn!)
+                
+                self.mainName.text = fn!.capitalized + " " + sn!.capitalized
+                
+            })
+            
+        })
+        
+        if(FBSDKAccessToken.current() != nil) {
+            
+            print(FBSDKAccessToken.current().permissions)
+            let graphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields" : "id, name, email"])
+            let connection = FBSDKGraphRequestConnection()
+            
+            connection.add(graphRequest, completionHandler: { (connection, result, error) -> Void in
+                
+                let data = result as! [String : AnyObject]
+                
+                //   self.label.text = data["name"] as? String
+                
+                let FBid = data["id"] as? String
+                
+                let url = NSURL(string: "https://graph.facebook.com/\(FBid!)/picture?type=large&return_ssl_resources=1")
+                self.imgmain.image = UIImage(data: NSData(contentsOf: url! as URL)! as Data)
+            })
+            connection.start()
+        }
         
        // if let user = user {
            // let name = user.displayName

@@ -64,10 +64,22 @@ class ConsultantVC: UIViewController {
         */
         // Do any additional setup after loading the view.
         
-        fullname.setBottomBorder()
-        first.setBottomBorder()
-        second.setBottomBorder()
-        third.setBottomBorder()
+        //fullname.setBottomBorder()
+        //first.setBottomBorder()
+        //second.setBottomBorder()
+        //third.setBottomBorder()
+        
+        fullname.layer.borderWidth = 1
+        fullname.layer.borderColor = UIColor.white.cgColor
+        
+        first.layer.borderWidth = 1
+        first.layer.borderColor = UIColor.white.cgColor
+        
+        second.layer.borderWidth = 1
+        second.layer.borderColor = UIColor.white.cgColor
+        
+        third.layer.borderWidth = 1
+        third.layer.borderColor = UIColor.white.cgColor
         
         let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeaction(swipe:)))
         leftSwipe.direction = UISwipeGestureRecognizerDirection.left

@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseDatabase
 import Firebase
+import MobileCoreServices
 import SearchTextField
 
 // Put this piece of code anywhere you like
@@ -24,7 +25,7 @@ extension UIViewController {
     }
 }
 
-class ActualVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate, UITextFieldDelegate {
+class ActualVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate, UITextFieldDelegate, UIDocumentMenuDelegate,UIDocumentPickerDelegate {
     
     @IBOutlet weak var sbmit: UIButton!
     
@@ -36,6 +37,38 @@ class ActualVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
     var statusBarHidden = false
     
     @IBOutlet weak var category: SearchTextField!
+    
+    @IBAction func attach(_ sender: Any) {
+        
+        let importMenu = UIDocumentPickerViewController(documentTypes: [String(kUTTypePDF)], in: UIDocumentPickerMode.import)
+        
+        importMenu.delegate = self
+        self.present(importMenu, animated: true, completion: nil)
+        
+    }
+    
+    func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
+        
+        dismiss(animated: true, completion: nil)
+        
+    }
+    
+    func documentMenu(_ documentMenu: UIDocumentMenuViewController, didPickDocumentPicker documentPicker: UIDocumentPickerViewController) {
+        
+        documentPicker.delegate = self
+        
+        self.present(documentPicker, animated: true, completion: nil)
+        
+    }
+    
+    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentAt url: URL) {
+        
+        let myURL = url as URL
+        print("import result : /(myURL)")
+        
+    }
+    
+    @IBOutlet weak var attch: UIButton!
     
     @IBOutlet weak var labelMain: UILabel!
     
@@ -287,7 +320,13 @@ class ActualVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
         if(labelMain.text == "Quick Hit") {
             questionDifficult.isHidden = true
             fourth.isHidden = true
+            attch.isHidden = true
         }
+        
+        if(labelMain.text == "Deep Dive") {
+            attch.isHidden = true
+        }
+        
         first.delegate = self
         second.delegate = self
         third.delegate = self

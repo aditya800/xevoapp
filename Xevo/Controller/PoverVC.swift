@@ -27,7 +27,7 @@ class PoverVC: UIViewController {
             read += 1
             
         } else if read == 1 {
-            mainText.text = "Interested in Consulting? Submit your application by navigating to the \"Become a consultant\" option in the sidebar."
+            mainText.text = "Interested in consulting? Submit your application by navigating to the \"Become a consultant\" option in the sidebar."
             
             read += 1
             
