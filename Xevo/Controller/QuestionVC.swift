@@ -233,7 +233,7 @@ class QuestionVC: UIViewController {
             
         }
             
-        else{
+        else {
             
 //            let transition:CATransition = CATransition()
 //            transition.duration = 0.5

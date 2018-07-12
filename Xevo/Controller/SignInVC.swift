@@ -59,7 +59,7 @@ class SignInVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         if let _ = KeychainWrapper.standard.string(forKey: "uid") {
-            performSegue(withIdentifier: "gotofeed", sender: nil)
+           performSegue(withIdentifier: "gotofeed", sender: nil)
     }
     }
  

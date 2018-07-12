@@ -46,6 +46,10 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         performSegue(withIdentifier: "gotobav", sender: nil)
     }
     
+    @IBAction func goforward(_ sender: Any) {
+        performSegue(withIdentifier: "gotote", sender: nil)
+    }
+    
     //@IBOutlet weak var imgMain: UIImageView!
     
     //@IBOutlet weak var leadingConstraint: NSLayoutConstraint!
@@ -134,7 +138,9 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.delegate = self
         tableView.dataSource = self
         
-        /*let uid = user?.uid
+        questions.removeAll()
+        
+        let uid = user?.uid
         
         ref.child("Questions").child(uid!).observe(.childAdded, with: {
                 snapshot in
@@ -142,11 +148,12 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             let snapshotValue = snapshot.value as? NSDictionary
             let main = snapshotValue?["title"] as? String
             let detail = snapshotValue?["description"] as? String
+            let has = snapshotValue?["hasAnswered"] as? String
             
-            questions.insert(questionStruct(main: main, detail: detail), at: 0)
+            questions.insert(questionStruct(main: main, detail: detail, has: has), at: 0)
             self.tableView.reloadData()
             
-        })*/
+        })
 
   /*ref.child("Questions").child("OOUN4i80LvR1bGVa2ejm56u6SnE2").queryOrderedByKey().observe(.childAdded, with: {
             snapshot in
@@ -262,7 +269,6 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         myIndex = indexPath.row
         performSegue(withIdentifier: "gotote", sender: self)
-        
         
     }
 
