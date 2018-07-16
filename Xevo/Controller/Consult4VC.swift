@@ -8,11 +8,12 @@
 
 import UIKit
 import SearchTextField
+import MobileCoreServices
 
 var ffChoice: String!
 var ffMotivation: String!
 
-class Consult4VC: UIViewController {
+class Consult4VC: UIViewController, UIDocumentMenuDelegate,UIDocumentPickerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var firstexp: SearchTextField!
     
@@ -110,6 +111,37 @@ class Consult4VC: UIViewController {
      }
      }
      */
+    
+    @IBAction func attach(_ sender: Any) {
+    
+        let importMenu = UIDocumentPickerViewController(documentTypes: [String(kUTTypePDF)], in: UIDocumentPickerMode.import)
+        
+        importMenu.delegate = self
+        self.present(importMenu, animated: true, completion: nil)
+        
+    }
+    
+    func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
+        
+        dismiss(animated: true, completion: nil)
+        
+    }
+    
+    func documentMenu(_ documentMenu: UIDocumentMenuViewController, didPickDocumentPicker documentPicker: UIDocumentPickerViewController) {
+        
+        documentPicker.delegate = self
+        
+        self.present(documentPicker, animated: true, completion: nil)
+        
+    }
+    
+    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentAt url: URL) {
+        
+        let myURL = url as URL
+        print("import result : /(myURL)")
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

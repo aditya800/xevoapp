@@ -17,6 +17,7 @@ class LtemVC: UIViewController {
     
     @IBOutlet weak var askd: UIButton!
     @IBOutlet weak var bcomd: UIButton!
+    var i = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -110,9 +111,10 @@ class LtemVC: UIViewController {
             
             let temp = snapshot.value as? String
             if temp == "no" {
-                self.myCases.isEnabled = false
-                self.myCases.setTitle("My Cases (0 new)", for: .normal)
-                self.myCases.sizeToFit()
+                //self.myCases.isEnabled = false
+                //self.myCases.setTitle("My Cases (0 new)", for: .normal)
+                //self.myCases.sizeToFit()
+                self.i = 2
             }
             
         })
@@ -148,6 +150,10 @@ class LtemVC: UIViewController {
 //        }
 //        else {
         
+        if(i == 2) {
+            performSegue(withIdentifier: "gotofed", sender: nil)
+        } else {
+        
        let id = Auth.auth().currentUser?.uid
         
        let databaseRef = Database.database().reference()
@@ -164,6 +170,7 @@ class LtemVC: UIViewController {
             }
         })
         //}
+      }
     }
     
     @IBAction func askaques(_ sender: Any) {

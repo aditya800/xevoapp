@@ -57,6 +57,9 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        imgmain.layer.cornerRadius = imgmain.frame.size.width / 2
+        imgmain.clipsToBounds = true
+        
         // Do any additional setup after loading the view.
        // leadingConstraint.constant = -270
         //labelName.text = tempVal

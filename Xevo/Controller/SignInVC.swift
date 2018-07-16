@@ -59,7 +59,18 @@ class SignInVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         if let _ = KeychainWrapper.standard.string(forKey: "uid") {
-           performSegue(withIdentifier: "gotofeed", sender: nil)
+            questions.removeAll()
+            mainc = 0
+            countc = 0
+            let k = KeychainWrapper.standard.removeObject(forKey: "uid")
+            print("Signed out \(k)")
+            let firebaseAuth = Auth.auth()
+            do {
+                try firebaseAuth.signOut()
+            } catch let signOutError as NSError {
+                print ("Error signing out: %@", signOutError)
+            }
+           //performSegue(withIdentifier: "gotofeed", sender: nil)
     }
     }
  
@@ -71,9 +82,12 @@ class SignInVC: UIViewController {
     @IBAction func facebookBtnClicked(_ sender: Any) {
         
         let facebookLogin = FBSDKLoginManager()
+        
+        facebookLogin.logOut()
+        
         facebookLogin.logIn(withReadPermissions: ["email"], from: self) {(result, error) in
             if error != nil {
-                print("Unable to authenticate with facebook")
+                print("Unable to authenticate with facebook \(error)")
             } else if result?.isCancelled == true {
                 print("User cancelled")
             } else {
@@ -90,7 +104,7 @@ class SignInVC: UIViewController {
     func firebaseAuth(_ credential: AuthCredential) {
         Auth.auth().signIn(with: credential) { (user, error) in
             if let error = error {
-                print("Unable to authenticate with Firebase")
+                print("Unable to authenticate with Firebase \(error)")
             } else {
                 print("Successfully Authenticated with Firebase")
                 if let user = user {
@@ -100,7 +114,7 @@ class SignInVC: UIViewController {
                     
                     databaseRef.child("Users").observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
                         
-                        if snapshot.hasChild(user.uid){
+                        if snapshot.hasChild(user.uid) {
                             
                             print("true rooms exist")
                             
