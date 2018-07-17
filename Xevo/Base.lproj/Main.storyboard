@@ -473,7 +473,7 @@ This Beta Test Agreement governs the disclosure of information by Xevo to the Re
                                 <rect key="frame" x="0.0" y="283" width="320" height="285"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="celli" rowHeight="93" id="STt-6K-HbR" customClass="customCell" customModule="Xevo" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="celli" rowHeight="93" id="STt-6K-HbR" customClass="customCell" customModule="Xevo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="93"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="STt-6K-HbR" id="bTD-ja-i7P">
@@ -1141,7 +1141,7 @@ This Beta Test Agreement governs the disclosure of information by Xevo to the Re
                         <segue destination="eTz-MK-lMy" kind="show" identifier="gotob" id="54o-q4-Bz7"/>
                         <segue destination="gkk-1a-wOp" kind="show" identifier="gotov" id="WqA-mN-0nl"/>
                         <segue destination="c2m-Cm-YRf" kind="show" identifier="gotovarn" animates="NO" id="JSK-Gq-3B9"/>
-                        <segue destination="lNG-4f-Um4" kind="show" identifier="gotofed" animates="NO" id="DwQ-Bz-NI5"/>
+                        <segue destination="lNG-4f-Um4" kind="show" identifier="gotofedd" animates="NO" id="DwQ-Bz-NI5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r8G-Ej-VDm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1161,7 +1161,7 @@ This Beta Test Agreement governs the disclosure of information by Xevo to the Re
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="thirdcustomcell" rowHeight="66" id="2lp-Ir-fXW" customClass="thirdcustomcell" customModule="Xevo" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="thirdcustomcell" rowHeight="66" id="2lp-Ir-fXW" customClass="thirdcustomcell" customModule="Xevo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="335" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2lp-Ir-fXW" id="1U6-O6-fja">
@@ -1175,14 +1175,14 @@ This Beta Test Agreement governs the disclosure of information by Xevo to the Re
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uTh-ob-I0C">
-                                                    <rect key="frame" x="15" y="11" width="184" height="24"/>
+                                                    <rect key="frame" x="15" y="11" width="239" height="24"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
                                                     <state key="normal" title="Button">
                                                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     </state>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3/5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yzc-kq-SFy">
-                                                    <rect key="frame" x="234" y="18" width="31" height="28"/>
+                                                    <rect key="frame" x="289" y="18" width="31" height="28"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -2133,7 +2133,7 @@ This Beta Test Agreement governs the disclosure of information by Xevo to the Re
                                 <rect key="frame" x="0.0" y="192" width="320" height="376"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="celli" rowHeight="74" id="BhM-fb-PyH" customClass="secondcustomcell" customModule="Xevo" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="celli" rowHeight="74" id="BhM-fb-PyH" customClass="secondcustomcell" customModule="Xevo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="74"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BhM-fb-PyH" id="p8N-hi-lq6">
@@ -2375,7 +2375,7 @@ This Beta Test Agreement governs the disclosure of information by Xevo to the Re
                                 <rect key="frame" x="0.0" y="163" width="320" height="361"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="75" id="ktc-uO-Pa7">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="75" id="ktc-uO-Pa7">
                                         <rect key="frame" x="0.0" y="28" width="320" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ktc-uO-Pa7" id="fX7-9H-GNy">

@@ -11,6 +11,7 @@ import FacebookLogin
 import FBSDKCoreKit
 import FBSDKLoginKit
 import Firebase
+import FirebaseDatabase
 import SwiftKeychainWrapper
 
 //var a = false
@@ -93,7 +94,7 @@ class SignInVC: UIViewController {
             } else {
                 print("Sucessfully Authenticated")
                 let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
-                    
+                
                 self.firebaseAuth(credential)
                 
                 }
@@ -105,39 +106,74 @@ class SignInVC: UIViewController {
         Auth.auth().signIn(with: credential) { (user, error) in
             if let error = error {
                 print("Unable to authenticate with Firebase \(error)")
+                
             } else {
                 print("Successfully Authenticated with Firebase")
                 if let user = user {
                     self.userId = user.uid
                     
                     let databaseRef = Database.database().reference()
+                    print("1111111")
+//                    databaseRef.child("Users").observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
+//
+//                        print("2222222")
+//                        if snapshot.hasChild(user.uid) {
+//
+//                            print("true rooms exist")
+//
+//                        } else {
+//
+//                    let nam = user.displayName
+//                    let email = user.email
+//
+//                    var myStringArr = nam?.components(separatedBy: " ")
+//
+//                            let fn: String = myStringArr! [0]
+//                            let sn: String = myStringArr! [1]
+//
+//                            let userr = ["casesAnswered": "0", "email": email!, "firstName": fn, "lastName": sn, "isConsultant": "none", "rating": "-1", "device": UIDevice.current.identifierForVendor!.uuidString, "cases": "no"]
+//
+//                        databaseRef.child("Users").child(user.uid).setValue(userr)
+//
+//                        print("false room doesn't exist \(fn) \(sn) \(email!)")
+//                            self.cba = true
+//                        }
+//                    })
+                    
+                    print(user.uid)
                     
                     databaseRef.child("Users").observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
-                        
-                        if snapshot.hasChild(user.uid) {
                             
-                            print("true rooms exist")
+                        if snapshot.hasChild(user.uid){
+                                
+                            print("true rooms dssds")
+                            self.completeSignIn(id: user.uid)
+                                
+                            } else {
+                            let nam = user.displayName
+                            let email = user.email
                             
-                        } else {
+                            var myStringArr = nam?.components(separatedBy: " ")
                             
-                    let nam = user.displayName
-                    let email = user.email
-                    
-                    var myStringArr = nam?.components(separatedBy: " ")
+                             let fn: String = myStringArr! [0]
+                             let sn: String = myStringArr! [1]
                             
-                            let fn: String = myStringArr! [0]
-                            let sn: String = myStringArr! [1]
-                            
-                            let userr = ["casesAnswered": "0", "email": email!, "firstName": fn, "lastName": sn, "isConsultant": "none", "rating": "-1", "device": UIDevice.current.identifierForVendor!.uuidString, "cases": "no"]
-                            
+                    let userr = ["casesAnswered": "0", "email": "a@a.com", "firstName": fn, "lastName": sn, "isConsultant": "none", "rating": "-1", "device": UIDevice.current.identifierForVendor!.uuidString, "cases": "no"]
+
                         databaseRef.child("Users").child(user.uid).setValue(userr)
+//
+//                            print(email!)
+//                            print(fn)
+//                            print(sn)
+                        
                             
-                        print("false room doesn't exist \(fn) \(sn) \(email!)")
-                            self.cba = true
-                        }
-                    })
+                            print("false room doesn't exist")
+                            self.cba = false
+                            self.completeSignIn(id: user.uid)
+                            }
+                        })
                     
-                    self.completeSignIn(id: user.uid)
+                    
                 }
             }
             
@@ -153,6 +189,7 @@ class SignInVC: UIViewController {
                         self.userId = user.uid
                         self.completeSignIn(id: user.uid)
                     }
+                    
                 } else {
                     
                     var tem = self.pwdField.text?.characters.count

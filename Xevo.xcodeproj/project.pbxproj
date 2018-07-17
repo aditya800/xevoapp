@@ -110,7 +110,6 @@
 		485DCBDD20AF61FB00DE0DB0 /* RatingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingVC.swift; sourceTree = "<group>"; };
 		4872450E20FCCB7F00F2F43B /* FedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FedVC.swift; sourceTree = "<group>"; };
 		48819C6120DD487000648FB6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		48819C6320DD51AF00648FB6 /* Xevo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Xevo.entitlements; sourceTree = "<group>"; };
 		48819C6420E8E9AC00648FB6 /* FinalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalVC.swift; sourceTree = "<group>"; };
 		4885E71520D2136500BD243A /* PoverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoverVC.swift; sourceTree = "<group>"; };
 		489CD7ED20D18A36004BDAAB /* MtemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MtemVC.swift; sourceTree = "<group>"; };
@@ -229,7 +228,6 @@
 		4829C51D2071D3CD007C29E6 /* Xevo */ = {
 			isa = PBXGroup;
 			children = (
-				48819C6320DD51AF00648FB6 /* Xevo.entitlements */,
 				480888722072F3740084587B /* Model */,
 				480888732072F3790084587B /* View */,
 				480888702071DD9A0084587B /* Controller */,

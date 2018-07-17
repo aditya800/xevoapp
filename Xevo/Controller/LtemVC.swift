@@ -68,12 +68,12 @@ class LtemVC: UIViewController {
         databaseRef.child("Users").child(id!).child("firstName").observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
             
             fn = snapshot.value as? String
-            print(fn!)
+            //print(fn!)
             
             databaseRef.child("Users").child(id!).child("lastName").observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
                 
                 sn = snapshot.value as? String
-                print(sn!)
+                //print(sn!)
                 
                 self.lblMain.text = fn!.capitalized + " " + sn!.capitalized
                 
@@ -119,11 +119,11 @@ class LtemVC: UIViewController {
             
         })
         
-        print("questionscount", questions.count)
+        //print("questionscount", questions.count)
         countc = questions.count
         mainc = countc
-        print("mainc", mainc)
-        print("countc", countc)
+        //print("mainc", mainc)
+        //print("countc", countc)
         
 //        if (questions.count == 0) {
 //            print("truldkflke")
@@ -151,7 +151,7 @@ class LtemVC: UIViewController {
 //        else {
         
         if(i == 2) {
-            performSegue(withIdentifier: "gotofed", sender: nil)
+            performSegue(withIdentifier: "gotofedd", sender: nil)
         } else {
         
        let id = Auth.auth().currentUser?.uid
