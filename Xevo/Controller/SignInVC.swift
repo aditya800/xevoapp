@@ -168,7 +168,7 @@ class SignInVC: UIViewController {
                         
                             
                             print("false room doesn't exist")
-                            self.cba = false
+                            self.cba = true
                             self.completeSignIn(id: user.uid)
                             }
                         })

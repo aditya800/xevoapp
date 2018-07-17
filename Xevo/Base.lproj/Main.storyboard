@@ -703,6 +703,10 @@ This Beta Test Agreement governs the disclosure of information by Xevo to the Re
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pga-Ff-5Zg"/>
                     </view>
+                    <connections>
+                        <outlet property="imgMain" destination="bfN-Zm-erk" id="3nc-mE-ROP"/>
+                        <outlet property="mainT" destination="46t-aA-LTh" id="Nib-aA-a7w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DTX-GS-5EN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
