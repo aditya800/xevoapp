@@ -229,7 +229,25 @@ class SignInVC: UIViewController {
     func completeSignIn(id: String) {
         let keychain = KeychainWrapper.standard.set(id, forKey: "uid")
         print("Data saved to Keychain: \(keychain)")
-        performSegue(withIdentifier: "gotofeed", sender: nil)
+        
+        //let id = Auth.auth().currentUser?.uid
+        
+        let databaseRef = Database.database().reference()
+        
+        //let databaseRef = Database.database().reference()
+        
+        databaseRef.child("Users").child(id).child("isConsultant").observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
+            
+            let temp = snapshot.value as? String
+            if temp == "Verified" {
+                //self.bcomd.setTitle("Answer a case", for: .normal)
+                self.performSegue(withIdentifier: "skiptoconsul", sender: nil)
+            } else {
+                self.performSegue(withIdentifier: "gotofeed", sender: nil)
+            }
+            
+        })
+        
     }
 
 }
