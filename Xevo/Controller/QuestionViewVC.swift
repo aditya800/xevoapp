@@ -12,8 +12,10 @@ class QuestionViewVC: UIViewController {
 
     @IBOutlet weak var mainLabel: UILabel!
     
-    @IBOutlet weak var detailLabel: UILabel!
-
+    
+    
+    @IBOutlet weak var detailLabel: UITextView!
+    
     @IBOutlet weak var backButton: UIButton!
     
     override func viewDidLoad() {

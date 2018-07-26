@@ -57,7 +57,7 @@ class LtemVC: UIViewController {
             
             let temp = snapshot.value as? String
             if temp == "Verified" {
-                self.bcomd.setTitle("Answer a case", for: .normal)
+                self.bcomd.setTitle("Answer a Case             ", for: .normal)
             }
             
         })

@@ -15,6 +15,9 @@ import FBSDKLoginKit
 class FedVC: UIViewController {
 
     var ref: DatabaseReference!
+    var f = 0
+    
+    @IBOutlet weak var firstline: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,6 +68,10 @@ class FedVC: UIViewController {
                 self.imgMain.image = UIImage(data: NSData(contentsOf: url! as URL)! as Data)
             })
             connection.start()
+        }
+        
+        if(f == 2) {
+            firstline.text = "You do not have any cases yet. Answer a "
         }
         
         // Do any additional setup after loading the view.

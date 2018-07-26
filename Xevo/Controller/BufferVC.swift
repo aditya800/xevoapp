@@ -1,26 +1,32 @@
 //
-//  TemoVC.swift
+//  BufferVC.swift
 //  Xevo
 //
-//  Created by Aditya Saxena on 16/05/18.
+//  Created by Aditya Saxena on 18/07/18.
 //  Copyright © 2018 aditya saxena. All rights reserved.
 //
 
 import UIKit
 
-class TemoVC: UIViewController {
+class BufferVC: UIViewController {
     
-    var val = 0
-
-    @IBOutlet weak var quck: UIButton!
+    
+    @IBOutlet weak var mainT: UIButton!
+    @IBOutlet weak var subT: UITextView!
+    
+    @IBAction func continueT(_ sender: Any) {
+        performSegue(withIdentifier: "fotomain", sender: nil)
+    }
+    
+    @IBAction func back(_ sender: Any) {
+        dismiss(animated: false, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if(val == 1) {
-            quck.setTitle("Your answer has", for: .normal)
-        }
 
+        mainT.setTitle(questions[myIndex].main, for: .normal)
+        subT.text = questions[myIndex].detail
         // Do any additional setup after loading the view.
     }
 
@@ -29,14 +35,6 @@ class TemoVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    @IBAction func goback(_ sender: Any) {
-        
-        performSegue(withIdentifier: "gotomf", sender: nil)
-        
-    }
-    
-
     /*
     // MARK: - Navigation
 

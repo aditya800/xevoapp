@@ -56,6 +56,7 @@
 		48A8D52D20A919D100722628 /* RoundTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A8D52C20A919D100722628 /* RoundTextField.swift */; };
 		48A8D52F20A93BC000722628 /* TermsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A8D52E20A93BC000722628 /* TermsVC.swift */; };
 		48EC6CF82089833F00874A96 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EC6CF72089833F00874A96 /* FeedVC.swift */; };
+		48FAEE6E210046080063C39D /* BufferVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FAEE6D210046080063C39D /* BufferVC.swift */; };
 		56CBAC7048965D09557297A7 /* Pods_Xevo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94F377391D7BE633DDBEE615 /* Pods_Xevo.framework */; };
 		FF212C3920D0A8FF000C57C5 /* QuestionViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF212C3820D0A8FF000C57C5 /* QuestionViewVC.swift */; };
 		FF756AA520C6EA8B00E093EC /* RatingCompleteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF756AA420C6EA8B00E093EC /* RatingCompleteVC.swift */; };
@@ -116,6 +117,7 @@
 		48A8D52C20A919D100722628 /* RoundTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundTextField.swift; sourceTree = "<group>"; };
 		48A8D52E20A93BC000722628 /* TermsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsVC.swift; sourceTree = "<group>"; };
 		48EC6CF72089833F00874A96 /* FeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
+		48FAEE6D210046080063C39D /* BufferVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BufferVC.swift; sourceTree = "<group>"; };
 		7D28001DC60B6137E5DEF8BE /* Pods-Xevo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Xevo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Xevo/Pods-Xevo.debug.xcconfig"; sourceTree = "<group>"; };
 		94F377391D7BE633DDBEE615 /* Pods_Xevo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Xevo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD6A92010EF73A31AF8543BF /* Pods-Xevo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Xevo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Xevo/Pods-Xevo.release.xcconfig"; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				4885E71520D2136500BD243A /* PoverVC.swift */,
 				48819C6420E8E9AC00648FB6 /* FinalVC.swift */,
 				4872450E20FCCB7F00F2F43B /* FedVC.swift */,
+				48FAEE6D210046080063C39D /* BufferVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -427,6 +430,7 @@
 				485DCBC920ACE2C600DE0DB0 /* CosmosView.swift in Sources */,
 				485DCBD120ACE2C600DE0DB0 /* StarLayer.swift in Sources */,
 				48819C6520E8E9AC00648FB6 /* FinalVC.swift in Sources */,
+				48FAEE6E210046080063C39D /* BufferVC.swift in Sources */,
 				485DCBCC20ACE2C600DE0DB0 /* CosmosTouch.swift in Sources */,
 				48EC6CF82089833F00874A96 /* FeedVC.swift in Sources */,
 				4829C5212071D3CD007C29E6 /* SignInVC.swift in Sources */,

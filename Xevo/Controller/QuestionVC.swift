@@ -116,7 +116,6 @@ class QuestionVC: UIViewController {
         view.isUserInteractionEnabled = true
         
         area = CGRect(x: 0, y: 0, width: 280, height: self.view.frame.height)
-        
      
     }
     

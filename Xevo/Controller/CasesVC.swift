@@ -193,7 +193,7 @@ class CasesVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
         sideMenuViewController.view.frame = CGRect(x: 83, y: 185, width: 250, height: 210)
         
         vsideMenuViewController = storyboard!.instantiateViewController(withIdentifier: "LtemVC") as! LtemVC
-        vsideMenuViewController.view.frame = CGRect(x: 0, y: 80, width: 280, height: self.view.frame.height)
+        vsideMenuViewController.view.frame = CGRect(x: 0, y: 0, width: 280, height: self.view.frame.height)
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
         
@@ -254,7 +254,7 @@ class CasesVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         myIndex = indexPath.row
-        performSegue(withIdentifier: "gotoanswer", sender: self)
+        performSegue(withIdentifier: "fotofeed", sender: self)
         
     }
     

@@ -28,12 +28,82 @@ class ConsultCasesVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     var total = 0
     
     var count = 0
+    var sideMenuViewController = LtemVC()
+    var isMenuOpened:Bool = false
+    
+    @IBAction func showside(_ sender: Any) {
+        //        self.statusBarHidden = false
+        //        setNeedsStatusBarAppearanceUpdate()
+        
+        if(isMenuOpened){
+            
+            
+            
+            //   transition.subtype = kCATransitionFromRight
+            // sideMenuViewController.view.layer.add(transition, forKey: kCATransition)
+            
+            //            self.statusBarHidden = false
+            //            setNeedsStatusBarAppearanceUpdate()
+            isMenuOpened = false
+            //showside.setImage(#imageLiteral(resourceName: "Hamburger_icon.svg"), for: .normal)
+            sideMenuViewController.willMove(toParentViewController: nil)
+            sideMenuViewController.view.removeFromSuperview()
+            sideMenuViewController.removeFromParentViewController()
+            
+            
+        }
+            
+        else {
+            
+            //            let transition:CATransition = CATransition()
+            //            transition.duration = 0.5
+            //            transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+            //            transition.type = kCATransitionPush
+            //            transition.subtype = kCATransitionFromBottom
+            //            self.navigationController!.view.layer.add(transition, forKey: kCATransition)
+            //            self.navigationController?.pushViewController(dstVC, animated: false)
+            
+            let transition = CATransition()
+            //let ltemvc = LtemVC()
+            //let questionvc = QuestionVC()
+            
+            let withDuration = 0.4
+            transition.startProgress = 0.9;
+            transition.endProgress = 1;
+            
+            transition.duration = withDuration
+            transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+            transition.type = kCATransitionMoveIn
+            transition.subtype = kCATransitionFromLeft
+            
+            
+            sideMenuViewController.view.layer.add(transition, forKey: kCATransition)
+            // sideMenuViewController.navigationController?.pushViewController(ltemvc, animated: false)
+            
+            //view.window!.layer.add(transition, forKey: kCATransition)
+            // present(ltemvc, animated: false, completion: nil)
+            
+            
+            //   sideMenuViewController.view.clipsToBounds = true
+            
+            
+            
+            isMenuOpened = true
+            //showside.setImage(#imageLiteral(resourceName: "close_symbol"), for: .normal)
+            self.addChildViewController(sideMenuViewController)
+            self.view.addSubview(sideMenuViewController.view)
+            sideMenuViewController.didMove(toParentViewController: self)
+            //self.statusBarHidden = true
+            setNeedsStatusBarAppearanceUpdate()
+        }
+    }
+    
     
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var name: UILabel!
     
-    @IBOutlet weak var avgRating: UILabel!
+   // @IBOutlet weak var avgRating: UILabel!
     
     @IBOutlet weak var imgMain: UIImageView!
     //    @IBAction func handleSelection(_ sender: Any) {
@@ -118,8 +188,11 @@ class ConsultCasesVC: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             let fn = snapshot.value as? String
             print("FN", fn)
-            self.avgRating.text = fn! + "/5"
+            //self.avgRating.text = fn! + "/5"
         })
+        
+        imgMain.layer.cornerRadius = imgMain.frame.size.width / 2
+        imgMain.clipsToBounds = true
         
         
 //        ref.child("Answers").observe(.childAdded, with: {
@@ -165,6 +238,9 @@ class ConsultCasesVC: UIViewController, UITableViewDelegate, UITableViewDataSour
 //        rightSwipe.direction = UISwipeGestureRecognizerDirection.right
 //        self.view.addGestureRecognizer(rightSwipe)
         
+        sideMenuViewController = storyboard!.instantiateViewController(withIdentifier: "LtemVC") as! LtemVC
+        sideMenuViewController.view.frame = CGRect(x: 0, y: 0, width: 280, height: self.view.frame.height)
+        
     }
     
 //    @objc func swipeaction(swipe: UISwipeGestureRecognizer) {
@@ -200,7 +276,7 @@ class ConsultCasesVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         cell.labelMain.setTitle(details[indexPath.row].main , for: .normal )
         cell.detailLabel.text = details[indexPath.row].detail
-        cell.rating.text = String(details[indexPath.row].rating) + "/5"
+        cell.rating.text = "89"//String(details[indexPath.row].rating) + "/5"
         
         
         //let label2 = cell.viewWithTag(2) as! UILabel
