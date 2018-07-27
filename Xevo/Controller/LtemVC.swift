@@ -119,6 +119,18 @@ class LtemVC: UIViewController {
             
         })
         
+        ref.child("Users").child(id!).child("casesAnswered").observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
+            
+            let temp = snapshot.value as? String
+            if temp == "0" {
+                //self.myCases.isEnabled = false
+                //self.myCases.setTitle("My Cases (0 new)", for: .normal)
+                //self.myCases.sizeToFit()
+                self.i = 2
+            }
+            
+        })
+        
         //print("questionscount", questions.count)
         countc = questions.count
         mainc = countc

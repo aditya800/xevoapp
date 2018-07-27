@@ -143,7 +143,7 @@ class ConsultCasesVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.delegate = self
         tableView.dataSource = self
         
-        let uid = "OOUN4i80LvR1bGVa2ejm56u6SnE2"
+        let uid = Auth.auth().currentUser?.uid
        // print("description", uid.description)
         
         if(FBSDKAccessToken.current() != nil) {
@@ -166,7 +166,7 @@ class ConsultCasesVC: UIViewController, UITableViewDelegate, UITableViewDataSour
             connection.start()
         }
 
-        ref.child("Answers").child(uid).observe(.childAdded, with: {
+        ref.child("Answers").child(uid!).observe(.childAdded, with: {
             snapshot in
             
             let snapshotValue = snapshot.value as? NSDictionary
@@ -184,7 +184,7 @@ class ConsultCasesVC: UIViewController, UITableViewDelegate, UITableViewDataSour
           //  print("COUNTT", count)
             
         })
-        ref.child("Users").child(uid).child("rating").observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
+        ref.child("Users").child(uid!).child("rating").observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
             
             let fn = snapshot.value as? String
             print("FN", fn)
@@ -212,13 +212,13 @@ class ConsultCasesVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         var fn: String!
         var sn: String!
-        databaseRef.child("Users").child(uid).child("firstName").observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
+        databaseRef.child("Users").child(uid!).child("firstName").observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
             
             fn = snapshot.value as? String
             print("firstname", fn!)
             
             
-            databaseRef.child("Users").child(uid).child("lastName").observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
+            databaseRef.child("Users").child(uid!).child("lastName").observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
                 
                 sn = snapshot.value as? String
                 print(sn!)

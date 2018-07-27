@@ -26,6 +26,7 @@ class CasesVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     var ref: DatabaseReference!
     var vsideMenuViewController = LtemVC()
     var visMenuOpened:Bool = false
+    var statusBarHidden = false
     //var cba = ""
     //var flag = 0
     
@@ -46,11 +47,9 @@ class CasesVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
             vsideMenuViewController.willMove(toParentViewController: nil)
             vsideMenuViewController.view.removeFromSuperview()
             vsideMenuViewController.removeFromParentViewController()
-            
-            
         }
             
-        else{
+        else {
             
             //            let transition:CATransition = CATransition()
             //            transition.duration = 0.5
@@ -200,6 +199,8 @@ class CasesVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
         view.addGestureRecognizer(tap)
         view.isUserInteractionEnabled = true
         
+        area = CGRect(x: 0, y: 0, width: 280, height: self.view.frame.height)
+        
     }
     
     @objc func handleTap(_ sender: UITapGestureRecognizer) {
@@ -209,14 +210,25 @@ class CasesVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
         vsideMenuViewController.view.removeFromSuperview()
         vsideMenuViewController.removeFromParentViewController()
         
-        isMenuOpened = false
-        //showside.setImage(#imageLiteral(resourceName: "Hamburger_icon.svg"), for: .normal)
-        sideMenuViewController.willMove(toParentViewController: nil)
-        sideMenuViewController.view.removeFromSuperview()
-        sideMenuViewController.removeFromParentViewController()
+        let p = sender.location(in: self.view)
+        if area!.contains(p) {
+            isMenuOpened = true
+        }
+        else {
+            isMenuOpened = false
+            //showside.setImage(#imageLiteral(resourceName: "Hamburger_icon.svg"), for: .normal)
+            sideMenuViewController.willMove(toParentViewController: nil)
+            sideMenuViewController.view.removeFromSuperview()
+            sideMenuViewController.removeFromParentViewController()
+            self.statusBarHidden = false
+            setNeedsStatusBarAppearanceUpdate()
+        }
         
     }
     
+     override var prefersStatusBarHidden: Bool {
+        return self.statusBarHidden
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

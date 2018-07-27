@@ -671,16 +671,16 @@ This Beta Test Agreement governs the disclosure of information by Xevo to the Re
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="-3" translatesAutoresizingMaskIntoConstraints="NO" id="zc5-xO-gIX">
-                                <rect key="frame" x="11.5" y="344" width="297.5" height="41"/>
+                                <rect key="frame" x="6" y="344" width="309" height="36"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You do not have any cases yet. Ask a " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BpS-Q9-6Cd">
-                                        <rect key="frame" x="0.0" y="0.0" width="268.5" height="22"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You do not have any cases yet. Cases will appear" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BpS-Q9-6Cd">
+                                        <rect key="frame" x="0.0" y="0.0" width="309" height="19.5"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="question to begin your Xevo experience!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AeD-ep-TL3">
-                                        <rect key="frame" x="0.0" y="19" width="297.5" height="22"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="here once you begin your Xevo experience!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AeD-ep-TL3">
+                                        <rect key="frame" x="0.0" y="16.5" width="279.5" height="19.5"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -1174,13 +1174,13 @@ This Beta Test Agreement governs the disclosure of information by Xevo to the Re
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Testing details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ahO-4E-ECh">
-                                                    <rect key="frame" x="30" y="60" width="105" height="22"/>
+                                                    <rect key="frame" x="30" y="60" width="250" height="22"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uTh-ob-I0C">
-                                                    <rect key="frame" x="30" y="20" width="68" height="43"/>
+                                                    <rect key="frame" x="30" y="20" width="218" height="43"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
                                                     <state key="normal" title="Button">
                                                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1204,11 +1204,13 @@ This Beta Test Agreement governs the disclosure of information by Xevo to the Re
                                                 <constraint firstItem="ahO-4E-ECh" firstAttribute="leading" secondItem="1U6-O6-fja" secondAttribute="leadingMargin" constant="15" id="5Ic-ns-ylJ"/>
                                                 <constraint firstItem="do2-yn-lsx" firstAttribute="top" secondItem="1U6-O6-fja" secondAttribute="topMargin" id="5bP-BR-asm"/>
                                                 <constraint firstItem="do2-yn-lsx" firstAttribute="leading" secondItem="1U6-O6-fja" secondAttribute="leadingMargin" constant="10" id="6ex-YM-qIe"/>
+                                                <constraint firstItem="yzc-kq-SFy" firstAttribute="leading" secondItem="uTh-ob-I0C" secondAttribute="trailing" constant="16" id="6hA-Io-fVk"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="do2-yn-lsx" secondAttribute="trailing" constant="10" id="DGx-kL-RAr"/>
                                                 <constraint firstItem="ahO-4E-ECh" firstAttribute="top" secondItem="uTh-ob-I0C" secondAttribute="bottom" constant="-3" id="DOc-q2-Hic"/>
                                                 <constraint firstItem="uTh-ob-I0C" firstAttribute="leading" secondItem="1U6-O6-fja" secondAttribute="leadingMargin" constant="15" id="ML9-4C-cpN"/>
                                                 <constraint firstItem="uTh-ob-I0C" firstAttribute="top" secondItem="do2-yn-lsx" secondAttribute="bottom" constant="8.5" id="Vzy-Wx-a2k"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="yzc-kq-SFy" secondAttribute="trailing" constant="10" id="eFx-l7-Jvp"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ahO-4E-ECh" secondAttribute="trailing" constant="25" id="eP2-h6-uxl"/>
                                                 <constraint firstItem="yzc-kq-SFy" firstAttribute="top" secondItem="do2-yn-lsx" secondAttribute="bottom" constant="16.5" id="sNO-Kj-qds"/>
                                             </constraints>
                                         </tableViewCellContentView>
