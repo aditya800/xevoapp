@@ -9,7 +9,10 @@
 import UIKit
 
 class TermsVC: UIViewController {
-
+    
+    var f = 0
+    
+    @IBOutlet weak var maino: UILabel!
     
     @IBAction func goBack(_ sender: Any) {
         self.dismiss(animated: false, completion: nil)
@@ -22,6 +25,13 @@ class TermsVC: UIViewController {
         let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeaction(swipe:)))
         rightSwipe.direction = UISwipeGestureRecognizerDirection.right
         self.view.addGestureRecognizer(rightSwipe)
+        
+        if(f == 1) {
+            maino.text = "Privacy Policy"
+        } else if (f == 2) {
+            maino.text = "Beta Test Agreement"
+        }
+        
     }
     
     @objc func swipeaction(swipe: UISwipeGestureRecognizer) {

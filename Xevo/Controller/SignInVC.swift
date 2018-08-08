@@ -97,10 +97,10 @@ class SignInVC: UIViewController {
                 
                 self.firebaseAuth(credential)
                 
-                }
+            }
                 
         }
-        }
+      }
     
     func firebaseAuth(_ credential: AuthCredential) {
         Auth.auth().signIn(with: credential) { (user, error) in
@@ -144,7 +144,7 @@ class SignInVC: UIViewController {
                     
                     databaseRef.child("Users").observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
                             
-                        if snapshot.hasChild(user.uid){
+                        if snapshot.hasChild(user.uid) {
                                 
                             print("true rooms dssds")
                             self.completeSignIn(id: user.uid)

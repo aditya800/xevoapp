@@ -103,10 +103,14 @@ class SignUpVC: UIViewController {
                     self.useruid = user?.uid
                     print("Successfully authenticated with firebase with user id: ")
                     
-                    let userr = ["casesAnswered": "0", "email": email, "firstName": fn, "lastName": sn, "isConsultant": "none", "rating": "-1", "device": UIDevice.current.identifierForVendor!.uuidString, "cases": "no"]
+                    let userr = ["casesAnswered": "0", "email": email, "firstName": fn, "lastName": sn, "isConsultant": "none", "rating": "-1", "device": UIDevice.current.identifierForVendor!.uuidString, "cases": "no", "used": "", "credits" : "0"]
                     
                     self.dbReference = Database.database().reference()
                     self.dbReference?.child("Users").child(self.useruid).setValue(userr)
+                    
+                    let tem = fn + "bd03909"
+                    
+                    self.dbReference?.child("Referrals").child(tem).child("status").setValue("active")
                     
                     self.text = fn + " " + sn
                     

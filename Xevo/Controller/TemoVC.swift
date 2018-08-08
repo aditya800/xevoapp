@@ -32,8 +32,11 @@ class TemoVC: UIViewController {
     
     @IBAction func goback(_ sender: Any) {
         
+        if(val == 1) {
+            performSegue(withIdentifier: "fotomg", sender: nil)
+        } else {
         performSegue(withIdentifier: "gotomf", sender: nil)
-        
+        }
     }
     
 

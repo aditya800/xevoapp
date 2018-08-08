@@ -9,13 +9,41 @@
 import UIKit
 
 class LegalVC: UIViewController {
+    
+    var m = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.identifier == "gototermi" {
+                let sc = segue.destination as! TermsVC
+                sc.f = m
+            }
+    }
+    
+    @IBAction func goback(_ sender: Any) {
+        self.dismiss(animated: false, completion: nil)
+    }
+    
+    
+    @IBAction func goto(_ sender: Any) {
+        m = 0
+        performSegue(withIdentifier: "gototermi", sender: nil)
+    }
+    
+    @IBAction func privatr(_ sender: Any) {
+        m = 1
+        performSegue(withIdentifier: "gototermi", sender: nil)
+    }
+    
+    @IBAction func betatd(_ sender: Any) {
+        m = 2
+        performSegue(withIdentifier: "gototermi", sender: nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

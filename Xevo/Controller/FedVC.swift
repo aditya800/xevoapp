@@ -19,6 +19,10 @@ class FedVC: UIViewController {
     
     @IBOutlet weak var firstline: UILabel!
     
+    @IBOutlet weak var secondline: UILabel!
+    
+    @IBOutlet weak var payment: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -50,6 +54,10 @@ class FedVC: UIViewController {
             
         })
         
+        if(f==4) {
+            payment.setTitle("My Payments", for: .normal)
+        }
+        
         if(FBSDKAccessToken.current() != nil) {
             
             print(FBSDKAccessToken.current().permissions)
@@ -72,6 +80,11 @@ class FedVC: UIViewController {
         
         if(f == 2) {
             firstline.text = "You do not have any cases yet. Answer a "
+        }
+        
+        if(f==4) {
+            firstline.text = "You have not made any payments yet. Payments"
+            secondline.text = "will appear here after your first transaction"
         }
         
         // Do any additional setup after loading the view.

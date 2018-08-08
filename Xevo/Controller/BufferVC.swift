@@ -10,7 +10,6 @@ import UIKit
 
 class BufferVC: UIViewController {
     
-    
     @IBOutlet weak var mainT: UIButton!
     @IBOutlet weak var subT: UITextView!
     
@@ -25,8 +24,8 @@ class BufferVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        mainT.setTitle(questions[myIndex].main, for: .normal)
-        subT.text = questions[myIndex].detail
+        mainT.setTitle(details[myIndex].main, for: .normal)
+        subT.text = details[myIndex].detail
         // Do any additional setup after loading the view.
     }
 

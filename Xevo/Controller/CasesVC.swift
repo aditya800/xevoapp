@@ -91,8 +91,13 @@ class CasesVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
             vsideMenuViewController.didMove(toParentViewController: self)
         }
 
-        
     }
+    
+    
+    @IBAction func goforqard(_ sender: Any) {
+        performSegue(withIdentifier: "fotofeed", sender: self)
+    }
+    
     
     @IBOutlet weak var tableView: UITableView!
     

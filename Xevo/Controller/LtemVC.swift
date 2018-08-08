@@ -18,6 +18,21 @@ class LtemVC: UIViewController {
     @IBOutlet weak var askd: UIButton!
     @IBOutlet weak var bcomd: UIButton!
     var i = 1
+    var m = 2
+    
+    @IBAction func returnon(_ sender: Any) {
+        m = 4
+        performSegue(withIdentifier: "gotofedd", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(m == 4) {
+        if segue.identifier == "gotofedd" {
+            let sc = segue.destination as! FedVC
+            sc.f = 4
+        }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -214,7 +229,6 @@ class LtemVC: UIViewController {
             }
             
         })
-        
     }
     
     @IBAction func logout(_ sender: Any) {
@@ -235,12 +249,18 @@ class LtemVC: UIViewController {
         self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
     }
     
+    @IBAction func referj(_ sender: Any) {
+        performSegue(withIdentifier: "gotorefer", sender: nil)
+    }
+    
+    @IBAction func legal(_ sender: Any) {
+        performSegue(withIdentifier: "gotolegal", sender: nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
     
 
     /*

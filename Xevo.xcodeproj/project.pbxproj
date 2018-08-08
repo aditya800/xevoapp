@@ -57,6 +57,8 @@
 		48A8D52F20A93BC000722628 /* TermsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A8D52E20A93BC000722628 /* TermsVC.swift */; };
 		48EC6CF82089833F00874A96 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EC6CF72089833F00874A96 /* FeedVC.swift */; };
 		48FAEE6E210046080063C39D /* BufferVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FAEE6D210046080063C39D /* BufferVC.swift */; };
+		48FBCD5B2113CF4E007728D4 /* ReferralVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FBCD5A2113CF4E007728D4 /* ReferralVC.swift */; };
+		48FBCD5D2117EF36007728D4 /* LegalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FBCD5C2117EF36007728D4 /* LegalVC.swift */; };
 		56CBAC7048965D09557297A7 /* Pods_Xevo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94F377391D7BE633DDBEE615 /* Pods_Xevo.framework */; };
 		FF212C3920D0A8FF000C57C5 /* QuestionViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF212C3820D0A8FF000C57C5 /* QuestionViewVC.swift */; };
 		FF756AA520C6EA8B00E093EC /* RatingCompleteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF756AA420C6EA8B00E093EC /* RatingCompleteVC.swift */; };
@@ -118,6 +120,8 @@
 		48A8D52E20A93BC000722628 /* TermsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsVC.swift; sourceTree = "<group>"; };
 		48EC6CF72089833F00874A96 /* FeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		48FAEE6D210046080063C39D /* BufferVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BufferVC.swift; sourceTree = "<group>"; };
+		48FBCD5A2113CF4E007728D4 /* ReferralVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferralVC.swift; sourceTree = "<group>"; };
+		48FBCD5C2117EF36007728D4 /* LegalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalVC.swift; sourceTree = "<group>"; };
 		7D28001DC60B6137E5DEF8BE /* Pods-Xevo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Xevo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Xevo/Pods-Xevo.debug.xcconfig"; sourceTree = "<group>"; };
 		94F377391D7BE633DDBEE615 /* Pods_Xevo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Xevo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD6A92010EF73A31AF8543BF /* Pods-Xevo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Xevo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Xevo/Pods-Xevo.release.xcconfig"; sourceTree = "<group>"; };
@@ -173,6 +177,8 @@
 				48819C6420E8E9AC00648FB6 /* FinalVC.swift */,
 				4872450E20FCCB7F00F2F43B /* FedVC.swift */,
 				48FAEE6D210046080063C39D /* BufferVC.swift */,
+				48FBCD5A2113CF4E007728D4 /* ReferralVC.swift */,
+				48FBCD5C2117EF36007728D4 /* LegalVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -422,6 +428,7 @@
 				48021CA720AAE0D10005B15A /* RoundView.swift in Sources */,
 				FFB7EE7220CEC76100F86DFB /* ConsultCasesVC.swift in Sources */,
 				4808D2C420B7FBB200C15D24 /* AnswerVC.swift in Sources */,
+				48FBCD5B2113CF4E007728D4 /* ReferralVC.swift in Sources */,
 				485DCBDA20AF534100DE0DB0 /* customCell.swift in Sources */,
 				485DCBCF20ACE2C600DE0DB0 /* CosmosRating.swift in Sources */,
 				4808D2BC20B6DD3E00C15D24 /* Consult4VC.swift in Sources */,
@@ -451,6 +458,7 @@
 				4808D2C020B7B99600C15D24 /* CasesVC.swift in Sources */,
 				4808D2B820B6D45C00C15D24 /* Consult2VC.swift in Sources */,
 				485DCBCA20ACE2C600DE0DB0 /* CosmosSize.swift in Sources */,
+				48FBCD5D2117EF36007728D4 /* LegalVC.swift in Sources */,
 				489CD7EE20D18A36004BDAAB /* MtemVC.swift in Sources */,
 				48021CA520AAD2380005B15A /* ConsultantVC.swift in Sources */,
 				485DCBCD20ACE2C600DE0DB0 /* CosmosLayers.swift in Sources */,
