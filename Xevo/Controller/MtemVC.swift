@@ -30,13 +30,22 @@ class MtemVC: UIViewController {
     @IBAction func exp2(_ sender: Any) {
         // text = exp2l.currentTitle!
         ref = Database.database().reference()
-        let user = Auth.auth().currentUser
-        let uid = user?.uid
-        print(exp2l.currentTitle!)
-        ref.child("Users").child(uid!).child("exp1").setValue(exp2l.currentTitle!)
-        ref.child("Users").child(uid!).child("exp2").setValue(tang)
         
-        performSegue(withIdentifier: "gotoyarn", sender: nil)
+        ref.child("CasesBySubject").observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
+            
+            if snapshot.hasChild(self.exp2l.currentTitle!) {
+                let user = Auth.auth().currentUser
+                let uid = user?.uid
+                print(self.exp2l.currentTitle!)
+                self.ref.child("Users").child(uid!).child("exp1").setValue(self.self.exp2l.currentTitle!)
+                self.ref.child("Users").child(uid!).child("exp2").setValue(self.tang)
+                
+                self.performSegue(withIdentifier: "gotoyarn", sender: nil)
+            } else {
+                self.performSegue(withIdentifier: "gotomeff", sender: self)
+            }
+        })
+        
     }
     
     @IBAction func exp5(_ sender: Any) {
@@ -44,12 +53,21 @@ class MtemVC: UIViewController {
         //performSegue(withIdentifier: "gotoyarn", sender: nil)
         
         ref = Database.database().reference()
-        let user = Auth.auth().currentUser
-        let uid = user?.uid
-        ref.child("Users").child(uid!).child("exp1").setValue(exp5l.currentTitle!)
-        ref.child("Users").child(uid!).child("exp5").setValue(tang)
         
-        performSegue(withIdentifier: "gotoyarn", sender: nil)
+        ref.child("CasesBySubject").observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
+            
+            if snapshot.hasChild(self.exp5l.currentTitle!) {
+                let user = Auth.auth().currentUser
+                let uid = user?.uid
+                print(self.exp5l.currentTitle!)
+                self.ref.child("Users").child(uid!).child("exp1").setValue(self.self.exp5l.currentTitle!)
+                self.ref.child("Users").child(uid!).child("exp5").setValue(self.tang)
+                
+                self.performSegue(withIdentifier: "gotoyarn", sender: nil)
+            } else {
+                self.performSegue(withIdentifier: "gotomeff", sender: self)
+            }
+        })
         
     }
     
@@ -133,24 +151,42 @@ class MtemVC: UIViewController {
     @IBAction func exp3(_ sender: Any) {
         
         ref = Database.database().reference()
-        let user = Auth.auth().currentUser
-        let uid = user?.uid
-        ref.child("Users").child(uid!).child("exp1").setValue(exp3l.currentTitle!)
-        ref.child("Users").child(uid!).child("exp3").setValue(tang)
         
-        performSegue(withIdentifier: "gotoyarn", sender: nil)
+        ref.child("CasesBySubject").observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
+            
+            if snapshot.hasChild(self.exp3l.currentTitle!) {
+                let user = Auth.auth().currentUser
+                let uid = user?.uid
+                print(self.exp3l.currentTitle!)
+                self.ref.child("Users").child(uid!).child("exp1").setValue(self.self.exp3l.currentTitle!)
+                self.ref.child("Users").child(uid!).child("exp3").setValue(self.tang)
+                
+                self.performSegue(withIdentifier: "gotoyarn", sender: nil)
+            } else {
+                self.performSegue(withIdentifier: "gotomeff", sender: self)
+            }
+        })
         
     }
     
     @IBAction func exp4(_ sender: Any) {
         
         ref = Database.database().reference()
-        let user = Auth.auth().currentUser
-        let uid = user?.uid
-        ref.child("Users").child(uid!).child("exp1").setValue(exp4l.currentTitle!)
-        ref.child("Users").child(uid!).child("exp4").setValue(tang)
         
-        performSegue(withIdentifier: "gotoyarn", sender: nil)
+        ref.child("CasesBySubject").observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
+            
+            if snapshot.hasChild(self.exp4l.currentTitle!) {
+                let user = Auth.auth().currentUser
+                let uid = user?.uid
+                print(self.exp4l.currentTitle!)
+                self.ref.child("Users").child(uid!).child("exp1").setValue(self.self.exp4l.currentTitle!)
+                self.ref.child("Users").child(uid!).child("exp4").setValue(self.tang)
+                
+                self.performSegue(withIdentifier: "gotoyarn", sender: nil)
+            } else {
+                self.performSegue(withIdentifier: "gotomeff", sender: self)
+            }
+        })
         
     }
     

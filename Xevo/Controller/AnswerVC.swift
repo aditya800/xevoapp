@@ -118,6 +118,10 @@ class AnswerVC: UIViewController, UITextViewDelegate {
         let id = Auth.auth().currentUser?.uid
         let question1 = ["caseType": "","title": details[myIndex].main, "description": textView.text, "rating": 0] as [String : Any]
         let dbReference = Database.database().reference()
+        let temp = details[myIndex].qid
+        
+        dbReference.child("Questions").child(id!).child(temp!).child("hasAnswered").setValue("yes")
+        
         dbReference.child("Answers").child(id!).childByAutoId().setValue(question1)
         dbReference.child("Users").child(id!).child("casesAnswered").setValue("1")
         performSegue(withIdentifier: "fotosubmit", sender: nil)

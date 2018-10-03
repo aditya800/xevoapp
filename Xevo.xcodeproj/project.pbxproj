@@ -56,6 +56,7 @@
 		48A8D52D20A919D100722628 /* RoundTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A8D52C20A919D100722628 /* RoundTextField.swift */; };
 		48A8D52F20A93BC000722628 /* TermsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A8D52E20A93BC000722628 /* TermsVC.swift */; };
 		48EC6CF82089833F00874A96 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EC6CF72089833F00874A96 /* FeedVC.swift */; };
+		48F30DBD214CBA2C004FC94D /* ImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F30DBC214CBA2C004FC94D /* ImageVC.swift */; };
 		48FAEE6E210046080063C39D /* BufferVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FAEE6D210046080063C39D /* BufferVC.swift */; };
 		48FBCD5B2113CF4E007728D4 /* ReferralVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FBCD5A2113CF4E007728D4 /* ReferralVC.swift */; };
 		48FBCD5D2117EF36007728D4 /* LegalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FBCD5C2117EF36007728D4 /* LegalVC.swift */; };
@@ -119,6 +120,7 @@
 		48A8D52C20A919D100722628 /* RoundTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundTextField.swift; sourceTree = "<group>"; };
 		48A8D52E20A93BC000722628 /* TermsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsVC.swift; sourceTree = "<group>"; };
 		48EC6CF72089833F00874A96 /* FeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
+		48F30DBC214CBA2C004FC94D /* ImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVC.swift; sourceTree = "<group>"; };
 		48FAEE6D210046080063C39D /* BufferVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BufferVC.swift; sourceTree = "<group>"; };
 		48FBCD5A2113CF4E007728D4 /* ReferralVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferralVC.swift; sourceTree = "<group>"; };
 		48FBCD5C2117EF36007728D4 /* LegalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalVC.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				48FAEE6D210046080063C39D /* BufferVC.swift */,
 				48FBCD5A2113CF4E007728D4 /* ReferralVC.swift */,
 				48FBCD5C2117EF36007728D4 /* LegalVC.swift */,
+				48F30DBC214CBA2C004FC94D /* ImageVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 				4808D2BC20B6DD3E00C15D24 /* Consult4VC.swift in Sources */,
 				FFB7EE7420CEF33F00F86DFB /* thirdcustomcell.swift in Sources */,
 				485DCBDE20AF61FB00DE0DB0 /* RatingVC.swift in Sources */,
+				48F30DBD214CBA2C004FC94D /* ImageVC.swift in Sources */,
 				485DCBC920ACE2C600DE0DB0 /* CosmosView.swift in Sources */,
 				485DCBD120ACE2C600DE0DB0 /* StarLayer.swift in Sources */,
 				48819C6520E8E9AC00648FB6 /* FinalVC.swift in Sources */,

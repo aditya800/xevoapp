@@ -37,10 +37,21 @@ class SignUpVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        FirstName.setBottomBorder()
-        SecondName.setBottomBorder()
-        Email.setBottomBorder()
-        pwdField.setBottomBorder()
+        //FirstName.setBottomBorder()
+        //SecondName.setBottomBorder()
+        //Email.setBottomBorder()
+        //pwdField.setBottomBorder()
+       
+        FirstName.layer.borderWidth = 1
+        FirstName.layer.borderColor = UIColor.white.cgColor
+        
+        SecondName.layer.borderWidth = 1
+        SecondName.layer.borderColor = UIColor.white.cgColor
+        
+        Email.layer.borderWidth = 1
+        Email.layer.borderColor = UIColor.white.cgColor
+        pwdField.layer.borderWidth = 1
+        pwdField.layer.borderColor = UIColor.white.cgColor
         
         pwdField.isSecureTextEntry = true
         

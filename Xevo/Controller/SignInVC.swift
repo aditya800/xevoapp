@@ -27,11 +27,16 @@ class SignInVC: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
      
-       emailField.setBottomBorder()
-       pwdField.setBottomBorder()
-       fbImage.layer.cornerRadius = 25
+       //emailField.setBottomBorder()
+       //pwdField.setBottomBorder()
+        emailField.layer.borderWidth = 1
+        emailField.layer.borderColor = UIColor.white.cgColor
+        pwdField.layer.borderWidth = 1
+        pwdField.layer.borderColor = UIColor.white.cgColor
+       
+        fbImage.layer.cornerRadius = 25
         
-       pwdField.isSecureTextEntry = true
+        pwdField.isSecureTextEntry = true
         
         if UIDevice().userInterfaceIdiom == .phone {
             switch UIScreen.main.nativeBounds.height {

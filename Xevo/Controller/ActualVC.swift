@@ -35,6 +35,9 @@ class ActualVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
     var sideMenuViewController = LtemVC()
     var isMenuOpened:Bool = false
     var statusBarHidden = false
+    var il = "Error"
+    var hasImage = "no"
+    var downloadPath = "NA"
     
     @IBOutlet weak var category: SearchTextField!
     
@@ -164,7 +167,6 @@ class ActualVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
             //   sideMenuViewController.view.clipsToBounds = true
             
             
-            
             isMenuOpened = true
             //showside.setImage(#imageLiteral(resourceName: "close_symbol"), for: .normal)
             self.addChildViewController(sideMenuViewController)
@@ -177,6 +179,9 @@ class ActualVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
     }
     
     @IBAction func camera(_ sender: Any) {
+        imagePicker.delegate = self
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.allowsEditing = true
         self.present(imagePicker, animated: true, completion: nil)
     }
 
@@ -345,7 +350,6 @@ class ActualVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
         
         //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
       
-        
         let tap1 = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
         
         view.addGestureRecognizer(tap1)
@@ -420,7 +424,7 @@ class ActualVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
             default:
                 break
             }
-        }else{
+        } else {
             
         }
     }
@@ -445,15 +449,12 @@ class ActualVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
         let id = Auth.auth().currentUser?.uid
             let desc = first.text! + second.text! + third.text!
             let username = Auth.auth().currentUser?.uid
-            let question1 = ["caseType": labelMain.text!, "description": desc, "title": whatsup.text!, "hasAnswered": "none", "reasonForDifficulty": fourth.text!] as [String : Any]
-        dbReference = Database.database().reference()
-        dbReference?.child("Questions").child(id!).childByAutoId().setValue(question1)
             
             let image = mainImage.image
             
             if image != nil {
             self.uploadProfileImage(image!) { url in
-                
+                self.hasImage = "yes"
                 if url != nil {
                     let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
                    // changeRequest?.displayName = username
@@ -474,11 +475,28 @@ class ActualVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
                 
             }
             }
-        
-    
-        dbReference?.child("Users").child(id!).child("cases").setValue("yes")
-        self.performSegue(withIdentifier: "gototemp", sender: nil)
             
+            print(hasImage)
+            print(downloadPath)
+            
+            dbReference = Database.database().reference()
+            let idfor = dbReference?.child("Questions").child(id!).childByAutoId()
+           
+            let question1 = ["id": id!, "caseType": labelMain.text!, "description": desc, "title": whatsup.text!, "hasAnswered": "none", "download": downloadPath, "hasImage": hasImage, "reasonForDifficulty": fourth.text!, "isWorking" : "no"] as [String : Any]
+            dbReference?.child("CasesBySubject").child(category.text!).childByAutoId().setValue(question1)
+            idfor?.setValue(question1)
+            
+            il = (idfor!.key)
+            print(il)
+    
+            //let temq = ["qid": il]
+            
+            idfor?.child("qid").setValue(il)
+            
+        dbReference?.child("Users").child(id!).child("cases").setValue("yes")
+            
+        print(downloadPath)
+        self.performSegue(withIdentifier: "gototemp", sender: nil)
             
         //performSegue(withIdentifier: "gototemp", sender: nil)
         
@@ -490,31 +508,50 @@ class ActualVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, 
         // Dispose of any resources that can be recreated.
     }
     
-    
     @objc func openImagePicker(_ sender:Any) {
         // Open Image Picker
+        //let picker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.allowsEditing = true
         self.present(imagePicker, animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "gototemp" {
+            let sc = segue.destination as! TemoVC
+            sc.piq = downloadPath
+        }
     }
     
     func uploadProfileImage(_ image:UIImage, completion: @escaping ((_ url:URL?)->())) {
         guard let uid = Auth.auth().currentUser?.uid else { return }
-        let storageRef = Storage.storage().reference().child("user/\(uid)")
+        let storageRef = Storage.storage().reference().child("questions/\(il)")
         
         guard let imageData = UIImageJPEGRepresentation(image, 0.75) else { return }
         
         let metaData = StorageMetadata()
         metaData.contentType = "image/jpg"
+        hasImage = "yes"
         
         storageRef.putData(imageData, metadata: metaData) { metaData, error in
             if error == nil, metaData != nil {
                 if let url = metaData?.downloadURL() {
+                    self.downloadPath = url.absoluteString
+                    print(self.downloadPath)
+                    self.dbReference = Database.database().reference()
+                   
+                    print(self.il)
+//                    self.dbReference?.child("Questions").child(self.il).child("download").setValue(self.downloadPath)
                     completion(url)
                 } else {
                     completion(nil)
+                    print("this")
                 }
                 // success!
             } else {
-                // failed
+                print("failed")
                 completion(nil)
             }
         }
@@ -536,7 +573,5 @@ extension ActualVC: UIImagePickerControllerDelegate, UINavigationControllerDeleg
         
         picker.dismiss(animated: true, completion: nil)
 }
-    
-    
 
 }

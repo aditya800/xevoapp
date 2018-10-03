@@ -17,6 +17,15 @@ let temp = ["Test Question", "Test Question 2", "Nothing", "Whatever", "Here you
 let temp2 = ["Test question detail", "dddddd", "whatever", "unanswered", "This is nothing"]
 var myIndex = 0
 
+struct questionStruct {
+    let main : String!
+    let detail : String!
+    let has : String!
+    let qid : String!
+}
+
+var questions = [questionStruct]()
+
 class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var menuCheckr = true
@@ -152,8 +161,9 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             let main = snapshotValue?["title"] as? String
             let detail = snapshotValue?["description"] as? String
             let has = snapshotValue?["hasAnswered"] as? String
+            let qid = snapshotValue?["qid"] as? String
             
-            questions.insert(questionStruct(main: main, detail: detail, has: has), at: 0)
+            questions.insert(questionStruct(main: main, detail: detail, has: has, qid: qid), at: 0)
             self.tableView.reloadData()
             
         })

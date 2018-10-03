@@ -14,6 +14,7 @@ struct DetailStruct {
     let main : String!
     let detail : String!
     let rating : Int!
+    let qid : String!
 }
 
 var details = [DetailStruct]()
@@ -30,14 +31,13 @@ class CasesVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     //var cba = ""
     //var flag = 0
     
+    
     @IBOutlet weak var vshowside: UIButton!
     
     @IBAction func showside(_ sender: Any) {
         
         
         if(visMenuOpened){
-            
-            
             
             //   transition.subtype = kCATransitionFromRight
             // sideMenuViewController.view.layer.add(transition, forKey: kCATransition)
@@ -114,7 +114,7 @@ class CasesVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
             
         }
             
-        else{
+        else {
             
             //            let transition:CATransition = CATransition()
             //            transition.duration = 0.5
@@ -160,6 +160,15 @@ class CasesVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
         
         self.tableView.separatorStyle = .none
         
+        
+//        ref.child("CasesBySubject").observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
+//
+//            if snapshot.hasChild(self.handleselect.currentTitle!) {
+//                self.performSegue(withIdentifier: "gotomef", sender: self)
+//            }
+//
+//        })
+        
         // if let user = user {
         // let name = user.displayName
         //   labelName.text = name
@@ -170,19 +179,8 @@ class CasesVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
         
         let uid = user?.uid
         
-        ref.child("CasesBySubject").child("computer_science").observe(.childAdded, with: {
-            snapshot in
-            
-            let snapshotValue = snapshot.value as? NSDictionary
-            let main = snapshotValue?["title"] as? String
-            let detail = snapshotValue?["description"] as? String
-            let rating = snapshotValue?["rating"] as? Int
-            // let exp1 = snapshotValue?["exp1"] as? String
-            
-            details.insert(DetailStruct(main: main, detail: detail, rating: rating), at: 0)
-            self.tableView.reloadData()
-            
-        })
+        print("currentn title")
+        print(handleselect.currentTitle!)
         
         ref.child("Users").child(uid!).child("exp1").observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
             
@@ -192,6 +190,26 @@ class CasesVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
             // self.handleselect.setTitle(self.cba.capitalized, for: .normal)
             
         })
+        
+        ref.child("CasesBySubject").child(handleselect.currentTitle!).observe(.childAdded, with: {
+            snapshot in
+            
+            let snapshotValue = snapshot.value as? NSDictionary
+            let main = snapshotValue?["title"] as? String
+            let detail = snapshotValue?["description"] as? String
+            let rating = snapshotValue?["rating"] as? Int
+            let qid = snapshotValue?["qid"] as? String
+            // let exp1 = snapshotValue?["exp1"] as? String
+            
+            details.insert(DetailStruct(main: main, detail: detail, rating: rating, qid: qid), at: 0)
+            self.tableView.reloadData()
+            
+        })
+        
+        print("changed title")
+        print(handleselect.currentTitle!)
+        
+      
         
         sideMenuViewController = storyboard!.instantiateViewController(withIdentifier: "MtemVC") as! MtemVC
         sideMenuViewController.view.frame = CGRect(x: 83, y: 185, width: 250, height: 210)
@@ -274,7 +292,6 @@ class CasesVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
         performSegue(withIdentifier: "fotofeed", sender: self)
         
     }
-    
     
     /*
      // MARK: - Navigation

@@ -11,6 +11,7 @@ import UIKit
 class TemoVC: UIViewController {
     
     var val = 0
+    var piq = "error"
 
     @IBOutlet weak var quck: UIButton!
     
@@ -21,6 +22,8 @@ class TemoVC: UIViewController {
             quck.setTitle("Your answer has", for: .normal)
         }
 
+        print(piq)
+        
         // Do any additional setup after loading the view.
     }
 
@@ -28,7 +31,6 @@ class TemoVC: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
     @IBAction func goback(_ sender: Any) {
         

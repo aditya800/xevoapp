@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SubcaseVC: UIViewController {
 
@@ -17,6 +18,14 @@ class SubcaseVC: UIViewController {
     @IBAction func goback(_ sender: Any) {
         self.dismiss(animated: false, completion: nil)
     }
+    
+    let temp = questions[myIndex].qid
+    
+    @IBAction func toimage(_ sender: Any) {
+        performSegue(withIdentifier: "gotovimage", sender: nil)
+    }
+    
+    @IBOutlet weak var tohimage: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +39,22 @@ class SubcaseVC: UIViewController {
             rateout.isEnabled = false
         }
 
+        var fn = ""
+        let databaseRef = Database.database().reference()
+        let id = Auth.auth().currentUser?.uid
+        databaseRef.child("Questions").child(id!).child(temp!).child("hasImage").observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
+            
+            fn = (snapshot.value as? String)!
+            
+        })
+        
+        if(fn == "no") {
+            tohimage.isHidden = true
+        }
+        
+        print(temp!)
+        print(temp!)
+        
         // Do any additional setup after loading the view.
         
         let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeaction(swipe:)))
@@ -45,6 +70,14 @@ class SubcaseVC: UIViewController {
     
     @IBAction func gotorate(_ sender: Any) {
         performSegue(withIdentifier: "gotorate", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "gotovimage" {
+            let sc = segue.destination as! ImageVC
+            sc.qid = temp!
+        }
     }
     
     override func didReceiveMemoryWarning() {

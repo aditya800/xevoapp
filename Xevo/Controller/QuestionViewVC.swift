@@ -12,8 +12,6 @@ class QuestionViewVC: UIViewController {
 
     @IBOutlet weak var mainLabel: UILabel!
     
-    
-    
     @IBOutlet weak var detailLabel: UITextView!
     
     @IBOutlet weak var backButton: UIButton!
@@ -35,6 +33,7 @@ class QuestionViewVC: UIViewController {
     @objc func swipeaction(swipe: UISwipeGestureRecognizer) {
         self.dismiss(animated: false, completion: nil)
     }
+    
     @IBAction func backPressed(_ sender: Any) {
         self.dismiss(animated: false, completion: nil)
     }

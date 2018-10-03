@@ -173,12 +173,13 @@ class ConsultCasesVC: UIViewController, UITableViewDelegate, UITableViewDataSour
             let main = snapshotValue?["title"] as? String
             let detail = snapshotValue?["description"] as? String
             let rating = snapshotValue?["rating"] as? Int
+            let qid = snapshotValue?["qid"] as? String
         //    let count = Int(snapshot.childrenCount)
          //   self.total = self.total + rating!
            // print("total", self.total)
             
 
-            details.insert(DetailStruct(main: main, detail: detail, rating: rating), at: 0)
+            details.insert(DetailStruct(main: main, detail: detail, rating: rating, qid: qid), at: 0)
             self.tableView.reloadData()
             
           //  print("COUNTT", count)

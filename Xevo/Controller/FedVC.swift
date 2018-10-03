@@ -18,9 +18,7 @@ class FedVC: UIViewController {
     var f = 0
     
     @IBOutlet weak var firstline: UILabel!
-    
     @IBOutlet weak var secondline: UILabel!
-    
     @IBOutlet weak var payment: UIButton!
     
     override func viewDidLoad() {
@@ -84,7 +82,6 @@ class FedVC: UIViewController {
         
         if(f==4) {
             firstline.text = "You have not made any payments yet. Payments"
-            secondline.text = "will appear here after your first transaction"
         }
         
         // Do any additional setup after loading the view.

@@ -12,19 +12,12 @@ import FirebaseDatabase
 import SwiftKeychainWrapper
 import FBSDKCoreKit
 import FBSDKLoginKit
+import UserNotifications
 
 var mainc = 0
 var countc = 0
 var area: CGRect?
 //var whichquestion = 0
-
-struct questionStruct {
-    let main : String!
-    let detail : String!
-    let has : String!
-}
-
-var questions = [questionStruct]()
 
 class QuestionVC: UIViewController {
     
@@ -106,6 +99,17 @@ class QuestionVC: UIViewController {
         //sideName.text = fn!.capitalized + " " + sn!.capitalized
         
         // Do any additional setup after loading the view.
+        
+        let content = UNMutableNotificationContent()
+        content.title = "Hello"
+        content.body = "body"
+        content.sound = UNNotificationSound.default()
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: "testIdentifier", content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
         
         sideMenuViewController = storyboard!.instantiateViewController(withIdentifier: "LtemVC") as! LtemVC
         sideMenuViewController.view.frame = CGRect(x: 0, y: 0, width: 280, height: self.view.frame.height)
@@ -216,8 +220,6 @@ class QuestionVC: UIViewController {
         
         if(isMenuOpened){
             
-            
-            
          //   transition.subtype = kCATransitionFromRight
            // sideMenuViewController.view.layer.add(transition, forKey: kCATransition)
 
@@ -278,7 +280,6 @@ class QuestionVC: UIViewController {
 
         
     }
-    
     
     @IBAction func logout(_ sender: Any) {
         
